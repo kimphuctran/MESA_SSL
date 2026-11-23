@@ -252,5 +252,45 @@
     "control": "Label priors as mathematical regularizers until real-world physical constraints verified",
     "verification": "Domain-specific interventions and causal concept truth",
     "provenance": "MESA_SSL/BIOPHYSICS_ARCHITECTURE.md"
+  },
+  {
+    "id": "F17",
+    "topic": "Dataset-level sample count is not enough for few-shot eligibility",
+    "hypothesis": "Dataset total TRAIN/class metadata implies at least 5 examples for every class",
+    "finding": "FaceFour and Adiac both failed load_data TRAIN class-frequency threshold despite plausible aggregate counts; no TEST scoring took place",
+    "datasets": [
+      "FaceFour",
+      "Adiac"
+    ],
+    "severity": "high",
+    "control": "Check min TRAIN count by actual class before scheduling any few-shot experiment; document ineligible tasks without swapping them in response to TEST performance",
+    "verification": "TRAIN-only aeon archive counts, exact preregistered exclusion report",
+    "provenance": "https://github.com/kimphuctran/MESA_SSL/actions/runs/45286212883"
+  },
+  {
+    "id": "F18",
+    "topic": "Shallow GitHub Actions checkouts invalidate historical git-diff reference tests",
+    "hypothesis": "The pinned pretest source commit is always available locally via git diff in CI",
+    "finding": "First frozen ElasticSynapse holdout run failed all jobs during source provenance check because checkout@v4 used a shallow clone; zero TEST scores were computed",
+    "datasets": [],
+    "severity": "medium",
+    "control": "Pin exact git blob SHA-1 of model source and verify via git hash-object; document CI-only amendment, never alter frozen model during repair",
+    "verification": "Compare immutable source file SHA from pretest commit and current branch, test CI without loading TEST before repairing",
+    "provenance": "https://github.com/kimphuctran/MESA_SSL/actions/runs/45287128261"
+  },
+  {
+    "id": "F19",
+    "topic": "Strong 10k MultiRocket baseline must be matched, not cited from another dataset",
+    "hypothesis": "A compact 336-kernel baseline provides robust SOTA evidence",
+    "finding": "Full 10000-kernel features were successfully evaluated on ArrowHead, SwedishLeaf and ScreenType; new architecture must be compared on the same datasets, support IDs and perturbation family",
+    "datasets": [
+      "ArrowHead",
+      "SwedishLeaf",
+      "ScreenType"
+    ],
+    "severity": "high",
+    "control": "Match complete baseline implementation and label IDs to new architecture's frozen validation, retain all negative results",
+    "verification": "HCLM matched 10k MR benchmark on CricketX, MedicalImages, Worms and Yoga with seed 3801/3802",
+    "provenance": "https://github.com/kimphuctran/MESA_SSL/actions/runs/45286212883"
   }
 ]
