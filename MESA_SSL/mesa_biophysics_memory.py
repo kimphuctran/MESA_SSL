@@ -534,6 +534,24 @@ def hclm_guarded_affine_policy(predictions,charts,budget,assessment):
 
 
 def numerical_contracts():
+    # A policy under HCLM control must preserve the safe dual-MR
+    # prediction whenever both nuisance charts contradict each other.
+    pdu=np.array([[.90,.10],[.80,.20],[.70,.30],[.85,.15]])
+    pslow=np.array([[.15,.85],[.15,.85],[.12,.88],[.15,.85]])
+    predictions={
+        "Dual MR episodic":[pdu,pdu,pdu],
+        "Slow cortex episodic":[pslow,pslow,pslow],
+    }
+    charts=[
+       (np.array([.9,.01,.9,.01]),np.array([.9,.9,.01,.01]))
+       for _ in range(3)]
+    outputs,meta=hclm_guarded_affine_policy(
+         predictions,charts,1,dict())
+    assert len(outputs)==3
+    assert np.allclose(outputs[0][0],softmax_class(pdu)[0])
+    assert np.allclose(outputs[0][1],softmax_class(pdu)[1])
+    assert np.allclose(outputs[0][2],softmax_class(pslow)[2])
+    assert np.allclose(outputs[0][3],softmax_class(pdu)[3])
     rng=np.random.default_rng(2004)
     x=rng.normal(size=(10,80,3)).astype("float32")
     f=physical_signature(x)
