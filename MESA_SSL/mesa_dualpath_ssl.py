@@ -26,6 +26,8 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 from sklearn.metrics import f1_score, accuracy_score
+from sklearn.covariance import LedoitWolf
+from sklearn.preprocessing import StandardScaler
 
 from MESA_SSL.mesa_canonical import load_data
 from MESA_SSL.mesa_gauge_ssl import affine_gauge, generate_affine_shift
@@ -41,7 +43,8 @@ DEV_DATASETS = ("GunPoint","ItalyPowerDemand","BasicMotions",
 METHODS = ("Raw MultiRocket", "Canonical MultiRocket", "Dual MultiRocket",
            "Generic learned-only", "MESA learned-only",
            "Generic dual-path hybrid", "MESA dual-path hybrid",
-           "MESA SPC hybrid", "TRAIN-selected admissible")
+           "MESA SPC hybrid", "MESA dual-chart", "Adaptive dual-chart",
+           "TRAIN-selected admissible")
 
 
 def torch_decompose(x, eps=1e-6):
@@ -358,6 +361,130 @@ def chart_policy(ctrain, cprobes, ctests, choices, K, idx, y, classes, seed):
                                       for q in alarm_test])
 
 
+
+
+def morphology_stats(x):
+    """Label-blind waveform roughness and spectral-shape signatures.
+
+    This chart supplements the mean/slope chart; it does not assume that
+    waveform jitter is equivalent to an affine offset or trend.
+    """
+    q,_=affine_gauge(x)
+    q=q.astype(np.float64)
+    d=np.diff(q,axis=1)
+    d2=np.diff(d,axis=1) if q.shape[1]>3 else d
+    freq=np.fft.rfft(q,axis=1)
+    power=(freq.real**2+freq.imag**2)
+    cut=max(1,int(math.ceil(.28*(power.shape[1]-1))))
+    high=power[:,cut:,:].sum(1)
+    total=np.maximum(power.sum(1),1e-8)
+    rough=np.log1p(np.mean(d*d,axis=1))
+    curvature=np.log1p(np.mean(d2*d2,axis=1))
+    highratio=high/total
+    lag=(q[:,1:,:]*q[:,:-1,:]).mean(1)
+    extreme=np.quantile(np.abs(q),.95,axis=1)
+    return np.column_stack([rough,curvature,highratio,lag,extreme])
+
+
+def calibrate_morphology(train_features,seed):
+    """Split-conformal individual-case shrinkage chart; TRAIN only."""
+    arr=np.asarray(train_features,dtype=np.float64)
+    order=np.random.default_rng(seed+220551).permutation(len(arr))
+    cutoff=min(len(arr)-4,max(8,round(.6*len(arr))))
+    if cutoff<5:raise ValueError("Insufficient TRAIN for split chart")
+    idx0,idx1=order[:cutoff],order[cutoff:]
+    scaler=StandardScaler().fit(arr[idx0])
+    base=scaler.transform(arr[idx0])
+    covariance=LedoitWolf().fit(base)
+    precision=covariance.precision_
+    center=covariance.location_
+    def score(values):
+        z=scaler.transform(np.asarray(values,dtype=np.float64))-center
+        return np.einsum("ij,jk,ik->i",z,precision,z)
+    cal=np.sort(score(arr[idx1]))
+    return dict(center=center,precision=precision,scaler=scaler,
+                calibration=cal,fit_n=len(idx0),cal_n=len(idx1),score=score)
+
+
+def morphology_p(chart,features):
+    vals=chart["score"](features)
+    reference=chart["calibration"]
+    p=(1+(reference[None,:]>=vals[:,None]).sum(1))/(len(reference)+1)
+    return p
+
+
+def two_chart_policy(ctrain,cprobes,ctests,queries,choices,K,idx,y,
+                     classes,seed,restricted=False):
+    """TRAIN-only structure selection plus independent nuisance controllers.
+
+    Calibration and expert/model choice are made using TRAIN examples.
+    The TEST modes enter only through feature extraction after selection.
+    """
+    morphological=calibrate_morphology(morphology_stats(queries[0]),seed)
+    morphology_probs=[
+        morphology_p(morphological,morphology_stats(q))
+        for q in queries]
+    affine=chart_train(ctrain,seed,alpha=.10)
+    affine_probs=[chart_predict(affine,c)[2] for c in
+                  [ctrain]+list(cprobes)+list(ctests)]
+    choices_allowed=[
+        "Raw MultiRocket","Canonical MultiRocket","Dual MultiRocket",
+        "MESA learned-only","MESA dual-path hybrid"]
+    if not restricted:
+        choices_allowed+=["Generic learned-only","Generic dual-path hybrid"]
+    def pick(mode):
+        return sorted(choices_allowed,key=lambda name:(
+             -choices[name]["cv_f1"][mode]+.007*(
+                len(choices[name]["weights"])-1),
+             len(choices[name]["weights"]),name))[0]
+    names=dict(clean=pick(0),affine=pick(1),jitter=pick(2))
+    train_predictions={name:choices[name]["loo"] for name in choices_allowed}
+    test_predictions={name:predict(choices[name],K) for name in choices_allowed}
+    labeled=y[idx]
+    chart_candidates=[]
+    for a_cut in (.05,.10,.20):
+        for m_cut in (.10,.20,.30):
+            loo=[]
+            for mode in range(3):
+                # Altered TRAIN sample is never included as a labeled
+                # predictor in any selected expert's exact LOO score.
+                pm=morphology_probs[mode][idx]
+                pa=affine_probs[mode][idx]
+                base=train_predictions[names["clean"]][mode]
+                after_affine=train_predictions[names["affine"]][mode]
+                after_jitter=train_predictions[names["jitter"]][mode]
+                # Roughness has precedence: an affine-only chart does not
+                # detect a high-frequency waveform disturbance.
+                mixed=np.where((pm<=m_cut)[:,None],after_jitter,
+                     np.where((pa<=a_cut)[:,None],after_affine,base))
+                loo.append(mixed)
+            f=[float(f1_score(labeled,classes[np.argmax(x,axis=1)],
+                              average="macro",zero_division=0)) for x in loo]
+            objective=.40*f[0]+.37*f[1]+.23*f[2]-.003*(
+                names["clean"]!=names["affine"])-.003*(
+                names["clean"]!=names["jitter"])
+            chart_candidates.append((objective,-m_cut,-a_cut,a_cut,m_cut,f))
+    winner=sorted(chart_candidates,reverse=True)[0]
+    _,__,___,a_cut,m_cut,train_f=winner
+    preds=[];alarm_rates=[]
+    for mode in range(3):
+        index=mode+3
+        pm=morphology_probs[index]
+        pa=affine_probs[index]
+        preds.append(np.where((pm<=m_cut)[:,None],
+            test_predictions[names["jitter"]][mode],
+            np.where((pa<=a_cut)[:,None],
+                test_predictions[names["affine"]][mode],
+                test_predictions[names["clean"]][mode])))
+        alarm_rates.append(dict(morphology=float(np.mean(pm<=m_cut)),
+                                affine=float(np.mean(pa<=a_cut))))
+    return preds,dict(train_policy_f1=train_f,train_score=float(winner[0]),
+        expert_names=names,morphology_threshold=m_cut,
+        affine_threshold=a_cut,alarm_rates=alarm_rates,
+        morphology_train_reference=morphological["fit_n"],
+        morphology_calibration=morphological["cal_n"])
+
+
 def test_scientific_contract():
     """Synthetic numeric checks for the two information paths."""
     rng=np.random.default_rng(881)
@@ -422,6 +549,12 @@ def evaluate(args):
         predictions["MESA SPC hybrid"],policy=chart_policy(
             concepts[0],concepts[1:3],concepts[3:],
             choices,kernels,indices,y,classes,seed)
+        predictions["MESA dual-chart"],meta_chart_mesa=two_chart_policy(
+            concepts[0],concepts[1:3],concepts[3:],
+            queries,choices,kernels,indices,y,classes,seed,restricted=True)
+        predictions["Adaptive dual-chart"],meta_chart_full=two_chart_policy(
+            concepts[0],concepts[1:3],concepts[3:],
+            queries,choices,kernels,indices,y,classes,seed,restricted=False)
         # TRAIN-only select among bounded few-label expert candidates.
         selected=min(("Raw MultiRocket","Canonical MultiRocket",
                       "Dual MultiRocket","Generic dual-path hybrid",
@@ -446,7 +579,10 @@ def evaluate(args):
               weights=(choices[name]["weights"]
                 if name in choices else None),
               selected=selected if name=="TRAIN-selected admissible" else None,
-              chart_policy=policy if name=="MESA SPC hybrid" else None,
+              chart_policy=(
+                  policy if name=="MESA SPC hybrid" else
+                  meta_chart_mesa if name=="MESA dual-chart" else
+                  meta_chart_full if name=="Adaptive dual-chart" else None),
               concept_rmse_train=concept_rmse,
               shape_concept_rmse_train=shape_concept_rmse,
               runtime_seconds=round(time.monotonic()-t0,2),
