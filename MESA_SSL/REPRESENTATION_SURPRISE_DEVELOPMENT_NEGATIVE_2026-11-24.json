@@ -1,0 +1,4352 @@
+{
+  "date": "2026-11-24",
+  "run": 45287917462,
+  "branch": "mesa-representation-surprise-2026",
+  "methods": [
+    "Dual MR episodic",
+    "Elastic HCLM-authorized router",
+    "Elastic Representation-Surprise Router"
+  ],
+  "source_commit": "e06e6e54b782da89a2c70fbfcc60c57d05c8ae42",
+  "scope": "Previously inspected development tasks only; no independent validation",
+  "records": [
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.701085581085581,
+      "affine_macro_f1": 0.7047293303286226,
+      "jitter_macro_f1": 0.03940886699507389,
+      "accuracy": 0.7028571428571428,
+      "label_ids": [
+        164,
+        5,
+        18,
+        3,
+        121,
+        64,
+        58
+      ],
+      "n_labeled": 7,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 24.95,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.696507744732514,
+      "affine_macro_f1": 0.696507744732514,
+      "jitter_macro_f1": 0.03940886699507389,
+      "accuracy": 0.6971428571428572,
+      "label_ids": [
+        164,
+        5,
+        18,
+        3,
+        121,
+        64,
+        58
+      ],
+      "n_labeled": 7,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 24.96,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3182025615751002,
+      "affine_macro_f1": 0.17571505252664674,
+      "jitter_macro_f1": 0.29817107614631894,
+      "accuracy": 0.33714285714285713,
+      "label_ids": [
+        164,
+        5,
+        18,
+        3,
+        121,
+        64,
+        58
+      ],
+      "n_labeled": 7,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 24.96,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.33527987018338085,
+      "affine_macro_f1": 0.33527987018338085,
+      "jitter_macro_f1": 0.3966122085748521,
+      "accuracy": 0.34285714285714286,
+      "label_ids": [
+        164,
+        5,
+        18,
+        3,
+        121,
+        64,
+        58
+      ],
+      "n_labeled": 7,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 24.96,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3366663593337021,
+      "affine_macro_f1": 0.3135539235505743,
+      "jitter_macro_f1": 0.37039682539682545,
+      "accuracy": 0.34285714285714286,
+      "label_ids": [
+        164,
+        5,
+        18,
+        3,
+        121,
+        64,
+        58
+      ],
+      "n_labeled": 7,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 24.97,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6910046475263866,
+      "affine_macro_f1": 0.7047293303286226,
+      "jitter_macro_f1": 0.29433831136885363,
+      "accuracy": 0.6971428571428572,
+      "label_ids": [
+        164,
+        5,
+        18,
+        3,
+        121,
+        64,
+        58
+      ],
+      "n_labeled": 7,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "reason": "Fixed predeclared 1-shot policies; LOO invalid"
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.06285714285714286,
+          "combined_waveform_alert": 0.06857142857142857,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        },
+        {
+          "affine_alert": 0.9828571428571429,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.48,
+          "combined_waveform_alert": 0.4857142857142857,
+          "conflict_rate": 0.045714285714285714,
+          "novelty_conflict_rate": 0.4857142857142857
+        },
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 1,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 24.97,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.673224064719853,
+      "affine_macro_f1": 0.7047293303286226,
+      "jitter_macro_f1": 0.29433831136885363,
+      "accuracy": 0.68,
+      "label_ids": [
+        164,
+        5,
+        18,
+        3,
+        121,
+        64,
+        58
+      ],
+      "n_labeled": 7,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "reason": "Fixed predeclared 1-shot policies; LOO invalid"
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.06285714285714286,
+          "combined_waveform_alert": 0.06857142857142857,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        },
+        {
+          "affine_alert": 0.9828571428571429,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.48,
+          "combined_waveform_alert": 0.4857142857142857,
+          "conflict_rate": 0.045714285714285714,
+          "novelty_conflict_rate": 0.4857142857142857
+        },
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 1,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 175,
+        "reference": 105,
+        "calibration": 70,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 24.98,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7464889316661247,
+      "affine_macro_f1": 0.7363759405416964,
+      "jitter_macro_f1": 0.03940886699507389,
+      "accuracy": 0.76,
+      "label_ids": [
+        164,
+        55,
+        62,
+        5,
+        136,
+        79,
+        18,
+        73,
+        40,
+        3,
+        94,
+        108,
+        121,
+        36,
+        29,
+        64,
+        54,
+        14,
+        58,
+        116,
+        35
+      ],
+      "n_labeled": 21,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.05,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7464889316661247,
+      "affine_macro_f1": 0.7464889316661247,
+      "jitter_macro_f1": 0.03940886699507389,
+      "accuracy": 0.76,
+      "label_ids": [
+        164,
+        55,
+        62,
+        5,
+        136,
+        79,
+        18,
+        73,
+        40,
+        3,
+        94,
+        108,
+        121,
+        36,
+        29,
+        64,
+        54,
+        14,
+        58,
+        116,
+        35
+      ],
+      "n_labeled": 21,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.06,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.42294076475789605,
+      "affine_macro_f1": 0.19560477540017182,
+      "jitter_macro_f1": 0.43473988100300426,
+      "accuracy": 0.45714285714285713,
+      "label_ids": [
+        164,
+        55,
+        62,
+        5,
+        136,
+        79,
+        18,
+        73,
+        40,
+        3,
+        94,
+        108,
+        121,
+        36,
+        29,
+        64,
+        54,
+        14,
+        58,
+        116,
+        35
+      ],
+      "n_labeled": 21,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.06,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4377196792275272,
+      "affine_macro_f1": 0.4377196792275272,
+      "jitter_macro_f1": 0.47096294541038475,
+      "accuracy": 0.44571428571428573,
+      "label_ids": [
+        164,
+        55,
+        62,
+        5,
+        136,
+        79,
+        18,
+        73,
+        40,
+        3,
+        94,
+        108,
+        121,
+        36,
+        29,
+        64,
+        54,
+        14,
+        58,
+        116,
+        35
+      ],
+      "n_labeled": 21,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.06,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4377346445824707,
+      "affine_macro_f1": 0.34022249874467037,
+      "jitter_macro_f1": 0.4007407809529154,
+      "accuracy": 0.44571428571428573,
+      "label_ids": [
+        164,
+        55,
+        62,
+        5,
+        136,
+        79,
+        18,
+        73,
+        40,
+        3,
+        94,
+        108,
+        121,
+        36,
+        29,
+        64,
+        54,
+        14,
+        58,
+        116,
+        35
+      ],
+      "n_labeled": 21,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.07,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7406686237016871,
+      "affine_macro_f1": 0.7363759405416964,
+      "jitter_macro_f1": 0.4334252425449362,
+      "accuracy": 0.7542857142857143,
+      "label_ids": [
+        164,
+        55,
+        62,
+        5,
+        136,
+        79,
+        18,
+        73,
+        40,
+        3,
+        94,
+        108,
+        121,
+        36,
+        29,
+        64,
+        54,
+        14,
+        58,
+        116,
+        35
+      ],
+      "n_labeled": 21,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.8581632653061224,
+            "Canonical": 0.8581632653061224,
+            "Cortex": 0.48571428571428577,
+            "Elastic": 0.46258503401360546,
+            "ElasticConcept": 0.44217687074829926
+          },
+          "affine": {
+            "Dual": 0.8581632653061224,
+            "Canonical": 0.8581632653061224,
+            "Cortex": 0.2696351267779839,
+            "Elastic": 0.46258503401360546,
+            "ElasticConcept": 0.3190476190476191
+          },
+          "jitter": {
+            "Dual": 0.024844720496894408,
+            "Canonical": 0.024844720496894408,
+            "Cortex": 0.5085034013605442,
+            "Elastic": 0.37641723356009066,
+            "ElasticConcept": 0.41666666666666663
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.06285714285714286,
+          "combined_waveform_alert": 0.06857142857142857,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        },
+        {
+          "affine_alert": 0.9828571428571429,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.48,
+          "combined_waveform_alert": 0.4857142857142857,
+          "conflict_rate": 0.045714285714285714,
+          "novelty_conflict_rate": 0.4857142857142857
+        },
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 1,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.08,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7162324785312963,
+      "affine_macro_f1": 0.7363759405416964,
+      "jitter_macro_f1": 0.4334252425449362,
+      "accuracy": 0.7371428571428571,
+      "label_ids": [
+        164,
+        55,
+        62,
+        5,
+        136,
+        79,
+        18,
+        73,
+        40,
+        3,
+        94,
+        108,
+        121,
+        36,
+        29,
+        64,
+        54,
+        14,
+        58,
+        116,
+        35
+      ],
+      "n_labeled": 21,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.8581632653061224,
+            "Canonical": 0.8581632653061224,
+            "Cortex": 0.48571428571428577,
+            "Elastic": 0.46258503401360546,
+            "ElasticConcept": 0.44217687074829926
+          },
+          "affine": {
+            "Dual": 0.8581632653061224,
+            "Canonical": 0.8581632653061224,
+            "Cortex": 0.2696351267779839,
+            "Elastic": 0.46258503401360546,
+            "ElasticConcept": 0.3190476190476191
+          },
+          "jitter": {
+            "Dual": 0.024844720496894408,
+            "Canonical": 0.024844720496894408,
+            "Cortex": 0.5085034013605442,
+            "Elastic": 0.37641723356009066,
+            "ElasticConcept": 0.41666666666666663
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.06285714285714286,
+          "combined_waveform_alert": 0.06857142857142857,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        },
+        {
+          "affine_alert": 0.9828571428571429,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.48,
+          "combined_waveform_alert": 0.4857142857142857,
+          "conflict_rate": 0.045714285714285714,
+          "novelty_conflict_rate": 0.4857142857142857
+        },
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 1,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 175,
+        "reference": 105,
+        "calibration": 70,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 25.08,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7643034771657214,
+      "affine_macro_f1": 0.7496588465253655,
+      "jitter_macro_f1": 0.03940886699507389,
+      "accuracy": 0.7771428571428571,
+      "label_ids": [
+        164,
+        55,
+        62,
+        169,
+        109,
+        5,
+        136,
+        79,
+        151,
+        99,
+        18,
+        73,
+        40,
+        25,
+        44,
+        3,
+        94,
+        108,
+        1,
+        98,
+        121,
+        36,
+        29,
+        146,
+        147,
+        64,
+        54,
+        14,
+        97,
+        10,
+        58,
+        116,
+        35,
+        19,
+        112
+      ],
+      "n_labeled": 35,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.21,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7727104763290232,
+      "affine_macro_f1": 0.7727104763290232,
+      "jitter_macro_f1": 0.03940886699507389,
+      "accuracy": 0.7828571428571428,
+      "label_ids": [
+        164,
+        55,
+        62,
+        169,
+        109,
+        5,
+        136,
+        79,
+        151,
+        99,
+        18,
+        73,
+        40,
+        25,
+        44,
+        3,
+        94,
+        108,
+        1,
+        98,
+        121,
+        36,
+        29,
+        146,
+        147,
+        64,
+        54,
+        14,
+        97,
+        10,
+        58,
+        116,
+        35,
+        19,
+        112
+      ],
+      "n_labeled": 35,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.21,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4642691391138826,
+      "affine_macro_f1": 0.23189728012499225,
+      "jitter_macro_f1": 0.47190078121112605,
+      "accuracy": 0.49142857142857144,
+      "label_ids": [
+        164,
+        55,
+        62,
+        169,
+        109,
+        5,
+        136,
+        79,
+        151,
+        99,
+        18,
+        73,
+        40,
+        25,
+        44,
+        3,
+        94,
+        108,
+        1,
+        98,
+        121,
+        36,
+        29,
+        146,
+        147,
+        64,
+        54,
+        14,
+        97,
+        10,
+        58,
+        116,
+        35,
+        19,
+        112
+      ],
+      "n_labeled": 35,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.22,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4680774839167504,
+      "affine_macro_f1": 0.4680774839167504,
+      "jitter_macro_f1": 0.4680268966512067,
+      "accuracy": 0.49142857142857144,
+      "label_ids": [
+        164,
+        55,
+        62,
+        169,
+        109,
+        5,
+        136,
+        79,
+        151,
+        99,
+        18,
+        73,
+        40,
+        25,
+        44,
+        3,
+        94,
+        108,
+        1,
+        98,
+        121,
+        36,
+        29,
+        146,
+        147,
+        64,
+        54,
+        14,
+        97,
+        10,
+        58,
+        116,
+        35,
+        19,
+        112
+      ],
+      "n_labeled": 35,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.22,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4759912266290434,
+      "affine_macro_f1": 0.3506576019966553,
+      "jitter_macro_f1": 0.45631127617424044,
+      "accuracy": 0.49142857142857144,
+      "label_ids": [
+        164,
+        55,
+        62,
+        169,
+        109,
+        5,
+        136,
+        79,
+        151,
+        99,
+        18,
+        73,
+        40,
+        25,
+        44,
+        3,
+        94,
+        108,
+        1,
+        98,
+        121,
+        36,
+        29,
+        146,
+        147,
+        64,
+        54,
+        14,
+        97,
+        10,
+        58,
+        116,
+        35,
+        19,
+        112
+      ],
+      "n_labeled": 35,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.23,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7596239196928289,
+      "affine_macro_f1": 0.7496588465253655,
+      "jitter_macro_f1": 0.47087180185675387,
+      "accuracy": 0.7714285714285715,
+      "label_ids": [
+        164,
+        55,
+        62,
+        169,
+        109,
+        5,
+        136,
+        79,
+        151,
+        99,
+        18,
+        73,
+        40,
+        25,
+        44,
+        3,
+        94,
+        108,
+        1,
+        98,
+        121,
+        36,
+        29,
+        146,
+        147,
+        64,
+        54,
+        14,
+        97,
+        10,
+        58,
+        116,
+        35,
+        19,
+        112
+      ],
+      "n_labeled": 35,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.8476190476190476,
+            "Canonical": 0.8476190476190476,
+            "Cortex": 0.5357142857142858,
+            "Elastic": 0.4908424908424909,
+            "ElasticConcept": 0.4727272727272727
+          },
+          "affine": {
+            "Dual": 0.8174603174603176,
+            "Canonical": 0.8476190476190476,
+            "Cortex": 0.24212454212454212,
+            "Elastic": 0.4908424908424909,
+            "ElasticConcept": 0.2970739577882435
+          },
+          "jitter": {
+            "Dual": 0.03571428571428571,
+            "Canonical": 0.03571428571428571,
+            "Cortex": 0.425384139669854,
+            "Elastic": 0.4606504606504606,
+            "ElasticConcept": 0.43308913308913305
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.06285714285714286,
+          "combined_waveform_alert": 0.06857142857142857,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        },
+        {
+          "affine_alert": 0.9828571428571429,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.48,
+          "combined_waveform_alert": 0.4857142857142857,
+          "conflict_rate": 0.045714285714285714,
+          "novelty_conflict_rate": 0.4857142857142857
+        },
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 1,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 25.23,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Fish",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7424965667291953,
+      "affine_macro_f1": 0.7496588465253655,
+      "jitter_macro_f1": 0.47087180185675387,
+      "accuracy": 0.76,
+      "label_ids": [
+        164,
+        55,
+        62,
+        169,
+        109,
+        5,
+        136,
+        79,
+        151,
+        99,
+        18,
+        73,
+        40,
+        25,
+        44,
+        3,
+        94,
+        108,
+        1,
+        98,
+        121,
+        36,
+        29,
+        146,
+        147,
+        64,
+        54,
+        14,
+        97,
+        10,
+        58,
+        116,
+        35,
+        19,
+        112
+      ],
+      "n_labeled": 35,
+      "train_cases": 175,
+      "test_cases": 175,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006985598841052712,
+          0.0015208109091815558
+        ],
+        "k_reference": 35,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.8476190476190476,
+            "Canonical": 0.8476190476190476,
+            "Cortex": 0.5357142857142858,
+            "Elastic": 0.4908424908424909,
+            "ElasticConcept": 0.4727272727272727
+          },
+          "affine": {
+            "Dual": 0.8174603174603176,
+            "Canonical": 0.8476190476190476,
+            "Cortex": 0.24212454212454212,
+            "Elastic": 0.4908424908424909,
+            "ElasticConcept": 0.2970739577882435
+          },
+          "jitter": {
+            "Dual": 0.03571428571428571,
+            "Canonical": 0.03571428571428571,
+            "Cortex": 0.425384139669854,
+            "Elastic": 0.4606504606504606,
+            "ElasticConcept": 0.43308913308913305
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.06285714285714286,
+          "combined_waveform_alert": 0.06857142857142857,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        },
+        {
+          "affine_alert": 0.9828571428571429,
+          "waveform_alert": 0.045714285714285714,
+          "representation_alert": 0.48,
+          "combined_waveform_alert": 0.4857142857142857,
+          "conflict_rate": 0.045714285714285714,
+          "novelty_conflict_rate": 0.4857142857142857
+        },
+        {
+          "affine_alert": 0.005714285714285714,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 1,
+          "conflict_rate": 0.005714285714285714,
+          "novelty_conflict_rate": 0.005714285714285714
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 175,
+        "reference": 105,
+        "calibration": 70,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 25.23,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5605616605616606,
+      "affine_macro_f1": 0.5605616605616606,
+      "jitter_macro_f1": 0.0945945945945946,
+      "accuracy": 0.55,
+      "label_ids": [
+        20,
+        19,
+        12,
+        53
+      ],
+      "n_labeled": 4,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.52,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5605616605616606,
+      "affine_macro_f1": 0.5605616605616606,
+      "jitter_macro_f1": 0.0945945945945946,
+      "accuracy": 0.55,
+      "label_ids": [
+        20,
+        19,
+        12,
+        53
+      ],
+      "n_labeled": 4,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.53,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.49059658737078093,
+      "affine_macro_f1": 0.37348820215199524,
+      "jitter_macro_f1": 0.44489674005803037,
+      "accuracy": 0.48333333333333334,
+      "label_ids": [
+        20,
+        19,
+        12,
+        53
+      ],
+      "n_labeled": 4,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.53,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.31379585326953746,
+      "affine_macro_f1": 0.31379585326953746,
+      "jitter_macro_f1": 0.31313131313131315,
+      "accuracy": 0.3333333333333333,
+      "label_ids": [
+        20,
+        19,
+        12,
+        53
+      ],
+      "n_labeled": 4,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.54,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.19137472660873606,
+      "affine_macro_f1": 0.28983268983268984,
+      "jitter_macro_f1": 0.2042059389885477,
+      "accuracy": 0.23333333333333334,
+      "label_ids": [
+        20,
+        19,
+        12,
+        53
+      ],
+      "n_labeled": 4,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.54,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5605616605616606,
+      "affine_macro_f1": 0.5605616605616606,
+      "jitter_macro_f1": 0.44489674005803037,
+      "accuracy": 0.55,
+      "label_ids": [
+        20,
+        19,
+        12,
+        53
+      ],
+      "n_labeled": 4,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "reason": "Fixed predeclared 1-shot policies; LOO invalid"
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.05,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.9666666666666667,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.06666666666666667,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0.06666666666666667,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.54,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5605616605616606,
+      "affine_macro_f1": 0.5605616605616606,
+      "jitter_macro_f1": 0.0945945945945946,
+      "accuracy": 0.55,
+      "label_ids": [
+        20,
+        19,
+        12,
+        53
+      ],
+      "n_labeled": 4,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "reason": "Fixed predeclared 1-shot policies; LOO invalid"
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.05,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.9666666666666667,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.06666666666666667,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0.06666666666666667,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 60,
+        "reference": 36,
+        "calibration": 24,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 23.55,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7986053671537543,
+      "affine_macro_f1": 0.830300523848911,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8,
+      "label_ids": [
+        20,
+        36,
+        50,
+        19,
+        15,
+        38,
+        12,
+        25,
+        28,
+        53,
+        1,
+        9
+      ],
+      "n_labeled": 12,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.59,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7986053671537543,
+      "affine_macro_f1": 0.7986053671537543,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8,
+      "label_ids": [
+        20,
+        36,
+        50,
+        19,
+        15,
+        38,
+        12,
+        25,
+        28,
+        53,
+        1,
+        9
+      ],
+      "n_labeled": 12,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.59,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.528337924889649,
+      "affine_macro_f1": 0.29014174231565537,
+      "jitter_macro_f1": 0.4215585941979131,
+      "accuracy": 0.5333333333333333,
+      "label_ids": [
+        20,
+        36,
+        50,
+        19,
+        15,
+        38,
+        12,
+        25,
+        28,
+        53,
+        1,
+        9
+      ],
+      "n_labeled": 12,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.6,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4570652173913044,
+      "affine_macro_f1": 0.4570652173913044,
+      "jitter_macro_f1": 0.4400584795321637,
+      "accuracy": 0.4666666666666667,
+      "label_ids": [
+        20,
+        36,
+        50,
+        19,
+        15,
+        38,
+        12,
+        25,
+        28,
+        53,
+        1,
+        9
+      ],
+      "n_labeled": 12,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.6,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.43215285554311317,
+      "affine_macro_f1": 0.4594905094905095,
+      "jitter_macro_f1": 0.3998417600854114,
+      "accuracy": 0.45,
+      "label_ids": [
+        20,
+        36,
+        50,
+        19,
+        15,
+        38,
+        12,
+        25,
+        28,
+        53,
+        1,
+        9
+      ],
+      "n_labeled": 12,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.61,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7986053671537543,
+      "affine_macro_f1": 0.830300523848911,
+      "jitter_macro_f1": 0.42904116123756303,
+      "accuracy": 0.8,
+      "label_ids": [
+        20,
+        36,
+        50,
+        19,
+        15,
+        38,
+        12,
+        25,
+        28,
+        53,
+        1,
+        9
+      ],
+      "n_labeled": 12,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.4404761904761904,
+            "Canonical": 0.5238095238095237,
+            "Cortex": 0.16666666666666666,
+            "Elastic": 0.5583333333333333,
+            "ElasticConcept": 0.35833333333333334
+          },
+          "affine": {
+            "Dual": 0.5238095238095237,
+            "Canonical": 0.5238095238095237,
+            "Cortex": 0.1388888888888889,
+            "Elastic": 0.5583333333333333,
+            "ElasticConcept": 0.4839285714285714
+          },
+          "jitter": {
+            "Dual": 0.07142857142857142,
+            "Canonical": 0.07142857142857142,
+            "Cortex": 0.15476190476190477,
+            "Elastic": 0.5583333333333333,
+            "ElasticConcept": 0.35833333333333334
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Elastic"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Elastic"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.05,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.9666666666666667,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.06666666666666667,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0.06666666666666667,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.61,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7986053671537543,
+      "affine_macro_f1": 0.830300523848911,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8,
+      "label_ids": [
+        20,
+        36,
+        50,
+        19,
+        15,
+        38,
+        12,
+        25,
+        28,
+        53,
+        1,
+        9
+      ],
+      "n_labeled": 12,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.4404761904761904,
+            "Canonical": 0.5238095238095237,
+            "Cortex": 0.16666666666666666,
+            "Elastic": 0.5583333333333333,
+            "ElasticConcept": 0.35833333333333334
+          },
+          "affine": {
+            "Dual": 0.5238095238095237,
+            "Canonical": 0.5238095238095237,
+            "Cortex": 0.1388888888888889,
+            "Elastic": 0.5583333333333333,
+            "ElasticConcept": 0.4839285714285714
+          },
+          "jitter": {
+            "Dual": 0.07142857142857142,
+            "Canonical": 0.07142857142857142,
+            "Cortex": 0.15476190476190477,
+            "Elastic": 0.5583333333333333,
+            "ElasticConcept": 0.35833333333333334
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Elastic"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Elastic"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.05,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.9666666666666667,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.06666666666666667,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0.06666666666666667,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 60,
+        "reference": 36,
+        "calibration": 24,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 23.61,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7362601626016261,
+      "affine_macro_f1": 0.7362601626016261,
+      "jitter_macro_f1": 0.22778633795582948,
+      "accuracy": 0.7333333333333333,
+      "label_ids": [
+        20,
+        36,
+        50,
+        0,
+        6,
+        19,
+        15,
+        38,
+        56,
+        49,
+        12,
+        25,
+        28,
+        58,
+        37,
+        53,
+        1,
+        9,
+        8,
+        29
+      ],
+      "n_labeled": 20,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.67,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7362601626016261,
+      "affine_macro_f1": 0.7362601626016261,
+      "jitter_macro_f1": 0.2246450304259635,
+      "accuracy": 0.7333333333333333,
+      "label_ids": [
+        20,
+        36,
+        50,
+        0,
+        6,
+        19,
+        15,
+        38,
+        56,
+        49,
+        12,
+        25,
+        28,
+        58,
+        37,
+        53,
+        1,
+        9,
+        8,
+        29
+      ],
+      "n_labeled": 20,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.68,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6167264448514449,
+      "affine_macro_f1": 0.28231559290382824,
+      "jitter_macro_f1": 0.5901924651924653,
+      "accuracy": 0.6166666666666667,
+      "label_ids": [
+        20,
+        36,
+        50,
+        0,
+        6,
+        19,
+        15,
+        38,
+        56,
+        49,
+        12,
+        25,
+        28,
+        58,
+        37,
+        53,
+        1,
+        9,
+        8,
+        29
+      ],
+      "n_labeled": 20,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.68,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.510785388654856,
+      "affine_macro_f1": 0.510785388654856,
+      "jitter_macro_f1": 0.4802597402597403,
+      "accuracy": 0.5166666666666667,
+      "label_ids": [
+        20,
+        36,
+        50,
+        0,
+        6,
+        19,
+        15,
+        38,
+        56,
+        49,
+        12,
+        25,
+        28,
+        58,
+        37,
+        53,
+        1,
+        9,
+        8,
+        29
+      ],
+      "n_labeled": 20,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.68,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5451612903225806,
+      "affine_macro_f1": 0.45212121212121215,
+      "jitter_macro_f1": 0.5032529239766081,
+      "accuracy": 0.55,
+      "label_ids": [
+        20,
+        36,
+        50,
+        0,
+        6,
+        19,
+        15,
+        38,
+        56,
+        49,
+        12,
+        25,
+        28,
+        58,
+        37,
+        53,
+        1,
+        9,
+        8,
+        29
+      ],
+      "n_labeled": 20,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.69,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7362601626016261,
+      "affine_macro_f1": 0.7362601626016261,
+      "jitter_macro_f1": 0.5901924651924653,
+      "accuracy": 0.7333333333333333,
+      "label_ids": [
+        20,
+        36,
+        50,
+        0,
+        6,
+        19,
+        15,
+        38,
+        56,
+        49,
+        12,
+        25,
+        28,
+        58,
+        37,
+        53,
+        1,
+        9,
+        8,
+        29
+      ],
+      "n_labeled": 20,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.8453282828282829,
+            "Canonical": 0.8453282828282829,
+            "Cortex": 0.6305555555555555,
+            "Elastic": 0.3214285714285714,
+            "ElasticConcept": 0.38316993464052285
+          },
+          "affine": {
+            "Dual": 0.8453282828282829,
+            "Canonical": 0.8453282828282829,
+            "Cortex": 0.4288461538461539,
+            "Elastic": 0.3214285714285714,
+            "ElasticConcept": 0.41666666666666663
+          },
+          "jitter": {
+            "Dual": 0.2159090909090909,
+            "Canonical": 0.2159090909090909,
+            "Cortex": 0.5984848484848484,
+            "Elastic": 0.3214285714285714,
+            "ElasticConcept": 0.3214285714285714
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.05,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.9666666666666667,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.06666666666666667,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0.06666666666666667,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.69,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "Car",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7362601626016261,
+      "affine_macro_f1": 0.7362601626016261,
+      "jitter_macro_f1": 0.22778633795582948,
+      "accuracy": 0.7333333333333333,
+      "label_ids": [
+        20,
+        36,
+        50,
+        0,
+        6,
+        19,
+        15,
+        38,
+        56,
+        49,
+        12,
+        25,
+        28,
+        58,
+        37,
+        53,
+        1,
+        9,
+        8,
+        29
+      ],
+      "n_labeled": 20,
+      "train_cases": 60,
+      "test_cases": 60,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.006564320931633662,
+          0.0021061841995449054
+        ],
+        "k_reference": 20,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.8453282828282829,
+            "Canonical": 0.8453282828282829,
+            "Cortex": 0.6305555555555555,
+            "Elastic": 0.3214285714285714,
+            "ElasticConcept": 0.38316993464052285
+          },
+          "affine": {
+            "Dual": 0.8453282828282829,
+            "Canonical": 0.8453282828282829,
+            "Cortex": 0.4288461538461539,
+            "Elastic": 0.3214285714285714,
+            "ElasticConcept": 0.41666666666666663
+          },
+          "jitter": {
+            "Dual": 0.2159090909090909,
+            "Canonical": 0.2159090909090909,
+            "Cortex": 0.5984848484848484,
+            "Elastic": 0.3214285714285714,
+            "ElasticConcept": 0.3214285714285714
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.05,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.9666666666666667,
+          "waveform_alert": 0,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0,
+          "novelty_conflict_rate": 0
+        },
+        {
+          "affine_alert": 0.06666666666666667,
+          "waveform_alert": 1,
+          "representation_alert": 0,
+          "combined_waveform_alert": 0,
+          "conflict_rate": 0.06666666666666667,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 60,
+        "reference": 36,
+        "calibration": 24,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 23.7,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.38223012194435524,
+      "affine_macro_f1": 0.3569026294944749,
+      "jitter_macro_f1": 0.08677351820298464,
+      "accuracy": 0.3986842105263158,
+      "label_ids": [
+        329,
+        291,
+        206,
+        110,
+        211,
+        240,
+        202,
+        379,
+        155,
+        252
+      ],
+      "n_labeled": 10,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.07,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3759868605002423,
+      "affine_macro_f1": 0.3759868605002423,
+      "jitter_macro_f1": 0.09080190429418238,
+      "accuracy": 0.39342105263157895,
+      "label_ids": [
+        329,
+        291,
+        206,
+        110,
+        211,
+        240,
+        202,
+        379,
+        155,
+        252
+      ],
+      "n_labeled": 10,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.08,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.362393063096209,
+      "affine_macro_f1": 0.2633631261503722,
+      "jitter_macro_f1": 0.341856511447511,
+      "accuracy": 0.37894736842105264,
+      "label_ids": [
+        329,
+        291,
+        206,
+        110,
+        211,
+        240,
+        202,
+        379,
+        155,
+        252
+      ],
+      "n_labeled": 10,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.08,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.31519788372975693,
+      "affine_macro_f1": 0.31519788372975693,
+      "jitter_macro_f1": 0.310825143373789,
+      "accuracy": 0.3092105263157895,
+      "label_ids": [
+        329,
+        291,
+        206,
+        110,
+        211,
+        240,
+        202,
+        379,
+        155,
+        252
+      ],
+      "n_labeled": 10,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.09,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3156047330540518,
+      "affine_macro_f1": 0.24400813820945708,
+      "jitter_macro_f1": 0.3256352825251084,
+      "accuracy": 0.3013157894736842,
+      "label_ids": [
+        329,
+        291,
+        206,
+        110,
+        211,
+        240,
+        202,
+        379,
+        155,
+        252
+      ],
+      "n_labeled": 10,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.09,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3801375292654179,
+      "affine_macro_f1": 0.3569026294944749,
+      "jitter_macro_f1": 0.08731418373996558,
+      "accuracy": 0.3986842105263158,
+      "label_ids": [
+        329,
+        291,
+        206,
+        110,
+        211,
+        240,
+        202,
+        379,
+        155,
+        252
+      ],
+      "n_labeled": 10,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "reason": "Fixed predeclared 1-shot policies; LOO invalid"
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.056578947368421055,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.018421052631578946,
+          "combined_waveform_alert": 0.025,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0.0013157894736842105
+        },
+        {
+          "affine_alert": 0.9776315789473684,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.26842105263157895,
+          "combined_waveform_alert": 0.275,
+          "conflict_rate": 0.02894736842105263,
+          "novelty_conflict_rate": 0.2723684210526316
+        },
+        {
+          "affine_alert": 0.06184210526315789,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.16447368421052633,
+          "combined_waveform_alert": 0.16973684210526316,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.09,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 1,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3755334349938996,
+      "affine_macro_f1": 0.35660522100265946,
+      "jitter_macro_f1": 0.12541293485376442,
+      "accuracy": 0.3960526315789474,
+      "label_ids": [
+        329,
+        291,
+        206,
+        110,
+        211,
+        240,
+        202,
+        379,
+        155,
+        252
+      ],
+      "n_labeled": 10,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "reason": "Fixed predeclared 1-shot policies; LOO invalid"
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.056578947368421055,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.018421052631578946,
+          "combined_waveform_alert": 0.025,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0.0013157894736842105
+        },
+        {
+          "affine_alert": 0.9776315789473684,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.26842105263157895,
+          "combined_waveform_alert": 0.275,
+          "conflict_rate": 0.02894736842105263,
+          "novelty_conflict_rate": 0.2723684210526316
+        },
+        {
+          "affine_alert": 0.06184210526315789,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.16447368421052633,
+          "combined_waveform_alert": 0.16973684210526316,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 381,
+        "reference": 228,
+        "calibration": 153,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 23.1,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.45308135464693483,
+      "affine_macro_f1": 0.4213899336749988,
+      "jitter_macro_f1": 0.108950654732102,
+      "accuracy": 0.42894736842105263,
+      "label_ids": [
+        329,
+        304,
+        162,
+        291,
+        149,
+        377,
+        206,
+        228,
+        355,
+        110,
+        212,
+        130,
+        211,
+        302,
+        378,
+        240,
+        52,
+        28,
+        202,
+        132,
+        48,
+        379,
+        276,
+        66,
+        155,
+        74,
+        56,
+        252,
+        104,
+        237
+      ],
+      "n_labeled": 30,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.27,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4546437098672696,
+      "affine_macro_f1": 0.4546437098672696,
+      "jitter_macro_f1": 0.1139186468381674,
+      "accuracy": 0.42894736842105263,
+      "label_ids": [
+        329,
+        304,
+        162,
+        291,
+        149,
+        377,
+        206,
+        228,
+        355,
+        110,
+        212,
+        130,
+        211,
+        302,
+        378,
+        240,
+        52,
+        28,
+        202,
+        132,
+        48,
+        379,
+        276,
+        66,
+        155,
+        74,
+        56,
+        252,
+        104,
+        237
+      ],
+      "n_labeled": 30,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.27,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3867678332083039,
+      "affine_macro_f1": 0.32083012728380317,
+      "jitter_macro_f1": 0.3885413323907014,
+      "accuracy": 0.3684210526315789,
+      "label_ids": [
+        329,
+        304,
+        162,
+        291,
+        149,
+        377,
+        206,
+        228,
+        355,
+        110,
+        212,
+        130,
+        211,
+        302,
+        378,
+        240,
+        52,
+        28,
+        202,
+        132,
+        48,
+        379,
+        276,
+        66,
+        155,
+        74,
+        56,
+        252,
+        104,
+        237
+      ],
+      "n_labeled": 30,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.27,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3808692815719788,
+      "affine_macro_f1": 0.3808692815719788,
+      "jitter_macro_f1": 0.38015624420315125,
+      "accuracy": 0.375,
+      "label_ids": [
+        329,
+        304,
+        162,
+        291,
+        149,
+        377,
+        206,
+        228,
+        355,
+        110,
+        212,
+        130,
+        211,
+        302,
+        378,
+        240,
+        52,
+        28,
+        202,
+        132,
+        48,
+        379,
+        276,
+        66,
+        155,
+        74,
+        56,
+        252,
+        104,
+        237
+      ],
+      "n_labeled": 30,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.28,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.40045305681059196,
+      "affine_macro_f1": 0.3055233243922125,
+      "jitter_macro_f1": 0.41382798301319834,
+      "accuracy": 0.37763157894736843,
+      "label_ids": [
+        329,
+        304,
+        162,
+        291,
+        149,
+        377,
+        206,
+        228,
+        355,
+        110,
+        212,
+        130,
+        211,
+        302,
+        378,
+        240,
+        52,
+        28,
+        202,
+        132,
+        48,
+        379,
+        276,
+        66,
+        155,
+        74,
+        56,
+        252,
+        104,
+        237
+      ],
+      "n_labeled": 30,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.28,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4481331266960136,
+      "affine_macro_f1": 0.4213899336749988,
+      "jitter_macro_f1": 0.10999229578594219,
+      "accuracy": 0.4263157894736842,
+      "label_ids": [
+        329,
+        304,
+        162,
+        291,
+        149,
+        377,
+        206,
+        228,
+        355,
+        110,
+        212,
+        130,
+        211,
+        302,
+        378,
+        240,
+        52,
+        28,
+        202,
+        132,
+        48,
+        379,
+        276,
+        66,
+        155,
+        74,
+        56,
+        252,
+        104,
+        237
+      ],
+      "n_labeled": 30,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.5778571428571428,
+            "Canonical": 0.5902380952380952,
+            "Cortex": 0.4245238095238095,
+            "Elastic": 0.4219047619047619,
+            "ElasticConcept": 0.440952380952381
+          },
+          "affine": {
+            "Dual": 0.5776190476190476,
+            "Canonical": 0.5902380952380952,
+            "Cortex": 0.2226984126984127,
+            "Elastic": 0.4219047619047619,
+            "ElasticConcept": 0.4002380952380952
+          },
+          "jitter": {
+            "Dual": 0.12181818181818183,
+            "Canonical": 0.12181818181818183,
+            "Cortex": 0.41880952380952385,
+            "Elastic": 0.4219047619047619,
+            "ElasticConcept": 0.4742857142857143
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.056578947368421055,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.018421052631578946,
+          "combined_waveform_alert": 0.025,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0.0013157894736842105
+        },
+        {
+          "affine_alert": 0.9776315789473684,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.26842105263157895,
+          "combined_waveform_alert": 0.275,
+          "conflict_rate": 0.02894736842105263,
+          "novelty_conflict_rate": 0.2723684210526316
+        },
+        {
+          "affine_alert": 0.06184210526315789,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.16447368421052633,
+          "combined_waveform_alert": 0.16973684210526316,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.28,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 3,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.45376519319092135,
+      "affine_macro_f1": 0.42128440309067205,
+      "jitter_macro_f1": 0.18035877768916894,
+      "accuracy": 0.42894736842105263,
+      "label_ids": [
+        329,
+        304,
+        162,
+        291,
+        149,
+        377,
+        206,
+        228,
+        355,
+        110,
+        212,
+        130,
+        211,
+        302,
+        378,
+        240,
+        52,
+        28,
+        202,
+        132,
+        48,
+        379,
+        276,
+        66,
+        155,
+        74,
+        56,
+        252,
+        104,
+        237
+      ],
+      "n_labeled": 30,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.5778571428571428,
+            "Canonical": 0.5902380952380952,
+            "Cortex": 0.4245238095238095,
+            "Elastic": 0.4219047619047619,
+            "ElasticConcept": 0.440952380952381
+          },
+          "affine": {
+            "Dual": 0.5776190476190476,
+            "Canonical": 0.5902380952380952,
+            "Cortex": 0.2226984126984127,
+            "Elastic": 0.4219047619047619,
+            "ElasticConcept": 0.4002380952380952
+          },
+          "jitter": {
+            "Dual": 0.12181818181818183,
+            "Canonical": 0.12181818181818183,
+            "Cortex": 0.41880952380952385,
+            "Elastic": 0.4219047619047619,
+            "ElasticConcept": 0.4742857142857143
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.056578947368421055,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.018421052631578946,
+          "combined_waveform_alert": 0.025,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0.0013157894736842105
+        },
+        {
+          "affine_alert": 0.9776315789473684,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.26842105263157895,
+          "combined_waveform_alert": 0.275,
+          "conflict_rate": 0.02894736842105263,
+          "novelty_conflict_rate": 0.2723684210526316
+        },
+        {
+          "affine_alert": 0.06184210526315789,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.16447368421052633,
+          "combined_waveform_alert": 0.16973684210526316,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 381,
+        "reference": 228,
+        "calibration": 153,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 23.29,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Dual MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.46860633994397893,
+      "affine_macro_f1": 0.4411577691231189,
+      "jitter_macro_f1": 0.09762373741060158,
+      "accuracy": 0.4776315789473684,
+      "label_ids": [
+        329,
+        304,
+        162,
+        165,
+        41,
+        291,
+        149,
+        377,
+        44,
+        370,
+        206,
+        228,
+        355,
+        90,
+        220,
+        110,
+        212,
+        130,
+        341,
+        260,
+        211,
+        302,
+        378,
+        137,
+        1,
+        240,
+        52,
+        28,
+        67,
+        184,
+        202,
+        132,
+        48,
+        71,
+        352,
+        379,
+        276,
+        66,
+        330,
+        257,
+        155,
+        74,
+        56,
+        111,
+        43,
+        252,
+        104,
+        237,
+        15,
+        348
+      ],
+      "n_labeled": 50,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.62,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Canonical MR episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.45974522611356006,
+      "affine_macro_f1": 0.45974522611356006,
+      "jitter_macro_f1": 0.11085811302449673,
+      "accuracy": 0.46710526315789475,
+      "label_ids": [
+        329,
+        304,
+        162,
+        165,
+        41,
+        291,
+        149,
+        377,
+        44,
+        370,
+        206,
+        228,
+        355,
+        90,
+        220,
+        110,
+        212,
+        130,
+        341,
+        260,
+        211,
+        302,
+        378,
+        137,
+        1,
+        240,
+        52,
+        28,
+        67,
+        184,
+        202,
+        132,
+        48,
+        71,
+        352,
+        379,
+        276,
+        66,
+        330,
+        257,
+        155,
+        74,
+        56,
+        111,
+        43,
+        252,
+        104,
+        237,
+        15,
+        348
+      ],
+      "n_labeled": 50,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.62,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Cortex episodic",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3833129589422756,
+      "affine_macro_f1": 0.2881719600737115,
+      "jitter_macro_f1": 0.38030132747331635,
+      "accuracy": 0.4105263157894737,
+      "label_ids": [
+        329,
+        304,
+        162,
+        165,
+        41,
+        291,
+        149,
+        377,
+        44,
+        370,
+        206,
+        228,
+        355,
+        90,
+        220,
+        110,
+        212,
+        130,
+        341,
+        260,
+        211,
+        302,
+        378,
+        137,
+        1,
+        240,
+        52,
+        28,
+        67,
+        184,
+        202,
+        132,
+        48,
+        71,
+        352,
+        379,
+        276,
+        66,
+        330,
+        257,
+        155,
+        74,
+        56,
+        111,
+        43,
+        252,
+        104,
+        237,
+        15,
+        348
+      ],
+      "n_labeled": 50,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.63,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic slow memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.3659883750137534,
+      "affine_macro_f1": 0.3659883750137534,
+      "jitter_macro_f1": 0.3692173708774299,
+      "accuracy": 0.3394736842105263,
+      "label_ids": [
+        329,
+        304,
+        162,
+        165,
+        41,
+        291,
+        149,
+        377,
+        44,
+        370,
+        206,
+        228,
+        355,
+        90,
+        220,
+        110,
+        212,
+        130,
+        341,
+        260,
+        211,
+        302,
+        378,
+        137,
+        1,
+        240,
+        52,
+        28,
+        67,
+        184,
+        202,
+        132,
+        48,
+        71,
+        352,
+        379,
+        276,
+        66,
+        330,
+        257,
+        155,
+        74,
+        56,
+        111,
+        43,
+        252,
+        104,
+        237,
+        15,
+        348
+      ],
+      "n_labeled": 50,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.63,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic shape-concept memory",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4065552651491884,
+      "affine_macro_f1": 0.31681530849319384,
+      "jitter_macro_f1": 0.41588645714137285,
+      "accuracy": 0.3684210526315789,
+      "label_ids": [
+        329,
+        304,
+        162,
+        165,
+        41,
+        291,
+        149,
+        377,
+        44,
+        370,
+        206,
+        228,
+        355,
+        90,
+        220,
+        110,
+        212,
+        130,
+        341,
+        260,
+        211,
+        302,
+        378,
+        137,
+        1,
+        240,
+        52,
+        28,
+        67,
+        184,
+        202,
+        132,
+        48,
+        71,
+        352,
+        379,
+        276,
+        66,
+        330,
+        257,
+        155,
+        74,
+        56,
+        111,
+        43,
+        252,
+        104,
+        237,
+        15,
+        348
+      ],
+      "n_labeled": 50,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": null,
+      "applied_route": null,
+      "alerts": null,
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.64,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic HCLM-authorized router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.462775305640176,
+      "affine_macro_f1": 0.4411577691231189,
+      "jitter_macro_f1": 0.0981273073897104,
+      "accuracy": 0.475,
+      "label_ids": [
+        329,
+        304,
+        162,
+        165,
+        41,
+        291,
+        149,
+        377,
+        44,
+        370,
+        206,
+        228,
+        355,
+        90,
+        220,
+        110,
+        212,
+        130,
+        341,
+        260,
+        211,
+        302,
+        378,
+        137,
+        1,
+        240,
+        52,
+        28,
+        67,
+        184,
+        202,
+        132,
+        48,
+        71,
+        352,
+        379,
+        276,
+        66,
+        330,
+        257,
+        155,
+        74,
+        56,
+        111,
+        43,
+        252,
+        104,
+        237,
+        15,
+        348
+      ],
+      "n_labeled": 50,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.6864685314685315,
+            "Canonical": 0.694019314019314,
+            "Cortex": 0.5088422688422688,
+            "Elastic": 0.5246031746031747,
+            "ElasticConcept": 0.5834559884559885
+          },
+          "affine": {
+            "Dual": 0.6114285714285714,
+            "Canonical": 0.694019314019314,
+            "Cortex": 0.4186505599663494,
+            "Elastic": 0.5246031746031747,
+            "ElasticConcept": 0.4692997198879552
+          },
+          "jitter": {
+            "Dual": 0.1547706163805235,
+            "Canonical": 0.1525172231054584,
+            "Cortex": 0.5048018648018647,
+            "Elastic": 0.536904761904762,
+            "ElasticConcept": 0.5975219225219225
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.056578947368421055,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.018421052631578946,
+          "combined_waveform_alert": 0.025,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0.0013157894736842105
+        },
+        {
+          "affine_alert": 0.9776315789473684,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.26842105263157895,
+          "combined_waveform_alert": 0.275,
+          "conflict_rate": 0.02894736842105263,
+          "novelty_conflict_rate": 0.2723684210526316
+        },
+        {
+          "affine_alert": 0.06184210526315789,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.16447368421052633,
+          "combined_waveform_alert": 0.16973684210526316,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": null,
+      "runtime_sec": 23.64,
+      "assumed_label_preserving_synthetic_corruption": true
+    },
+    {
+      "dataset": "MedicalImages",
+      "seed": 3801,
+      "budget": 5,
+      "method": "Elastic Representation-Surprise Router",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.4674905866302839,
+      "affine_macro_f1": 0.440957716806993,
+      "jitter_macro_f1": 0.16624971315031983,
+      "accuracy": 0.4763157894736842,
+      "label_ids": [
+        329,
+        304,
+        162,
+        165,
+        41,
+        291,
+        149,
+        377,
+        44,
+        370,
+        206,
+        228,
+        355,
+        90,
+        220,
+        110,
+        212,
+        130,
+        341,
+        260,
+        211,
+        302,
+        378,
+        137,
+        1,
+        240,
+        52,
+        28,
+        67,
+        184,
+        202,
+        132,
+        48,
+        71,
+        352,
+        379,
+        276,
+        66,
+        330,
+        257,
+        155,
+        74,
+        56,
+        111,
+        43,
+        252,
+        104,
+        237,
+        15,
+        348
+      ],
+      "n_labeled": 50,
+      "train_cases": 381,
+      "test_cases": 760,
+      "ssl_epochs": 3,
+      "elastic_fit": {
+        "train_only_scales": [
+          0.3885077474399532,
+          0.0944401478503574
+        ],
+        "k_reference": 50,
+        "steps": 96,
+        "radius": 12
+      },
+      "elastic_assessment": {
+        "train_loo_macro_f1": {
+          "clean": {
+            "Dual": 0.6864685314685315,
+            "Canonical": 0.694019314019314,
+            "Cortex": 0.5088422688422688,
+            "Elastic": 0.5246031746031747,
+            "ElasticConcept": 0.5834559884559885
+          },
+          "affine": {
+            "Dual": 0.6114285714285714,
+            "Canonical": 0.694019314019314,
+            "Cortex": 0.4186505599663494,
+            "Elastic": 0.5246031746031747,
+            "ElasticConcept": 0.4692997198879552
+          },
+          "jitter": {
+            "Dual": 0.1547706163805235,
+            "Canonical": 0.1525172231054584,
+            "Cortex": 0.5048018648018647,
+            "Elastic": 0.536904761904762,
+            "ElasticConcept": 0.5975219225219225
+          }
+        },
+        "selected_experts": {
+          "clean": "Dual",
+          "affine": "Dual",
+          "jitter": "Cortex"
+        },
+        "minimum_jitter_gain": 0.04,
+        "clean_support_tolerance": 0.04,
+        "selection_uses_test_labels": false
+      },
+      "applied_route": {
+        "clean": "Dual",
+        "affine": "Dual",
+        "jitter": "Cortex"
+      },
+      "alerts": [
+        {
+          "affine_alert": 0.056578947368421055,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.018421052631578946,
+          "combined_waveform_alert": 0.025,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0.0013157894736842105
+        },
+        {
+          "affine_alert": 0.9776315789473684,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.26842105263157895,
+          "combined_waveform_alert": 0.275,
+          "conflict_rate": 0.02894736842105263,
+          "novelty_conflict_rate": 0.2723684210526316
+        },
+        {
+          "affine_alert": 0.06184210526315789,
+          "waveform_alert": 0.02894736842105263,
+          "representation_alert": 0.16447368421052633,
+          "combined_waveform_alert": 0.16973684210526316,
+          "conflict_rate": 0.003947368421052632,
+          "novelty_conflict_rate": 0
+        }
+      ],
+      "representation_novelty_train_fit": {
+        "valid": true,
+        "n_train": 381,
+        "reference": 228,
+        "calibration": 153,
+        "statistical_claim": "empirical TRAIN-only split tail; not exact conformal"
+      },
+      "runtime_sec": 23.64,
+      "assumed_label_preserving_synthetic_corruption": true
+    }
+  ],
+  "risk_decision": "REJECT; 0.025+0.025 morphology/representation novelty alarm misses Car waveform stress, and independent HOLDOUT cannot be claimed",
+  "verdict": [
+    {
+      "shot": 1,
+      "new_minus_old": {
+        "clean": -0.007461559026017195,
+        "affine": -0.00009913616393841806,
+        "jitter": -0.10406779811654568
+      }
+    },
+    {
+      "shot": 3,
+      "new_minus_old": {
+        "clean": -0.006268026225160872,
+        "affine": -0.0000351768614422765,
+        "jitter": -0.08987786114797505
+      }
+    },
+    {
+      "shot": 5,
+      "new_minus_old": {
+        "clean": -0.004137357324508706,
+        "affine": -0.00006668410537535863,
+        "jitter": -0.09809457382534215
+      }
+    }
+  ]
+}
