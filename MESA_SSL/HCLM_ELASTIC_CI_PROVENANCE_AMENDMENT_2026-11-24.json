@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-24",
+  "original_frozen_contract": "MESA_SSL/HCLM_ELASTIC_FROZEN_PROTOCOL_2026-11-24.json",
+  "failed_workflow": 45287128261,
+  "fault": "actions/checkout@v4 shallow clone does not contain the prior pre-freeze source commit; git diff against that commit exits 128 during HCLM preflight",
+  "correction": "Replace unavailable historical git diff with byte-identical current git blob SHA verification against the frozen source's GitHub object SHA.",
+  "frozen_source_commit": "5706afb8510d53eca295ea38365bf2e251136f67",
+  "verified_frozen_blob_sha": "b45ca36da3e38d9b0ce277d0fe33aadd56294569",
+  "verified_current_blob_sha": "b45ca36da3e38d9b0ce277d0fe33aadd56294569",
+  "frozen_algorithm_changed": false,
+  "frozen_datasets_seeds_thresholds_changed": false,
+  "test_scores_from_failed_workflow": "NONE (all eight jobs failed before package installation or TEST loading)",
+  "scientific_policy": "A CI/provenance repair is allowed without reselecting the model; preserve complete workflow failure logs and original pre-registration."
+}
