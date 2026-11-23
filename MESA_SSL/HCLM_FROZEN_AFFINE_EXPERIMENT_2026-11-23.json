@@ -1,0 +1,97 @@
+{
+  "contract_id": "HCLM-MESA-AFFINE-5601-5602",
+  "created_date": "2026-11-23",
+  "hclm_governor": "MESA_SSL/hclm_search_governor.py",
+  "hclm_required_action": "AFFINE_FALLBACK_CALIBRATION",
+  "experiment_type": "NEW_SANDBOX_NOT_DEPLOYMENT",
+  "scientifically_frozen_before_results": true,
+  "hypotheses": {
+    "H1": "Reducing false chart switching and restricting affine fallback to TRAIN-supported baselines avoids part of the clean/affine accuracy regression.",
+    "H2": "Waveform-jitter expert can improve under corruption without forcing unrelated Hopfield/physics on clean signals."
+  },
+  "protocol": {
+    "datasets": [
+      "Strawberry",
+      "ToeSegmentation1",
+      "ToeSegmentation2",
+      "Computers"
+    ],
+    "role": "fresh independent research evaluation; after this run all become development",
+    "seeds": [
+      5601,
+      5602
+    ],
+    "labeled_train_support_per_class": [
+      1,
+      3,
+      5
+    ],
+    "epochs": 8,
+    "hidden": 40,
+    "dimension": 64,
+    "original_UCR_TRAIN_TEST": true,
+    "test_labels_not_used_for_method_or_threshold_selection": true,
+    "synthetic_affine_and_jitter_assumed_label_preserving": true,
+    "source_hash_must_be_fixed_before_test": true,
+    "matched_methods": [
+      "Dual MR episodic",
+      "BioPhysics risk-gated",
+      "BioPhysics HCLM-guarded",
+      "BioPhysics full",
+      "Raw MR ridge"
+    ],
+    "caution": "4 datasets x 2 seeds exploratory; cannot justify general claims or SOTA"
+  },
+  "fixed_policy": {
+    "clean_expert": "Dual MR episodic",
+    "one_shot_affine_expert": "Dual MR episodic",
+    "one_shot_waveform_expert": "Slow cortex episodic",
+    "three_five_shot_affine_candidates": [
+      "Dual MR episodic",
+      "Canonical MR episodic"
+    ],
+    "three_five_shot_waveform_candidates": [
+      "Dual MR episodic",
+      "Slow cortex episodic",
+      "BioPhysics no physics",
+      "NeuroMem prior",
+      "BioPhysics no Hopfield"
+    ],
+    "affine_min_train_loo_f1_improvement": 0.04,
+    "waveform_min_train_loo_f1_improvement": 0.04,
+    "chart_affine_conformal_p_cutoff": 0.05,
+    "chart_morphology_conformal_p_cutoff": 0.05,
+    "conflicted_dual_alarm_action": "safe_dual_MR_fallback",
+    "all_thresholds_fixed_before_unseen_TEST": true
+  },
+  "risk_envelope": {
+    "paired_baseline": "Dual MR episodic",
+    "clean_mean_noninferiority_delta_at_least": -0.01,
+    "affine_mean_noninferiority_delta_at_least": -0.01,
+    "jitter_mean_improvement_at_least": 0.04,
+    "any_dataset_clean_delta_at_least": -0.04,
+    "any_dataset_affine_delta_at_least": -0.04,
+    "full_comparators_needed_before_promotion": [
+      "MultiRocket full",
+      "TS2Vec",
+      "TimeMAE",
+      "MOMENT"
+    ],
+    "enough_new_validation_datasets_for_promotion": 8,
+    "enough_seed_pairs_for_promotion": 5
+  },
+  "governance": {
+    "allowed_actions": [
+      "train_development",
+      "test_frozen_sandbox",
+      "archive_negative_results"
+    ],
+    "forbidden_actions": [
+      "modify_master",
+      "deploy",
+      "claim_SOTA"
+    ],
+    "human_authorization_required_for_promotion": true,
+    "no_retroactive_threshold_tuning_from_TEST": true
+  }
+}
