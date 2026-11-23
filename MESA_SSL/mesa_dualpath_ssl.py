@@ -370,6 +370,11 @@ def evaluate(args):
             training.append(dict(dataset=args.dataset,seed=seed,
                      model=key,losses=curve))
         views,queries,concepts=features(train,test,seed,models)
+        concept_rmse={}
+        for model_name,net in models.items():
+            predicted=extract_nn(net,train)["concept_pred"]
+            concept_rmse[model_name]=float(np.sqrt(np.mean(
+                (predicted-concepts[0])**2)))
         kernels=build_kernels(views,indices)
         choices={};predictions={}
         for family in METHODS[:7]:
@@ -404,6 +409,7 @@ def evaluate(args):
                 if name in choices else None),
               selected=selected if name=="TRAIN-selected admissible" else None,
               chart_policy=policy if name=="MESA SPC hybrid" else None,
+              concept_rmse_train=concept_rmse,
               runtime_seconds=round(time.monotonic()-t0,2),
               status="EXECUTED",
               synthetic_shift_assumption="label-preserving offset/trend and jitter")
