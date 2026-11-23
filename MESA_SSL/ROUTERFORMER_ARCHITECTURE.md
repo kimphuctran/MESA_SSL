@@ -37,9 +37,14 @@ reconstruct a non-degenerate series, while `q` is invariant under
 information loss when class labels depend on mean or slope.
 
 Two **independently parameterized** tokenizers produce 8, 16 and 24 temporal
-summary tokens each from raw `x` and normalized shape `q`. Each token
-contains a window average, RMS and mean absolute first difference, plus
-fixed sinusoidal positional and trainable scale encoding.
+summary tokens each from raw `x` and normalized shape `q`. To avoid the
+strong-jitter failure of the first prototype, each tokenizer now includes a
+convolutional patch stem: depthwise kernels of 3, 7 and 15 time steps plus a
+trainable pointwise channel mixer. Every token retains **nine groups of
+channel features**: original local average/RMS/roughness, low-pass
+average/RMS and learned convolutional mean/peak descriptors. Original
+information remains available alongside anti-alias features. Fixed
+sinusoidal positions and trainable scale embeddings are added.
 
 For each stream `s`, define `X_s in R^(B*N*D)` and an analytic concept
 embedding `c_s in R^D`. For the raw stream, `c_raw` is based on
@@ -73,6 +78,11 @@ predicts the canonical residual's log band spectrum.
 
 All variants share masked/noisy-view consistency, raw/shape variance
 regularization, affine shape consistency and frequency prediction.
+The current denoising variant additionally learns consistency between
+clean and independently corrupted waveform embeddings and predicts the
+**clean** log band spectrum from TRAIN-side Gaussian/harmonic-noise
+corruptions. Those perturbation families and strengths are fixed before
+the final holdout; they are not selected using TEST labels.
 
 The mechanism variant adds:
 - raw concept-head alignment with analytical (mean,slope,log_rms);
