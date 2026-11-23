@@ -35,6 +35,7 @@ from MESA_SSL.mesa_neuromem import (
 METHODS=(
     "Raw MR episodic",
     "Canonical MR episodic",
+    "Dual MR episodic",
     "Slow cortex episodic",
     "DG episodic",
     "Physics episodic",
@@ -48,6 +49,7 @@ METHODS=(
     "BioPhysics no Hopfield",
     "BioPhysics no context",
     "BioPhysics full",
+    "BioPhysics safe TRAIN",
     "Raw MR ridge",
 )
 BUDGETS=(1,3,5)
@@ -278,6 +280,101 @@ def decision(scored,chart,p_surprise,**ablation):
              predictive_surprise_rate=float(np.mean(p_surprise<=.10)))
 
 
+
+
+def choose_meta_controller(views,support,y,classes,train_charts,p_surprise,budget):
+    """Episodic metaplastic controller with *honest* grouped support exclusion.
+
+    When budget >=3, every labeled TRAIN episode is withheld in turn from
+    each memory, along with its synthetic views. The model is evaluated on
+    clean and both predeclared perturbed views of that same held-out TRAIN
+    observation, using the original label for those synthetic perturbations.
+    Neither TEST examples nor TEST labels affect expert selection.
+
+    At 1-shot leave-one-label-out is undefined because it removes the only
+    exemplar of a class. We use an explicitly conservative dual-MR fallback,
+    rather than fitting a spurious hyperparameter to a single support.
+    """
+    default="Dual MR episodic"
+    if budget<3:
+        return default,{"selected":default,"reason":"No valid 1-shot LOO per class"}
+    choices=("Raw MR episodic","Canonical MR episodic","Dual MR episodic",
+             "Slow cortex episodic","NeuroMem prior",
+             "BioPhysics no physics","BioPhysics no Hopfield",
+             "BioPhysics full")
+    n=len(support)
+    cross={k:[np.zeros((n,len(classes)),dtype=float) for _ in range(3)]
+           for k in choices}
+    reference_keys=("rawMR","shapeMR","cortex","homeo_dg",
+                    "physics","predictive")
+    for row,support_case in enumerate(support):
+        remaining=np.delete(support,row)
+        # Each withheld TRAIN observation is a fresh query in every mode.
+        p={}
+        for key in reference_keys:
+            feats=views[key]
+            queries=[feats[mode][support_case:support_case+1]
+                     for mode in (0,1,2)]
+            out=retrieve(feats,remaining,y,classes,queries,replay=False)
+            p[key]=[q[0] for q in out]
+        hp=hopfield_scores(views["physics"],remaining,y,classes,
+             [views["physics"][mode][support_case:support_case+1]
+              for mode in (0,1,2)])
+        for mode in range(3):
+            S=[p[key][mode][None,:] for key in reference_keys]
+            S[4]=hp[mode]
+            # The chart is trained on unlabeled TRAIN. Conditional p-values
+            # for this label are taken from the clean/augmented TRAIN inputs.
+            cond=(train_charts[mode][0][support_case:support_case+1],
+                  train_charts[mode][1][support_case:support_case+1])
+            surprise=p_surprise[mode][support_case:support_case+1]
+            full=decision(S,cond,surprise)[0][0]
+            no_physics=decision(S,cond,surprise,
+                               without_physics=True)[0][0]
+            no_hopfield_S=list(S)
+            no_hopfield_S[4]=p["physics"][mode][None,:]
+            no_hop=decision(no_hopfield_S,cond,surprise)[0][0]
+            prior=decision(S,cond,surprise,
+                         without_physics=True,
+                         without_prediction=True)[0][0]
+            simplex={
+              "Raw MR episodic":softmax_class(p["rawMR"][mode][None,:])[0],
+              "Canonical MR episodic":softmax_class(p["shapeMR"][mode][None,:])[0],
+              "Dual MR episodic":softmax_class(
+                  .5*(p["rawMR"][mode][None,:]+
+                      p["shapeMR"][mode][None,:]))[0],
+              "Slow cortex episodic":softmax_class(
+                  p["cortex"][mode][None,:])[0],
+              "NeuroMem prior":prior,
+              "BioPhysics no physics":no_physics,
+              "BioPhysics no Hopfield":no_hop,
+              "BioPhysics full":full
+            }
+            for k in choices:cross[k][mode][row]=simplex[k]
+    score={}
+    truth=y[support]
+    for model in choices:
+        y_pred=[classes[np.argmax(p,axis=1)] for p in cross[model]]
+        f=[float(f1_score(truth,z,average="macro",zero_division=0))
+           for z in y_pred]
+        # Prefer small, replayable memory if paired TRAIN evidence is close.
+        penalty=(0.012 if model in ("BioPhysics full",
+                                   "NeuroMem prior",
+                                   "BioPhysics no physics",
+                                   "BioPhysics no Hopfield") else 0.)
+        objective=.55*f[0]+.25*f[1]+.20*f[2]-penalty
+        score[model]=dict(objective=objective,cv_macro_f1=f)
+    winner=max(choices,key=lambda k:(score[k]["objective"],
+                   -choices.index(k)))
+    baseline=score[default]["objective"]
+    # Bounded metaplastic switch threshold protects 5-label reference data
+    # against falsely concluding a complex brain-inspired module wins.
+    if winner!=default and score[winner]["objective"]<baseline+.025:
+        winner=default
+    return winner,dict(selected=winner,baseline_cv=baseline,
+                       scored_candidates=score,leakage_guard=True)
+
+
 def numerical_contracts():
     rng=np.random.default_rng(2004)
     x=rng.normal(size=(10,80,3)).astype("float32")
@@ -330,8 +427,10 @@ def run(args):
                            views["rawMR"][3:])
             ridge=ridge_memory(views["rawMR"],idx,y,classes,
                               views["rawMR"][3:])
+            dual_scores=[.5*(fast["rawMR"][j]+fast["shapeMR"][j]) for j in range(3)]
             predictions={"Raw MR episodic":ref,
               "Canonical MR episodic":fast["shapeMR"],
+              "Dual MR episodic":dual_scores,
               "Slow cortex episodic":fast["cortex"],
               "DG episodic":fast["homeo_dg"],
               "Physics episodic":fast["physics"],
@@ -372,6 +471,13 @@ def run(args):
                     s.append(yhat);metadata.append(diag)
                 predictions[name]=s
                 per_method[name]=metadata
+            chosen,training_assessment=choose_meta_controller(
+                views,idx,y,classes,slow["charts"][:3],surprise_p[:3],
+                budget)
+            predictions["BioPhysics safe TRAIN"]=predictions[chosen]
+            per_method["BioPhysics safe TRAIN"]=[dict(
+                selected_expert=chosen,train_objectives=training_assessment,
+                selection_uses_test_labels=False)]*3
             for method in METHODS:
                 scores=predictions[method]
                 pred=[classes[np.argmax(s,axis=1)] for s in scores]
