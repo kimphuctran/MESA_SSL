@@ -1,0 +1,49 @@
+name: HCLM closed-loop feedback update and next research action
+on:
+  push:
+    branches: [hclm-affine-fallback-sandbox-2026]
+    paths: ['.github/workflows/hclm-feedback-next.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  next_action:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Re-test HCLM research control invariants
+        run: |
+          python -m py_compile MESA_SSL/hclm_search_governor.py
+          python MESA_SSL/hclm_search_governor.py --test-only
+      - name: Integrate completed sandbox outcome; forbid repeating spent experiment
+        run: |
+          python MESA_SSL/hclm_search_governor.py \
+            --budget 5 \
+            --archive MESA_SSL/riskgate_biophysics_holdout_2026-11-23.json \
+            --feedback-archive MESA_SSL/HCLM_AFFINE_FROZEN_RUN_2026-11-23.json \
+            --ledger MESA_SSL/hclm_failure_ledger_2026-11-23.json \
+            --out results/hclm_closed_loop
+      - name: Enforce HCLM next-step learning from failed incumbent superiority
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("results/hclm_closed_loop/governance_decision.json").read_text())
+          assert len(r["failure_ledger"])==17
+          assert r["governed_decision"]["action"]=="RUN_SANDBOX"
+          assert not r["admissibility"]["admissible_for_promotion"]
+          assert "AFFINE_FALLBACK_CALIBRATION" in r["governed_decision"]["hclm_state"]["blocked_completed_experiments"]
+          assert r["governed_decision"]["next_experiment"]["id"]!="AFFINE_FALLBACK_CALIBRATION"
+          assert r["feedback_from_executed_sandbox"]["incumbent_improvement_on_all_three"] is False
+          assert "Strawberry" in r["source_provenance"]["all_examined_validation_datasets"]
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hclm-closed-loop-next-experiment-decision
+          path: results/hclm_closed_loop/governance_decision.json
+          retention-days: 30
