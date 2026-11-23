@@ -1,0 +1,3193 @@
+{
+  "date": "2026-11-23",
+  "repo": "kimphuctran/MESA_SSL",
+  "branch": "mesa-shape-mechanism-2026",
+  "source_commit": "6af79136c95d2bd8b707c8ff31e42e8186f3f539",
+  "run": 45270985220,
+  "protocol": {
+    "dev": [
+      "GunPoint",
+      "SyntheticControl"
+    ],
+    "holdout": [
+      "Ham",
+      "Car",
+      "BirdChicken"
+    ],
+    "seeds": [
+      2601,
+      2602
+    ],
+    "label_budget_per_class": 5,
+    "epochs": 12,
+    "encoder": "paired generic and mechanism with raw and harmonic shape concept heads",
+    "selection": "TRAIN-only 3-view ridge LOOCV"
+  },
+  "jobs": [
+    {
+      "name": "benchmark (GunPoint, 2601)",
+      "id": 138030394994,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (BirdChicken, 2602)",
+      "id": 138030395551,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (BirdChicken, 2601)",
+      "id": 138030395619,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Car, 2601)",
+      "id": 138030395633,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (SyntheticControl, 2601)",
+      "id": 138030395637,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Ham, 2602)",
+      "id": 138030395656,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Ham, 2601)",
+      "id": 138030395679,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (SyntheticControl, 2602)",
+      "id": 138030395751,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Car, 2602)",
+      "id": 138030395860,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (GunPoint, 2602)",
+      "id": 138030395994,
+      "conclusion": "success"
+    }
+  ],
+  "records": [
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.65,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.8581783800819414,
+      "affine_macro_f1": 0.8581783800819414,
+      "jitter_macro_f1": 0.7329460269865067,
+      "accuracy": 0.86,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8152777777777778,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.898989898989899
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.65,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.66,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.752794975724912,
+      "affine_macro_f1": 0.625,
+      "jitter_macro_f1": 0.699666295884316,
+      "accuracy": 0.7533333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8546262626262626,
+      "train_cv_f1": [
+        1,
+        0.696969696969697,
+        0.898989898989899
+      ],
+      "weights": {
+        "generic_raw": 1,
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.66,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.7459440185416295,
+      "affine_macro_f1": 0.5664932639722555,
+      "jitter_macro_f1": 0.6999866660740477,
+      "accuracy": 0.7466666666666667,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9313939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "mesa_raw": 1,
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.66,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.67,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.67,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          1,
+          0.898989898989899,
+          0.898989898989899
+        ],
+        "reference_n_cal": 20,
+        "test_alarm_rate": [
+          0.02666666666666667,
+          0.8133333333333334,
+          0.02666666666666667
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.67,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2832595705986023,
+        "mesa": 0.1797657459974289
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.35546278953552246,
+        "mesa": 0.1028888151049614
+      },
+      "runtime_seconds": 21.68,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.898989898989899,
+      "affine_macro_f1": 0.898989898989899,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.9,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7349494949494951,
+      "train_cv_f1": [
+        0.8,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.34,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.898989898989899,
+      "affine_macro_f1": 0.898989898989899,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.9,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6973333333333335,
+      "train_cv_f1": [
+        0.8,
+        0.8,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.35,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.898989898989899,
+      "affine_macro_f1": 0.898989898989899,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.9,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7349494949494951,
+      "train_cv_f1": [
+        0.8,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.35,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.8465473145780051,
+      "affine_macro_f1": 0.8465473145780051,
+      "jitter_macro_f1": 0.849624060150376,
+      "accuracy": 0.85,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7981666666666668,
+      "train_cv_f1": [
+        0.8,
+        0.8,
+        0.7916666666666667
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.35,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.8465473145780051,
+      "affine_macro_f1": 0.8465473145780051,
+      "jitter_macro_f1": 0.898989898989899,
+      "accuracy": 0.85,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7981666666666668,
+      "train_cv_f1": [
+        0.8,
+        0.8,
+        0.7916666666666667
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.898989898989899,
+      "affine_macro_f1": 0.898989898989899,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.9,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7349494949494951,
+      "train_cv_f1": [
+        0.8,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.898989898989899,
+      "affine_macro_f1": 0.898989898989899,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.9,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7349494949494951,
+      "train_cv_f1": [
+        0.8,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.898989898989899,
+      "affine_macro_f1": 0.898989898989899,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.9,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          0.8,
+          0.898989898989899,
+          0.3333333333333333
+        ],
+        "reference_n_cal": 8,
+        "test_alarm_rate": [
+          0,
+          0,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.898989898989899,
+      "affine_macro_f1": 0.898989898989899,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.9,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.22364990413188934,
+        "mesa": 0.12465361505746841
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14482052624225616,
+        "mesa": 0.06383069604635239
+      },
+      "runtime_seconds": 22.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.949874686716792,
+      "affine_macro_f1": 0.949874686716792,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.95,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7745454545454546,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.85,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.849624060150376,
+      "affine_macro_f1": 0.849624060150376,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.85,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7745454545454546,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.85,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.949874686716792,
+      "affine_macro_f1": 0.949874686716792,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.95,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7745454545454546,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.85,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.7493734335839599,
+      "affine_macro_f1": 0.7493734335839599,
+      "jitter_macro_f1": 0.696969696969697,
+      "accuracy": 0.75,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.696969696969697,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.696969696969697,
+        0.696969696969697
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.85,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.7493734335839599,
+      "affine_macro_f1": 0.7493734335839599,
+      "jitter_macro_f1": 0.696969696969697,
+      "accuracy": 0.75,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7708333333333334,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.696969696969697
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.86,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.949874686716792,
+      "affine_macro_f1": 0.949874686716792,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.95,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7745454545454546,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.86,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.949874686716792,
+      "affine_macro_f1": 0.949874686716792,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.95,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7745454545454546,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.86,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.949874686716792,
+      "affine_macro_f1": 0.949874686716792,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.95,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          0.898989898989899,
+          0.898989898989899,
+          0.3333333333333333
+        ],
+        "reference_n_cal": 8,
+        "test_alarm_rate": [
+          0,
+          0,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.87,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BirdChicken",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.849624060150376,
+      "affine_macro_f1": 0.849624060150376,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.85,
+      "n_train": 20,
+      "n_test": 20,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2641802728176117,
+        "mesa": 0.12233622372150421
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24021850526332855,
+        "mesa": 0.07373166084289551
+      },
+      "runtime_seconds": 18.87,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.8670347365999539,
+      "affine_macro_f1": 0.743131868131868,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.6143400488400489,
+      "train_cv_f1": [
+        0.7649572649572649,
+        0.7535714285714286,
+        0.1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.13,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.8475060684363009,
+      "affine_macro_f1": 0.8475060684363009,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.85,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.6186666666666667,
+      "train_cv_f1": [
+        0.7649572649572649,
+        0.7649572649572649,
+        0.1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.13,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.8670347365999539,
+      "affine_macro_f1": 0.8670347365999539,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.6279789377289378,
+      "train_cv_f1": [
+        0.7649572649572649,
+        0.810515873015873,
+        0.1
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.13,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.5803454715219422,
+      "affine_macro_f1": 0.5803454715219422,
+      "jitter_macro_f1": 0.5566580478345184,
+      "accuracy": 0.5833333333333334,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.7988708236208235,
+      "train_cv_f1": [
+        0.7979797979797979,
+        0.7979797979797979,
+        0.8020299145299146
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.14,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.580607315389924,
+      "affine_macro_f1": 0.580607315389924,
+      "jitter_macro_f1": 0.5751803751803752,
+      "accuracy": 0.5833333333333334,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.8000526418026419,
+      "train_cv_f1": [
+        0.7994949494949496,
+        0.7994949494949496,
+        0.8020299145299146
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.14,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.8670347365999539,
+      "affine_macro_f1": 0.8505291005291005,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.6554101731601731,
+      "train_cv_f1": [
+        0.8535353535353536,
+        0.810515873015873,
+        0.1
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "generic_shape": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.14,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.8670347365999539,
+      "affine_macro_f1": 0.8505291005291005,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.6554101731601731,
+      "train_cv_f1": [
+        0.8535353535353536,
+        0.810515873015873,
+        0.1
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "mesa_shape": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.15,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.8670347365999539,
+      "affine_macro_f1": 0.8505291005291005,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 1,
+        "cv_f1": [
+          0.7649572649572649,
+          0.810515873015873,
+          0.1
+        ],
+        "reference_n_cal": 24,
+        "test_alarm_rate": [
+          0.05,
+          1,
+          0.05
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.15,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.8670347365999539,
+      "affine_macro_f1": 0.8505291005291005,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Generic dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.24607236683368683,
+        "mesa": 0.07754335552453995
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.24888618290424347,
+        "mesa": 0.04930107295513153
+      },
+      "runtime_seconds": 35.16,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9327975115258536,
+      "affine_macro_f1": 0.8635921268633853,
+      "jitter_macro_f1": 0.9256393764873487,
+      "accuracy": 0.9333333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9611986531986532,
+      "train_cv_f1": [
+        0.9663299663299663,
+        0.9333333333333332,
+        1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.08,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.6490958177148423,
+      "affine_macro_f1": 0.6490958177148423,
+      "jitter_macro_f1": 0.6423339083579798,
+      "accuracy": 0.6533333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.6798888888888889,
+      "train_cv_f1": [
+        0.6722222222222222,
+        0.6722222222222222,
+        0.7070707070707071
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.08,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9702598834090762,
+      "affine_macro_f1": 0.9633714379222479,
+      "jitter_macro_f1": 0.9670382028440195,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9717979797979799,
+      "train_cv_f1": [
+        1,
+        0.9663299663299663,
+        0.9663299663299664
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.09,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9566422988452691,
+      "affine_macro_f1": 0.7374834449141624,
+      "jitter_macro_f1": 0.9566182748234096,
+      "accuracy": 0.9566666666666667,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.896575998075998,
+      "train_cv_f1": [
+        0.9663299663299663,
+        0.8245310245310243,
+        0.9305555555555557
+      ],
+      "weights": {
+        "generic_raw": 1,
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.1,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9432346311948819,
+      "affine_macro_f1": 0.7097370933081179,
+      "jitter_macro_f1": 0.9399886900483564,
+      "accuracy": 0.9433333333333334,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9275103415103415,
+      "train_cv_f1": [
+        1,
+        0.8497835497835498,
+        0.9663299663299663
+      ],
+      "weights": {
+        "mesa_raw": 1,
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.1,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.9833313527431174,
+      "affine_macro_f1": 0.9567328756685192,
+      "jitter_macro_f1": 0.97680682227701,
+      "accuracy": 0.9833333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9765925925925927,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9663299663299664
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "generic_raw": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.11,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.9701411761205576,
+      "affine_macro_f1": 0.9600738360532174,
+      "jitter_macro_f1": 0.9735571519114367,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.984,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "mesa_shape": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.11,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9327975115258536,
+      "affine_macro_f1": 0.9194426354240429,
+      "jitter_macro_f1": 0.9256393764873487,
+      "accuracy": 0.9333333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          0.9663299663299663,
+          0.9663299663299663,
+          1
+        ],
+        "reference_n_cal": 120,
+        "test_alarm_rate": [
+          0.04666666666666667,
+          0.97,
+          0.06333333333333334
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.12,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.9701411761205576,
+      "affine_macro_f1": 0.9600738360532174,
+      "jitter_macro_f1": 0.9735571519114367,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "MESA dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7558777332305908,
+        "mesa": 0.09498780220746994
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.19065986573696136,
+        "mesa": 0.12605099380016327
+      },
+      "runtime_seconds": 37.13,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.4361111111111111,
+      "affine_macro_f1": 0.4475689404934688,
+      "jitter_macro_f1": 0.5517304023980381,
+      "accuracy": 0.44761904761904764,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.422979797979798,
+      "train_cv_f1": [
+        0.4949494949494949,
+        0.375,
+        0.375
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.35,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.43901989683124537,
+      "affine_macro_f1": 0.43901989683124537,
+      "jitter_macro_f1": 0.5428156748911466,
+      "accuracy": 0.44761904761904764,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.46856060606060607,
+      "train_cv_f1": [
+        0.4949494949494949,
+        0.4949494949494949,
+        0.375
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.35,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.43901989683124537,
+      "affine_macro_f1": 0.43901989683124537,
+      "jitter_macro_f1": 0.5428156748911466,
+      "accuracy": 0.44761904761904764,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.46856060606060607,
+      "train_cv_f1": [
+        0.4949494949494949,
+        0.4949494949494949,
+        0.375
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.35,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.41820328821873015,
+      "affine_macro_f1": 0.44515306122448983,
+      "jitter_macro_f1": 0.3644534115920763,
+      "accuracy": 0.41904761904761906,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.42133838383838385,
+      "train_cv_f1": [
+        0.29292929292929293,
+        0.5833333333333333,
+        0.375
+      ],
+      "weights": {
+        "generic_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.6087928464977646,
+      "affine_macro_f1": 0.4845454545454545,
+      "jitter_macro_f1": 0.6111111111111112,
+      "accuracy": 0.6190476190476191,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.36969696969696964,
+      "train_cv_f1": [
+        0.29292929292929293,
+        0.4949494949494949,
+        0.29292929292929293
+      ],
+      "weights": {
+        "mesa_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.43901989683124537,
+      "affine_macro_f1": 0.43901989683124537,
+      "jitter_macro_f1": 0.5428156748911466,
+      "accuracy": 0.44761904761904764,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.46856060606060607,
+      "train_cv_f1": [
+        0.4949494949494949,
+        0.4949494949494949,
+        0.375
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.43901989683124537,
+      "affine_macro_f1": 0.43901989683124537,
+      "jitter_macro_f1": 0.5428156748911466,
+      "accuracy": 0.44761904761904764,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.46856060606060607,
+      "train_cv_f1": [
+        0.4949494949494949,
+        0.4949494949494949,
+        0.375
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.4361111111111111,
+      "affine_macro_f1": 0.44515306122448983,
+      "jitter_macro_f1": 0.5517304023980381,
+      "accuracy": 0.44761904761904764,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          0.4949494949494949,
+          0.4949494949494949,
+          0.375
+        ],
+        "reference_n_cal": 44,
+        "test_alarm_rate": [
+          0.02857142857142857,
+          0.9809523809523809,
+          0.02857142857142857
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.43901989683124537,
+      "affine_macro_f1": 0.43901989683124537,
+      "jitter_macro_f1": 0.5428156748911466,
+      "accuracy": 0.44761904761904764,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3798525035381317,
+        "mesa": 0.11755487322807312
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.11643706262111664,
+        "mesa": 0.056325603276491165
+      },
+      "runtime_seconds": 31.38,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.409041394335512,
+      "affine_macro_f1": 0.41883676617366844,
+      "jitter_macro_f1": 0.4128003314001657,
+      "accuracy": 0.4095238095238095,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8533333333333334,
+      "train_cv_f1": [
+        1,
+        1,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.05,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.43727859024434557,
+      "affine_macro_f1": 0.43727859024434557,
+      "jitter_macro_f1": 0.4157392686804452,
+      "accuracy": 0.4380952380952381,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9274725274725275,
+      "train_cv_f1": [
+        1,
+        1,
+        0.6703296703296704
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.05,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.43727859024434557,
+      "affine_macro_f1": 0.43727859024434557,
+      "jitter_macro_f1": 0.4157392686804452,
+      "accuracy": 0.4380952380952381,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9274725274725275,
+      "train_cv_f1": [
+        1,
+        1,
+        0.6703296703296704
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.06,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.4081818181818182,
+      "affine_macro_f1": 0.4081818181818182,
+      "jitter_macro_f1": 0.41883676617366844,
+      "accuracy": 0.4095238095238095,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8000000000000002,
+      "train_cv_f1": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.06,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.4094702467343977,
+      "affine_macro_f1": 0.41714441714441713,
+      "jitter_macro_f1": 0.41904761904761906,
+      "accuracy": 0.4095238095238095,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8376161616161618,
+      "train_cv_f1": [
+        0.8,
+        0.898989898989899,
+        0.8
+      ],
+      "weights": {
+        "mesa_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.07,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.47619047619047616,
+      "affine_macro_f1": 0.47619047619047616,
+      "jitter_macro_f1": 0.4493006993006993,
+      "accuracy": 0.47619047619047616,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9697777777777778,
+      "train_cv_f1": [
+        1,
+        1,
+        0.898989898989899
+      ],
+      "weights": {
+        "shapeMR": 1,
+        "generic_shape": 0.4
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.07,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.47619047619047616,
+      "affine_macro_f1": 0.47619047619047616,
+      "jitter_macro_f1": 0.4493006993006993,
+      "accuracy": 0.47619047619047616,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9697777777777778,
+      "train_cv_f1": [
+        1,
+        1,
+        0.898989898989899
+      ],
+      "weights": {
+        "shapeMR": 1,
+        "mesa_shape": 0.4
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.08,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.409041394335512,
+      "affine_macro_f1": 0.41883676617366844,
+      "jitter_macro_f1": 0.4128003314001657,
+      "accuracy": 0.4095238095238095,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          1,
+          1,
+          0.3333333333333333
+        ],
+        "reference_n_cal": 44,
+        "test_alarm_rate": [
+          0.11428571428571428,
+          0.9809523809523809,
+          0.12380952380952381
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.08,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Ham",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.47619047619047616,
+      "affine_macro_f1": 0.47619047619047616,
+      "jitter_macro_f1": 0.4493006993006993,
+      "accuracy": 0.47619047619047616,
+      "n_train": 109,
+      "n_test": 105,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Generic dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2469312846660614,
+        "mesa": 0.11210685223340988
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.14528018236160278,
+        "mesa": 0.05774659290909767
+      },
+      "runtime_seconds": 42.09,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9291749967374474,
+      "affine_macro_f1": 0.8680861832065342,
+      "jitter_macro_f1": 0.9154778418420827,
+      "accuracy": 0.93,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.6668983238983239,
+      "train_cv_f1": [
+        0.6418951418951419,
+        0.6823657823657824,
+        0.6856421356421357
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.18,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.5951149917244299,
+      "affine_macro_f1": 0.5951149917244299,
+      "jitter_macro_f1": 0.5955186692886526,
+      "accuracy": 0.5966666666666667,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.597,
+      "train_cv_f1": [
+        0.6055555555555555,
+        0.6055555555555555,
+        0.5666666666666667
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.19,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.898750841750842,
+      "train_cv_f1": [
+        0.9326599326599329,
+        0.8644781144781145,
+        0.9326599326599329
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.19,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9465731034256307,
+      "affine_macro_f1": 0.7625948439262665,
+      "jitter_macro_f1": 0.926624631235018,
+      "accuracy": 0.9466666666666667,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.7697491582491583,
+      "train_cv_f1": [
+        0.8638888888888889,
+        0.6372053872053872,
+        0.8638888888888889
+      ],
+      "weights": {
+        "generic_raw": 1,
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.2,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9135001638331722,
+      "affine_macro_f1": 0.7032704952310458,
+      "jitter_macro_f1": 0.9000784972949921,
+      "accuracy": 0.9133333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.778986531986532,
+      "train_cv_f1": [
+        0.8996632996632997,
+        0.6452020202020202,
+        0.827020202020202
+      ],
+      "weights": {
+        "mesa_raw": 1,
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.2,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.898750841750842,
+      "train_cv_f1": [
+        0.9326599326599329,
+        0.8644781144781145,
+        0.9326599326599329
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.2,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.898750841750842,
+      "train_cv_f1": [
+        0.9326599326599329,
+        0.8644781144781145,
+        0.9326599326599329
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.21,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9427455759259704,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9361266226294752,
+      "accuracy": 0.9433333333333334,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.2,
+        "strength": 1,
+        "cv_f1": [
+          0.6877104377104377,
+          0.8644781144781145,
+          0.7596801346801346
+        ],
+        "reference_n_cal": 120,
+        "test_alarm_rate": [
+          0.2733333333333333,
+          0.9533333333333334,
+          0.29333333333333333
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.21,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6908684968948364,
+        "mesa": 0.09163044393062592
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.18070748448371887,
+        "mesa": 0.11896500736474991
+      },
+      "runtime_seconds": 30.21,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.850638101444553,
+      "affine_macro_f1": 0.81002331002331,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.6519468864468865,
+      "train_cv_f1": [
+        0.8589743589743589,
+        0.7535714285714286,
+        0.1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.67,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.8554966744621917,
+      "affine_macro_f1": 0.8554966744621917,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.692,
+      "train_cv_f1": [
+        0.8589743589743589,
+        0.8589743589743589,
+        0.1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.68,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.8554966744621917,
+      "affine_macro_f1": 0.8554966744621917,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.692,
+      "train_cv_f1": [
+        0.8589743589743589,
+        0.8589743589743589,
+        0.1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.69,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.5293208629605689,
+      "affine_macro_f1": 0.5293208629605689,
+      "jitter_macro_f1": 0.5662382891058027,
+      "accuracy": 0.55,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.70558547008547,
+      "train_cv_f1": [
+        0.7555555555555555,
+        0.7555555555555555,
+        0.5284188034188034
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.69,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.5293208629605689,
+      "affine_macro_f1": 0.5293208629605689,
+      "jitter_macro_f1": 0.5665413533834587,
+      "accuracy": 0.55,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.70558547008547,
+      "train_cv_f1": [
+        0.7555555555555555,
+        0.7555555555555555,
+        0.5284188034188034
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.7,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.8554966744621917,
+      "affine_macro_f1": 0.8554966744621917,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.692,
+      "train_cv_f1": [
+        0.8589743589743589,
+        0.8589743589743589,
+        0.1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.71,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.8554966744621917,
+      "affine_macro_f1": 0.8554966744621917,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": 0.692,
+      "train_cv_f1": [
+        0.8589743589743589,
+        0.8589743589743589,
+        0.1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.71,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.850638101444553,
+      "affine_macro_f1": 0.8554966744621917,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 1,
+        "cv_f1": [
+          0.8589743589743589,
+          0.8589743589743589,
+          0.1
+        ],
+        "reference_n_cal": 24,
+        "test_alarm_rate": [
+          0.05,
+          0.9666666666666667,
+          0.05
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.72,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Car",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.8554966744621917,
+      "affine_macro_f1": 0.8554966744621917,
+      "jitter_macro_f1": 0.08904109589041095,
+      "accuracy": 0.8666666666666667,
+      "n_train": 60,
+      "n_test": 60,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.19991081953048706,
+        "mesa": 0.08650566637516022
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.15658868849277496,
+        "mesa": 0.03412763029336929
+      },
+      "runtime_seconds": 41.72,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9532814238042269,
+      "affine_macro_f1": 0.8139727159983464,
+      "jitter_macro_f1": 0.47089947089947093,
+      "accuracy": 0.9533333333333334,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8890886890886891,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.6703296703296704
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.18,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.9399332591768632,
+      "affine_macro_f1": 0.9399332591768632,
+      "jitter_macro_f1": 0.3936243936243936,
+      "accuracy": 0.94,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8533333333333334,
+      "train_cv_f1": [
+        1,
+        1,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.18,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9532814238042269,
+      "affine_macro_f1": 0.8258928571428572,
+      "jitter_macro_f1": 0.4586641496863028,
+      "accuracy": 0.9533333333333334,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9114725274725275,
+      "train_cv_f1": [
+        1,
+        1,
+        0.6703296703296704
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "stats": 0.05
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.19,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.6122303440898555,
+      "affine_macro_f1": 0.5196584237680129,
+      "jitter_macro_f1": 0.5499529801621066,
+      "accuracy": 0.6133333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7827878787878788,
+      "train_cv_f1": [
+        0.696969696969697,
+        1,
+        0.6
+      ],
+      "weights": {
+        "generic_shape": 1,
+        "stats": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.19,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.753234627184207,
+      "affine_macro_f1": 0.5699177438307873,
+      "jitter_macro_f1": 0.7127076744911139,
+      "accuracy": 0.7533333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7657373737373738,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.898989898989899,
+        0.696969696969697
+      ],
+      "weights": {
+        "mesa_raw": 1,
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.2,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.933143162774113,
+      "affine_macro_f1": 0.7664071190211346,
+      "jitter_macro_f1": 0.5238095238095238,
+      "accuracy": 0.9333333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9221666666666667,
+      "train_cv_f1": [
+        1,
+        1,
+        0.7916666666666667
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "generic_raw": 0.5,
+        "generic_shape": 0.5,
+        "stats": 0.08
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.2,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.933143162774113,
+      "affine_macro_f1": 0.7464863903220067,
+      "jitter_macro_f1": 0.5558672276764843,
+      "accuracy": 0.9333333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9221666666666667,
+      "train_cv_f1": [
+        1,
+        1,
+        0.7916666666666667
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "mesa_raw": 0.5,
+        "mesa_shape": 0.5,
+        "stats": 0.08
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.2,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9532814238042269,
+      "affine_macro_f1": 0.8381586045675238,
+      "jitter_macro_f1": 0.47089947089947093,
+      "accuracy": 0.9533333333333334,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          1,
+          1,
+          0.6703296703296704
+        ],
+        "reference_n_cal": 20,
+        "test_alarm_rate": [
+          0.02666666666666667,
+          0.8533333333333334,
+          0.02666666666666667
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.21,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.933143162774113,
+      "affine_macro_f1": 0.7664071190211346,
+      "jitter_macro_f1": 0.5238095238095238,
+      "accuracy": 0.9333333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Generic dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.218692347407341,
+        "mesa": 0.16663478314876556
+      },
+      "shape_concept_rmse_train": {
+        "generic": 0.33249661326408386,
+        "mesa": 0.09050676971673965
+      },
+      "runtime_seconds": 28.21,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    }
+  ]
+}
