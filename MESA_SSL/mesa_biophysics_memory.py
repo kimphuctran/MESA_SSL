@@ -51,6 +51,7 @@ METHODS=(
     "BioPhysics full",
     "BioPhysics safe TRAIN",
     "BioPhysics risk-gated",
+    "BioPhysics HCLM-guarded",
     "Raw MR ridge",
 )
 BUDGETS=(1,3,5)
@@ -446,6 +447,92 @@ def conditioned_episodic_policy(predictions,charts,budget,assessment):
     return outputs,diagnostics
 
 
+
+
+def hclm_guarded_affine_policy(predictions,charts,budget,assessment):
+    """Risk-constrained next *experiment*, selected by the HCLM meta-governor.
+
+    This policy is frozen in HCLM_FROZEN_AFFINE_EXPERIMENT_2026-11-23.json.
+    It does NOT govern research itself; the separate hclm_search_governor.py
+    did that by examining all earlier failures and selecting this sandbox.
+
+    The clean expert is always dual MR. The affine expert is allowed to differ
+    ONLY if a canonical MR model exceeds the dual on grouped TRAIN LOO
+    in the affine nuisance regime by >= 0.04. Waveform nuisance candidates
+    similarly require >=0.04 evidence in TRAIN LOO. At one-shot, grouped
+    LOO is invalid, so we use predeclared simple default experts.
+    Both p-value cutoffs are <=0.05; concurrent alarms use safe dual.
+    No TEST class labels are seen by this policy.
+    """
+    anchor="Dual MR episodic"
+    p_cut=.05;min_gain=.04
+    if budget<3:
+        chosen={"clean":anchor,"affine":anchor,
+                "wave":"Slow cortex episodic"}
+        reasons={"affine":"1-shot: LOO invalid; dual MR retained",
+                 "wave":"1-shot predeclared slow-cortex response"}
+    else:
+        cv=assessment.get("scored_candidates",{})
+        if anchor not in cv:raise ValueError("No original Dual MR TRAIN control")
+        base_aff=float(cv[anchor]["cv_macro_f1"][1])
+        base_wave=float(cv[anchor]["cv_macro_f1"][2])
+        chosen={"clean":anchor,"affine":anchor,"wave":anchor}
+        reasons={}
+        label="Canonical MR episodic"
+        diff=float(cv[label]["cv_macro_f1"][1])-base_aff
+        if diff>=min_gain:chosen["affine"]=label
+        reasons["affine"]=f"canonical minus dual TRAIN LOO Macro-F1: {diff:.5f}"
+        candidates=("Slow cortex episodic","BioPhysics no physics",
+                    "NeuroMem prior","BioPhysics no Hopfield")
+        candidates=[name for name in candidates if name in cv]
+        ranking=sorted(candidates,key=lambda name:(
+            -(float(cv[name]["cv_macro_f1"][2])-
+              (.012 if name.startswith("BioPhysics") or name=="NeuroMem prior" else 0.)),
+            name))
+        if ranking:
+            best=ranking[0]
+            delta=float(cv[best]["cv_macro_f1"][2])-base_wave
+            penalty=(.012 if best.startswith("BioPhysics") or
+                     best=="NeuroMem prior" else 0.)
+            if delta-penalty>=min_gain:chosen["wave"]=best
+            reasons["wave"]=f"best wave minus dual TRAIN LOO after penalty: {delta-penalty:.5f}"
+        else:reasons["wave"]="No eligible TRAIN mechanism expert"
+    def as_prob(model,j):
+        scores=np.asarray(predictions[model][j],dtype=float)
+        # Fixed BioPhysics outputs are already class-simplex mixtures;
+        # episodic cosine similarities require deterministic softmax.
+        if model.startswith("BioPhysics") or model=="NeuroMem prior":
+            return scores
+        return softmax_class(scores)
+    outputs=[];reports=[]
+    for j,(p_aff,p_wave) in enumerate(charts):
+        c=as_prob(chosen["clean"],j)
+        a=as_prob(chosen["affine"],j)
+        w=as_prob(chosen["wave"],j)
+        alert_a=np.asarray(p_aff)<=p_cut
+        alert_w=np.asarray(p_wave)<=p_cut
+        conflicted=alert_a&alert_w
+        wave_only=alert_w&~alert_a
+        affine_only=alert_a&~alert_w
+        pred=np.where(wave_only[:,None],w,
+             np.where(affine_only[:,None],a,c))
+        outputs.append(pred)
+        reports.append(dict(
+            selected_experts=chosen,
+            reasons=reasons,
+            chart_threshold_fixed=.05,
+            concurrent_alarm_fallback="Dual MR episodic",
+            waveform_alert_rate=float(np.mean(alert_w)),
+            affine_alert_rate=float(np.mean(alert_a)),
+            conflicting_alert_rate=float(np.mean(conflicted)),
+            clean_path_rate=float(np.mean(~wave_only&~affine_only)),
+            train_only_expert_selection=True,
+            hclm_controller_role="experiment selection and authorization",
+            source_contract="HCLM_FROZEN_AFFINE_EXPERIMENT_2026-11-23.json"
+        ))
+    return outputs,reports
+
+
 def numerical_contracts():
     rng=np.random.default_rng(2004)
     x=rng.normal(size=(10,80,3)).astype("float32")
@@ -510,7 +597,7 @@ def run(args):
               "Raw MR ridge":ridge}
             per_method={}
             for name in METHODS:
-                if name in predictions or name in ("BioPhysics safe TRAIN","BioPhysics risk-gated"):continue
+                if name in predictions or name in ("BioPhysics safe TRAIN","BioPhysics risk-gated","BioPhysics HCLM-guarded"):continue
                 s=[];metadata=[]
                 for mode in range(3):
                     branch=[
@@ -550,6 +637,10 @@ def run(args):
                 predictions,slow["charts"][3:],budget,training_assessment)
             predictions["BioPhysics risk-gated"]=conditional
             per_method["BioPhysics risk-gated"]=[conditional_meta]*3
+            controlled,controlled_meta=hclm_guarded_affine_policy(
+                predictions,slow["charts"][3:],budget,training_assessment)
+            predictions["BioPhysics HCLM-guarded"]=controlled
+            per_method["BioPhysics HCLM-guarded"]=controlled_meta
             per_method["BioPhysics safe TRAIN"]=[dict(
                 selected_expert=chosen,train_objectives=training_assessment,
                 selection_uses_test_labels=False)]*3
