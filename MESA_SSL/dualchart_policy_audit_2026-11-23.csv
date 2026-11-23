@@ -1,0 +1,15 @@
+dataset,seed,expert_clean,expert_affine,expert_jitter,morph_alpha,affine_alpha,morph_alarm_clean,morph_alarm_affine,morph_alarm_jitter,affine_alarm_affine
+"Car",2602,"Canonical MultiRocket","Canonical MultiRocket","MESA learned-only",0.1,0.05,0.016666666666666666,0.016666666666666666,1,0.9666666666666667
+"BirdChicken",2601,"Canonical MultiRocket","Canonical MultiRocket","MESA learned-only",0.2,0.05,0.2,0.2,1,0
+"Lightning7",2602,"MESA dual-path hybrid","MESA dual-path hybrid","MESA learned-only",0.3,0.05,0.3013698630136986,0.3013698630136986,0.3013698630136986,0.9452054794520548
+"SyntheticControl",2602,"Dual MultiRocket","Dual MultiRocket","Dual MultiRocket",0.1,0.05,0.08666666666666667,0.08666666666666667,0.08,0.95
+"GunPoint",2601,"Dual MultiRocket","Dual MultiRocket","Canonical MultiRocket",0.1,0.05,0.06,0.06,0.12,0.8133333333333334
+"GunPoint",2602,"Canonical MultiRocket","Canonical MultiRocket","MESA dual-path hybrid",0.2,0.05,0.17333333333333334,0.17333333333333334,0.4866666666666667,0.8533333333333334
+"Fish",2602,"Canonical MultiRocket","Canonical MultiRocket","MESA learned-only",0.1,0.05,0.07428571428571429,0.07428571428571429,1,0.9771428571428571
+"Ham",2601,"Canonical MultiRocket","Canonical MultiRocket","MESA dual-path hybrid",0.1,0.05,0.1523809523809524,0.1523809523809524,1,0.9809523809523809
+"Car",2601,"MESA dual-path hybrid","Dual MultiRocket","MESA learned-only",0.1,0.05,0.15,0.15,1,1
+"Fish",2601,"Canonical MultiRocket","Canonical MultiRocket","MESA learned-only",0.1,0.05,0.06285714285714286,0.06285714285714286,1,0.9885714285714285
+"SyntheticControl",2601,"Dual MultiRocket","MESA dual-path hybrid","Raw MultiRocket",0.1,0.05,0.08,0.08,0.07,0.97
+"BirdChicken",2602,"Canonical MultiRocket","Dual MultiRocket","MESA learned-only",0.2,0.2,0.2,0.2,1,0.95
+"Lightning7",2601,"Dual MultiRocket","MESA dual-path hybrid","MESA dual-path hybrid",0.1,0.05,0.0273972602739726,0.0273972602739726,0.0273972602739726,0.9452054794520548
+"Ham",2602,"Canonical MultiRocket","Canonical MultiRocket","Canonical MultiRocket",0.1,0.05,0.14285714285714285,0.14285714285714285,1,0.9809523809523809
