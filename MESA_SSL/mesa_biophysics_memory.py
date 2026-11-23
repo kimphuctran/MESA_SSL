@@ -50,6 +50,7 @@ METHODS=(
     "BioPhysics no context",
     "BioPhysics full",
     "BioPhysics safe TRAIN",
+    "BioPhysics risk-gated",
     "Raw MR ridge",
 )
 BUDGETS=(1,3,5)
@@ -375,6 +376,76 @@ def choose_meta_controller(views,support,y,classes,train_charts,p_surprise,budge
                        scored_candidates=score,leakage_guard=True)
 
 
+
+
+def conditioned_episodic_policy(predictions,charts,budget,assessment):
+    """Three-state metaplastic memory routing with a clean-data safeguard.
+
+    This is a predefined interpretation of a nuisance monitor, NOT a
+    TEST-oracle. Only TRAIN LOO classification can choose expert names
+    (for >=3 labels/class). Chart p-values come from unlabeled TRAIN
+    calibrations. The sample's latent state is a clean/affine/waveform
+    nuisance indicator, not a true physical causal classification.
+    """
+    methods={
+      "clean":["Raw MR episodic","Canonical MR episodic","Dual MR episodic"],
+      "affine":["Canonical MR episodic","Dual MR episodic",
+                "NeuroMem prior","BioPhysics no physics"],
+      "wave":["Slow cortex episodic","BioPhysics no physics",
+              "NeuroMem prior","BioPhysics no Hopfield",
+              "Dual MR episodic"]
+    }
+    if budget<3:
+        named=dict(clean="Dual MR episodic",affine="Canonical MR episodic",
+                   wave="Slow cortex episodic")
+        evidence="Fixed 1-shot fallback: no class-preserving LOO possible"
+    else:
+        scores=assessment.get("scored_candidates",{})
+        axes={"clean":0,"affine":1,"wave":2}
+        names={}
+        for mode,ix in axes.items():
+            allowed=[k for k in methods[mode] if k in scores]
+            if not allowed:raise AssertionError("Missing eligible policy experts")
+            def utility(name):
+                cv=scores[name]["cv_macro_f1"][ix]
+                complexity=.012 if name in (
+                    "NeuroMem prior","BioPhysics no physics",
+                    "BioPhysics no Hopfield") else 0.
+                return cv-complexity
+            candidate=max(allowed,key=lambda k:(utility(k),-allowed.index(k)))
+            # Under limited labels require positive TRAIN evidence before
+            # switching away from the simple two-source episodic reference.
+            anchor="Dual MR episodic"
+            if candidate!=anchor and utility(candidate)<utility(anchor)+.020:
+                candidate=anchor
+            names[mode]=candidate
+        named=names
+        evidence="TRAIN leave-one-episode-out per-nuisance expert screening"
+    outputs=[]
+    diagnostics=[]
+    for j,(pa,pm) in enumerate(charts):
+        def prob(k):
+            x=predictions[k][j]
+            if k.startswith("BioPhysics") or k=="NeuroMem prior":
+                return x
+            return softmax_class(x)
+        clean=prob(named["clean"])
+        affine=prob(named["affine"])
+        wave=prob(named["wave"])
+        # The waveform alarm takes priority because it is poorly detected
+        # by the affine chart; clean usually preserves a strong raw path.
+        chosen=np.where((pm<=.10)[:,None],wave,
+                np.where((pa<=.10)[:,None],affine,clean))
+        outputs.append(chosen)
+        diagnostics.append(dict(experts=named,
+             rationale=evidence,
+             affine_alarm_rate=float(np.mean(pa<=.10)),
+             morphology_alarm_rate=float(np.mean(pm<=.10)),
+             declared_thresholds={"affine":.10,"morphology":.10},
+             references_selected_only_on_train=True))
+    return outputs,diagnostics
+
+
 def numerical_contracts():
     rng=np.random.default_rng(2004)
     x=rng.normal(size=(10,80,3)).astype("float32")
@@ -439,7 +510,7 @@ def run(args):
               "Raw MR ridge":ridge}
             per_method={}
             for name in METHODS:
-                if name in predictions or name=="BioPhysics safe TRAIN":continue
+                if name in predictions or name in ("BioPhysics safe TRAIN","BioPhysics risk-gated"):continue
                 s=[];metadata=[]
                 for mode in range(3):
                     branch=[
@@ -475,6 +546,10 @@ def run(args):
                 views,idx,y,classes,slow["charts"][:3],surprise_p[:3],
                 budget)
             predictions["BioPhysics safe TRAIN"]=predictions[chosen]
+            conditional,conditional_meta=conditioned_episodic_policy(
+                predictions,slow["charts"][3:],budget,training_assessment)
+            predictions["BioPhysics risk-gated"]=conditional
+            per_method["BioPhysics risk-gated"]=[conditional_meta]*3
             per_method["BioPhysics safe TRAIN"]=[dict(
                 selected_expert=chosen,train_objectives=training_assessment,
                 selection_uses_test_labels=False)]*3
