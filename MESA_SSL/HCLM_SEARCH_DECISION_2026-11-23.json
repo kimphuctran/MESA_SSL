@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-23",
+  "purpose": "HCLM governs the assistant's research search and experimentation, NOT an internal neural layer",
+  "governance_workflow": "https://github.com/kimphuctran/MESA_SSL/actions/runs/45283247551",
+  "archived_evidence_run": "https://github.com/kimphuctran/MESA_SSL/actions/runs/45280823062",
+  "research_scope": "4 tasks 2 paired seeds, already evaluated and now development evidence",
+  "budget_decisions": [
+    {
+      "budget": 1,
+      "action": "RUN_SANDBOX",
+      "next_experiment": "AFFINE_FALLBACK_CALIBRATION",
+      "priority_per_cost": 1.7946931114823967,
+      "failure_entries_integrated": 16,
+      "paired_effects": {
+        "clean_macro_f1": {
+          "mean": -0.014584372570976278,
+          "exploratory_lower": -0.04174000061956552,
+          "exploratory_upper": 0.007802527971604289
+        },
+        "affine_macro_f1": {
+          "mean": -0.023448095411852388,
+          "exploratory_lower": -0.046433048787609996,
+          "exploratory_upper": -0.00005026129055928086
+        },
+        "jitter_macro_f1": {
+          "mean": 0.0952090434793845,
+          "exploratory_lower": -0.031410034946900534,
+          "exploratory_upper": 0.24270145248188757
+        }
+      },
+      "blockers": [
+        "insufficient untouched independent datasets",
+        "insufficient independent paired seeds",
+        "mean clean Macro-F1 non-inferiority failed",
+        "mean affine Macro-F1 non-inferiority failed",
+        "exploratory jitter gain interval crosses zero",
+        "at least one dataset exceeds allowed clean degradation",
+        "at least one dataset exceeds allowed affine degradation",
+        "full-strength matched baselines missing: MOMENT, MultiRocket full, TS2Vec, TimeMAE"
+      ],
+      "permission_scope": "RESEARCH_SANDBOX_ONLY",
+      "audit_sha256": "53aea86fbf07bc729dce5808c8760d43f16e3228da56ca0099d552415a9de61f"
+    },
+    {
+      "budget": 3,
+      "action": "RUN_SANDBOX",
+      "next_experiment": "AFFINE_FALLBACK_CALIBRATION",
+      "priority_per_cost": 1.8457421426575433,
+      "failure_entries_integrated": 16,
+      "paired_effects": {
+        "clean_macro_f1": {
+          "mean": -0.008563226490821314,
+          "exploratory_lower": -0.01626708179631764,
+          "exploratory_upper": -0.00023450478176662015
+        },
+        "affine_macro_f1": {
+          "mean": -0.027489266330104407,
+          "exploratory_lower": -0.06190151717496656,
+          "exploratory_upper": 0.002764440479907586
+        },
+        "jitter_macro_f1": {
+          "mean": 0.12718544419006877,
+          "exploratory_lower": -0.007207849680298931,
+          "exploratory_upper": 0.26919791473170507
+        }
+      },
+      "blockers": [
+        "insufficient untouched independent datasets",
+        "insufficient independent paired seeds",
+        "mean affine Macro-F1 non-inferiority failed",
+        "exploratory jitter gain interval crosses zero",
+        "at least one dataset exceeds allowed affine degradation",
+        "full-strength matched baselines missing: MOMENT, MultiRocket full, TS2Vec, TimeMAE"
+      ],
+      "permission_scope": "RESEARCH_SANDBOX_ONLY",
+      "audit_sha256": "7aa90fe775f53bd59f2bb68700b83336ab7e5c18804f2e6ed75f07177c1423a1"
+    },
+    {
+      "budget": 5,
+      "action": "RUN_SANDBOX",
+      "next_experiment": "AFFINE_FALLBACK_CALIBRATION",
+      "priority_per_cost": 1.8153891740567085,
+      "failure_entries_integrated": 16,
+      "paired_effects": {
+        "clean_macro_f1": {
+          "mean": -0.009551193134588992,
+          "exploratory_lower": -0.022810531034294812,
+          "exploratory_upper": 0.0012979433951628427
+        },
+        "affine_macro_f1": {
+          "mean": -0.0270320677268414,
+          "exploratory_lower": -0.07878328356300704,
+          "exploratory_upper": 0.00027709836525766085
+        },
+        "jitter_macro_f1": {
+          "mean": 0.13491279233721543,
+          "exploratory_lower": 0.0006528014474157517,
+          "exploratory_upper": 0.2764549240936971
+        }
+      },
+      "blockers": [
+        "insufficient untouched independent datasets",
+        "insufficient independent paired seeds",
+        "mean affine Macro-F1 non-inferiority failed",
+        "at least one dataset exceeds allowed affine degradation",
+        "full-strength matched baselines missing: MOMENT, MultiRocket full, TS2Vec, TimeMAE"
+      ],
+      "permission_scope": "RESEARCH_SANDBOX_ONLY",
+      "audit_sha256": "e72f3d49cf09ba5f178fb262fcfa30d2e1adc64a0357a9a703deb49b25db8584"
+    }
+  ]
+}
