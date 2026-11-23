@@ -439,7 +439,7 @@ def run(args):
               "Raw MR ridge":ridge}
             per_method={}
             for name in METHODS:
-                if name in predictions:continue
+                if name in predictions or name=="BioPhysics safe TRAIN":continue
                 s=[];metadata=[]
                 for mode in range(3):
                     branch=[
