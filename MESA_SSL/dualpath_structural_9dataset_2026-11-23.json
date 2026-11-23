@@ -1,0 +1,5053 @@
+{
+  "research_date": "2026-11-23",
+  "repository": "kimphuctran/MESA_SSL",
+  "branch": "mesa-dualpath-structural-2026",
+  "run_id": 45270021456,
+  "experiment_commit": "c40b0ddc7690ed3ae0b1ca07018af5cdea64ddda",
+  "protocol": "9 official UCR/UEA datasets, two seeds, 5 labeled TRAIN cases/class, 12 SSL epochs, test metrics reported only after train-only model selection; five development tasks and four previously unused tasks",
+  "development": [
+    "GunPoint",
+    "ItalyPowerDemand",
+    "BasicMotions",
+    "CBF",
+    "SyntheticControl"
+  ],
+  "new_holdout": [
+    "Wine",
+    "Fish",
+    "OSULeaf",
+    "Earthquakes"
+  ],
+  "job_index": [
+    {
+      "name": "benchmark (GunPoint, 2601)",
+      "id": 138027043362,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Wine, 2602)",
+      "id": 138027043586,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (BasicMotions, 2602)",
+      "id": 138027043601,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Fish, 2601)",
+      "id": 138027043618,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (GunPoint, 2602)",
+      "id": 138027043698,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (BasicMotions, 2601)",
+      "id": 138027043738,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (ItalyPowerDemand, 2601)",
+      "id": 138027043745,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Wine, 2601)",
+      "id": 138027043751,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (SyntheticControl, 2601)",
+      "id": 138027043772,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (CBF, 2602)",
+      "id": 138027043811,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (SyntheticControl, 2602)",
+      "id": 138027043836,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (ItalyPowerDemand, 2602)",
+      "id": 138027043862,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Fish, 2602)",
+      "id": 138027044054,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (CBF, 2601)",
+      "id": 138027044157,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Earthquakes, 2601)",
+      "id": 138027046301,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (OSULeaf, 2601)",
+      "id": 138027046306,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (OSULeaf, 2602)",
+      "id": 138027046308,
+      "conclusion": "success"
+    },
+    {
+      "name": "benchmark (Earthquakes, 2602)",
+      "id": 138027046373,
+      "conclusion": "success"
+    }
+  ],
+  "records": [
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.56,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.8581783800819414,
+      "affine_macro_f1": 0.8581783800819414,
+      "jitter_macro_f1": 0.7329460269865067,
+      "accuracy": 0.86,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8152777777777778,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.898989898989899
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.56,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.56,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.752794975724912,
+      "affine_macro_f1": 0.625,
+      "jitter_macro_f1": 0.6928418803418803,
+      "accuracy": 0.7533333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8546262626262626,
+      "train_cv_f1": [
+        1,
+        0.696969696969697,
+        0.898989898989899
+      ],
+      "weights": {
+        "generic_raw": 1,
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.57,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.7459440185416295,
+      "affine_macro_f1": 0.5531545951714019,
+      "jitter_macro_f1": 0.7265572895824997,
+      "accuracy": 0.7466666666666667,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8937777777777778,
+      "train_cv_f1": [
+        1,
+        0.8,
+        0.898989898989899
+      ],
+      "weights": {
+        "mesa_raw": 1,
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.57,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.57,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.58,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          1,
+          0.898989898989899,
+          0.898989898989899
+        ],
+        "reference_n_cal": 20,
+        "test_alarm_rate": [
+          0.02666666666666667,
+          0.8133333333333334,
+          0.02666666666666667
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.58,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.8716852010265184,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.8733333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2805834114551544,
+        "mesa": 0.1766263097524643
+      },
+      "runtime_seconds": 20.58,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.7403846153846154,
+      "affine_macro_f1": 0.4807692307692308,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.7407407407407407,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.542,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.4,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.83,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.7591766723842196,
+      "affine_macro_f1": 0.7591766723842196,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.7592592592592593,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6908333333333334,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.84,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.7591766723842196,
+      "affine_macro_f1": 0.7591766723842196,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.7592592592592593,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6908333333333334,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.84,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.5455820476858345,
+      "affine_macro_f1": 0.5455820476858345,
+      "jitter_macro_f1": 0.5561643835616439,
+      "accuracy": 0.5555555555555556,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.5961904761904763,
+      "train_cv_f1": [
+        0.6703296703296704,
+        0.6703296703296704,
+        0.3333333333333333
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.85,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.5727554179566563,
+      "affine_macro_f1": 0.46277873070325903,
+      "jitter_macro_f1": 0.5330335524040124,
+      "accuracy": 0.5740740740740741,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6136363636363636,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.4949494949494949,
+        0.4949494949494949
+      ],
+      "weights": {
+        "mesa_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.86,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.7591766723842196,
+      "affine_macro_f1": 0.7591766723842196,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.7592592592592593,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6908333333333334,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.86,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.7591766723842196,
+      "affine_macro_f1": 0.7591766723842196,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.7592592592592593,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6908333333333334,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.87,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.7403846153846154,
+      "affine_macro_f1": 0.7591766723842196,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.7407407407407407,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 1,
+        "cv_f1": [
+          0.7916666666666667,
+          0.7916666666666667,
+          0.3333333333333333
+        ],
+        "reference_n_cal": 23,
+        "test_alarm_rate": [
+          0,
+          1,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.87,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.7591766723842196,
+      "affine_macro_f1": 0.7591766723842196,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.7592592592592593,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18753693997859955,
+        "mesa": 0.040062692016363144
+      },
+      "runtime_seconds": 29.88,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.9888888888888889,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9494949494949495
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.12,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 0.761904761904762,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.9082251082251083,
+      "train_cv_f1": [
+        0.9494949494949495,
+        0.9494949494949495,
+        0.761904761904762
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.12,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.9888888888888889,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9494949494949495
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.13,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.950956937799043,
+      "affine_macro_f1": 0.729384341149047,
+      "jitter_macro_f1": 0.950956937799043,
+      "accuracy": 0.95,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.8934949494949495,
+      "train_cv_f1": [
+        0.9494949494949495,
+        0.793939393939394,
+        1
+      ],
+      "weights": {
+        "generic_raw": 1,
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.14,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.950956937799043,
+      "affine_macro_f1": 0.6184085841694538,
+      "jitter_macro_f1": 0.950956937799043,
+      "accuracy": 0.95,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.8696731601731602,
+      "train_cv_f1": [
+        1,
+        0.657034632034632,
+        1
+      ],
+      "weights": {
+        "mesa_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.14,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.9888888888888889,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9494949494949495
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.15,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.9888888888888889,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9494949494949495
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.15,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          1,
+          1,
+          0.9494949494949495
+        ],
+        "reference_n_cal": 16,
+        "test_alarm_rate": [
+          0,
+          0,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.16,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.929110586643219,
+        "mesa": 0.7977321147918701
+      },
+      "runtime_seconds": 39.17,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.7819766725432179,
+      "affine_macro_f1": 0.7464044360823152,
+      "jitter_macro_f1": 0.03190717911530094,
+      "accuracy": 0.8057142857142857,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.6778354978354979,
+      "train_cv_f1": [
+        0.874025974025974,
+        0.8430735930735931,
+        0.03571428571428571
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.8137089282327586,
+      "affine_macro_f1": 0.8137089282327586,
+      "jitter_macro_f1": 0.03190717911530094,
+      "accuracy": 0.8285714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.6895974025974027,
+      "train_cv_f1": [
+        0.874025974025974,
+        0.874025974025974,
+        0.03571428571428571
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.01,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.8137089282327586,
+      "affine_macro_f1": 0.8137089282327586,
+      "jitter_macro_f1": 0.03190717911530094,
+      "accuracy": 0.8285714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.6895974025974027,
+      "train_cv_f1": [
+        0.874025974025974,
+        0.874025974025974,
+        0.03571428571428571
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.01,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.5282813463814747,
+      "affine_macro_f1": 0.5282813463814747,
+      "jitter_macro_f1": 0.4524152299775113,
+      "accuracy": 0.5485714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.4592925170068028,
+      "train_cv_f1": [
+        0.4634920634920635,
+        0.4634920634920635,
+        0.4444032158317873
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.01,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.5282813463814747,
+      "affine_macro_f1": 0.5282813463814747,
+      "jitter_macro_f1": 0.4524152299775113,
+      "accuracy": 0.5485714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.4592925170068028,
+      "train_cv_f1": [
+        0.4634920634920635,
+        0.4634920634920635,
+        0.4444032158317873
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.02,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.8137089282327586,
+      "affine_macro_f1": 0.8137089282327586,
+      "jitter_macro_f1": 0.03190717911530094,
+      "accuracy": 0.8285714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.6895974025974027,
+      "train_cv_f1": [
+        0.874025974025974,
+        0.874025974025974,
+        0.03571428571428571
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.02,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.8137089282327586,
+      "affine_macro_f1": 0.8137089282327586,
+      "jitter_macro_f1": 0.03190717911530094,
+      "accuracy": 0.8285714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.6895974025974027,
+      "train_cv_f1": [
+        0.874025974025974,
+        0.874025974025974,
+        0.03571428571428571
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.03,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.7819766725432179,
+      "affine_macro_f1": 0.8077354330177784,
+      "jitter_macro_f1": 0.03190717911530094,
+      "accuracy": 0.8057142857142857,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          0.874025974025974,
+          0.874025974025974,
+          0.03571428571428571
+        ],
+        "reference_n_cal": 70,
+        "test_alarm_rate": [
+          0.011428571428571429,
+          0.9885714285714285,
+          0.011428571428571429
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.03,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.8137089282327586,
+      "affine_macro_f1": 0.8137089282327586,
+      "jitter_macro_f1": 0.03190717911530094,
+      "accuracy": 0.8285714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20891328155994415,
+        "mesa": 0.0598427876830101
+      },
+      "runtime_seconds": 40.03,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9532814238042269,
+      "affine_macro_f1": 0.8139727159983464,
+      "jitter_macro_f1": 0.47089947089947093,
+      "accuracy": 0.9533333333333334,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8890886890886891,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.6703296703296704
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.62,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.9399332591768632,
+      "affine_macro_f1": 0.9399332591768632,
+      "jitter_macro_f1": 0.3936243936243936,
+      "accuracy": 0.94,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8533333333333334,
+      "train_cv_f1": [
+        1,
+        1,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.63,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9532814238042269,
+      "affine_macro_f1": 0.8258928571428572,
+      "jitter_macro_f1": 0.4586641496863028,
+      "accuracy": 0.9533333333333334,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9114725274725275,
+      "train_cv_f1": [
+        1,
+        1,
+        0.6703296703296704
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "stats": 0.05
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.63,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.6052455506490031,
+      "affine_macro_f1": 0.5199146514935988,
+      "jitter_macro_f1": 0.5499529801621066,
+      "accuracy": 0.6066666666666667,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7827878787878788,
+      "train_cv_f1": [
+        0.696969696969697,
+        1,
+        0.6
+      ],
+      "weights": {
+        "generic_shape": 1,
+        "stats": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.63,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.6052455506490031,
+      "affine_macro_f1": 0.5199146514935988,
+      "jitter_macro_f1": 0.5499529801621066,
+      "accuracy": 0.6066666666666667,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.7827878787878788,
+      "train_cv_f1": [
+        0.696969696969697,
+        1,
+        0.6
+      ],
+      "weights": {
+        "mesa_shape": 1,
+        "stats": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.64,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.933143162774113,
+      "affine_macro_f1": 0.7664071190211346,
+      "jitter_macro_f1": 0.5238095238095238,
+      "accuracy": 0.9333333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9221666666666667,
+      "train_cv_f1": [
+        1,
+        1,
+        0.7916666666666667
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "generic_raw": 0.5,
+        "generic_shape": 0.5,
+        "stats": 0.08
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.64,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.933143162774113,
+      "affine_macro_f1": 0.753234627184207,
+      "jitter_macro_f1": 0.5346758504653242,
+      "accuracy": 0.9333333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9221666666666667,
+      "train_cv_f1": [
+        1,
+        1,
+        0.7916666666666667
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "mesa_raw": 0.5,
+        "mesa_shape": 0.5,
+        "stats": 0.08
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.65,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9532814238042269,
+      "affine_macro_f1": 0.8311647381927874,
+      "jitter_macro_f1": 0.47089947089947093,
+      "accuracy": 0.9533333333333334,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          1,
+          1,
+          0.6703296703296704
+        ],
+        "reference_n_cal": 20,
+        "test_alarm_rate": [
+          0.02666666666666667,
+          0.8533333333333334,
+          0.02666666666666667
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.65,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.933143162774113,
+      "affine_macro_f1": 0.7664071190211346,
+      "jitter_macro_f1": 0.5238095238095238,
+      "accuracy": 0.9333333333333333,
+      "n_train": 50,
+      "n_test": 150,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Generic dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21743886172771454,
+        "mesa": 0.16103364527225494
+      },
+      "runtime_seconds": 23.65,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 0.8958333333333334,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.9770833333333333,
+      "train_cv_f1": [
+        1,
+        1,
+        0.8958333333333334
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.26,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 0.761904761904762,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.9637362637362638,
+      "train_cv_f1": [
+        1,
+        1,
+        0.8351648351648351
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.27,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.992,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.27,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9261278195488721,
+      "affine_macro_f1": 0.8492063492063492,
+      "jitter_macro_f1": 0.899812030075188,
+      "accuracy": 0.925,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.8834949494949496,
+      "train_cv_f1": [
+        0.8994949494949496,
+        0.8494949494949495,
+        0.9494949494949495
+      ],
+      "weights": {
+        "generic_shape": 1,
+        "stats": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.27,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9261278195488721,
+      "affine_macro_f1": 0.8492063492063492,
+      "jitter_macro_f1": 0.899812030075188,
+      "accuracy": 0.925,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.8834949494949496,
+      "train_cv_f1": [
+        0.8994949494949496,
+        0.8494949494949495,
+        0.9494949494949495
+      ],
+      "weights": {
+        "mesa_shape": 1,
+        "stats": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.28,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.992,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.28,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": 0.992,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.28,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 0.8958333333333334,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          1,
+          1,
+          0.8958333333333334
+        ],
+        "reference_n_cal": 16,
+        "test_alarm_rate": [
+          0,
+          0,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.28,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 1,
+      "accuracy": 1,
+      "n_train": 40,
+      "n_test": 40,
+      "n_labeled": 20,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.9045816659927368,
+        "mesa": 0.7779073119163513
+      },
+      "runtime_seconds": 27.29,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9465104431991849,
+      "affine_macro_f1": 0.893099996222281,
+      "jitter_macro_f1": 0.9416309305016677,
+      "accuracy": 0.9465500485908649,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9212121212121213,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.4,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.9406381898189611,
+      "affine_macro_f1": 0.9406381898189611,
+      "jitter_macro_f1": 0.938700480830603,
+      "accuracy": 0.9407191448007775,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.4,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9406381898189611,
+      "affine_macro_f1": 0.9406381898189611,
+      "jitter_macro_f1": 0.938700480830603,
+      "accuracy": 0.9407191448007775,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.4,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9026320570468274,
+      "affine_macro_f1": 0.9026320570468274,
+      "jitter_macro_f1": 0.8948243096934411,
+      "accuracy": 0.902818270165209,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.41,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9026320570468274,
+      "affine_macro_f1": 0.9026320570468274,
+      "jitter_macro_f1": 0.8948243096934411,
+      "accuracy": 0.902818270165209,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.41,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.9406381898189611,
+      "affine_macro_f1": 0.9406381898189611,
+      "jitter_macro_f1": 0.938700480830603,
+      "accuracy": 0.9407191448007775,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.42,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.9406381898189611,
+      "affine_macro_f1": 0.9406381898189611,
+      "jitter_macro_f1": 0.938700480830603,
+      "accuracy": 0.9407191448007775,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.42,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9465104431991849,
+      "affine_macro_f1": 0.9299941794102307,
+      "jitter_macro_f1": 0.9416309305016677,
+      "accuracy": 0.9465500485908649,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          0.898989898989899,
+          1,
+          1
+        ],
+        "reference_n_cal": 27,
+        "test_alarm_rate": [
+          0.011661807580174927,
+          0.9407191448007775,
+          0.012633624878522837
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.42,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.9406381898189611,
+      "affine_macro_f1": 0.9406381898189611,
+      "jitter_macro_f1": 0.938700480830603,
+      "accuracy": 0.9407191448007775,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.49897509813308716,
+        "mesa": 0.09856445342302322
+      },
+      "runtime_seconds": 25.43,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.578125,
+      "affine_macro_f1": 0.3836042891732964,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.5925925925925926,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.5402020202020202,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.4949494949494949,
+        0.3333333333333333
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.35,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.6715563506261181,
+      "affine_macro_f1": 0.6715563506261181,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.6851851851851852,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6169696969696971,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.696969696969697,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.6715563506261181,
+      "affine_macro_f1": 0.6715563506261181,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.6851851851851852,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6169696969696971,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.696969696969697,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.642134635507499,
+      "affine_macro_f1": 0.642134635507499,
+      "jitter_macro_f1": 0.3338815789473684,
+      "accuracy": 0.6481481481481481,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6803571428571429,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.2857142857142857
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.36,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.642134635507499,
+      "affine_macro_f1": 0.642134635507499,
+      "jitter_macro_f1": 0.3338815789473684,
+      "accuracy": 0.6481481481481481,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6803571428571429,
+      "train_cv_f1": [
+        0.7916666666666667,
+        0.7916666666666667,
+        0.2857142857142857
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.6715563506261181,
+      "affine_macro_f1": 0.6715563506261181,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.6851851851851852,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6169696969696971,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.696969696969697,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.6715563506261181,
+      "affine_macro_f1": 0.6715563506261181,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.6851851851851852,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": 0.6169696969696971,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.696969696969697,
+        0.3333333333333333
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.37,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.578125,
+      "affine_macro_f1": 0.6715563506261181,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.5925925925925926,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 1,
+        "cv_f1": [
+          0.696969696969697,
+          0.696969696969697,
+          0.3333333333333333
+        ],
+        "reference_n_cal": 23,
+        "test_alarm_rate": [
+          0,
+          1,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.38,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Wine",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.6715563506261181,
+      "affine_macro_f1": 0.6715563506261181,
+      "jitter_macro_f1": 0.3333333333333333,
+      "accuracy": 0.6851851851851852,
+      "n_train": 57,
+      "n_test": 54,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.20486176013946533,
+        "mesa": 0.03366933763027191
+      },
+      "runtime_seconds": 21.38,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9327975115258536,
+      "affine_macro_f1": 0.8635921268633853,
+      "jitter_macro_f1": 0.9256393764873487,
+      "accuracy": 0.9333333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9611986531986532,
+      "train_cv_f1": [
+        0.9663299663299663,
+        0.9333333333333332,
+        1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.16,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.6490958177148423,
+      "affine_macro_f1": 0.6490958177148423,
+      "jitter_macro_f1": 0.6423339083579798,
+      "accuracy": 0.6533333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.6798888888888889,
+      "train_cv_f1": [
+        0.6722222222222222,
+        0.6722222222222222,
+        0.7070707070707071
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.17,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9702598834090762,
+      "affine_macro_f1": 0.9633714379222479,
+      "jitter_macro_f1": 0.9670382028440195,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9717979797979799,
+      "train_cv_f1": [
+        1,
+        0.9663299663299663,
+        0.9663299663299664
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.17,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9699929976991296,
+      "affine_macro_f1": 0.551355195490886,
+      "jitter_macro_f1": 0.9666633329999667,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9076236726236726,
+      "train_cv_f1": [
+        0.9663299663299663,
+        0.7923465423465424,
+        1
+      ],
+      "weights": {
+        "generic_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.17,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9566451833258557,
+      "affine_macro_f1": 0.6651938110024979,
+      "jitter_macro_f1": 0.9268881309322485,
+      "accuracy": 0.9566666666666667,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9189074074074075,
+      "train_cv_f1": [
+        1,
+        0.8287037037037038,
+        1
+      ],
+      "weights": {
+        "mesa_raw": 1,
+        "mesa_shape": 1,
+        "stats": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.18,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.9833313527431174,
+      "affine_macro_f1": 0.9600063607416548,
+      "jitter_macro_f1": 0.97680682227701,
+      "accuracy": 0.9833333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9765925925925927,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9663299663299664
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "generic_raw": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.18,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.9767179326973142,
+      "affine_macro_f1": 0.953308754170131,
+      "jitter_macro_f1": 0.973474509453891,
+      "accuracy": 0.9766666666666667,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.9765925925925927,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9663299663299664
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 1,
+        "mesa_raw": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.18,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9327975115258536,
+      "affine_macro_f1": 0.9159810171533724,
+      "jitter_macro_f1": 0.9256393764873487,
+      "accuracy": 0.9333333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          0.9663299663299663,
+          0.9663299663299663,
+          1
+        ],
+        "reference_n_cal": 120,
+        "test_alarm_rate": [
+          0.04666666666666667,
+          0.97,
+          0.06333333333333334
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.19,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.9833313527431174,
+      "affine_macro_f1": 0.9600063607416548,
+      "jitter_macro_f1": 0.97680682227701,
+      "accuracy": 0.9833333333333333,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Generic dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.7520791292190552,
+        "mesa": 0.09558680653572083
+      },
+      "runtime_seconds": 25.19,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9922310211452859,
+      "affine_macro_f1": 0.9316607068445891,
+      "jitter_macro_f1": 0.9911390774778753,
+      "accuracy": 0.9922222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.4,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.9424981591813294,
+      "affine_macro_f1": 0.9424981591813294,
+      "jitter_macro_f1": 0.9303300822390524,
+      "accuracy": 0.9422222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.8811851851851853,
+      "train_cv_f1": [
+        0.8666666666666667,
+        0.8666666666666667,
+        0.9326599326599326
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.4,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9922310211452859,
+      "affine_macro_f1": 0.9316607068445891,
+      "jitter_macro_f1": 0.9911390774778753,
+      "accuracy": 0.9922222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.41,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9422919763408893,
+      "affine_macro_f1": 0.6521165687153375,
+      "jitter_macro_f1": 0.9422919763408893,
+      "accuracy": 0.9422222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.9014814814814814,
+      "train_cv_f1": [
+        1,
+        0.7407407407407406,
+        1
+      ],
+      "weights": {
+        "generic_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.41,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9501145285363245,
+      "affine_macro_f1": 0.6383957918229272,
+      "jitter_macro_f1": 0.9446999457059819,
+      "accuracy": 0.95,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.9014814814814814,
+      "train_cv_f1": [
+        1,
+        0.7407407407407406,
+        1
+      ],
+      "weights": {
+        "mesa_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.41,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.9922310211452859,
+      "affine_macro_f1": 0.9316607068445891,
+      "jitter_macro_f1": 0.9911390774778753,
+      "accuracy": 0.9922222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.42,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.9922310211452859,
+      "affine_macro_f1": 0.9316607068445891,
+      "jitter_macro_f1": 0.9911390774778753,
+      "accuracy": 0.9922222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.42,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9922310211452859,
+      "affine_macro_f1": 0.9316607068445891,
+      "jitter_macro_f1": 0.9911390774778753,
+      "accuracy": 0.9922222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          1,
+          1,
+          1
+        ],
+        "reference_n_cal": 12,
+        "test_alarm_rate": [
+          0,
+          0,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.42,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.9922310211452859,
+      "affine_macro_f1": 0.9316607068445891,
+      "jitter_macro_f1": 0.9911390774778753,
+      "accuracy": 0.9922222222222222,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.3906472623348236,
+        "mesa": 0.2700892686843872
+      },
+      "runtime_seconds": 21.43,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9291749967374474,
+      "affine_macro_f1": 0.8680861832065342,
+      "jitter_macro_f1": 0.9154778418420827,
+      "accuracy": 0.93,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.6668983238983239,
+      "train_cv_f1": [
+        0.6418951418951419,
+        0.6823657823657824,
+        0.6856421356421357
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.24,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.5951149917244299,
+      "affine_macro_f1": 0.5951149917244299,
+      "jitter_macro_f1": 0.5955186692886526,
+      "accuracy": 0.5966666666666667,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.597,
+      "train_cv_f1": [
+        0.6055555555555555,
+        0.6055555555555555,
+        0.5666666666666667
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.24,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.898750841750842,
+      "train_cv_f1": [
+        0.9326599326599329,
+        0.8644781144781145,
+        0.9326599326599329
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.25,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9298746867167919,
+      "affine_macro_f1": 0.7655400759659604,
+      "jitter_macro_f1": 0.9265550615211896,
+      "accuracy": 0.93,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.7893097643097643,
+      "train_cv_f1": [
+        0.896885521885522,
+        0.6722222222222222,
+        0.8323232323232324
+      ],
+      "weights": {
+        "generic_raw": 1,
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.25,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9395959595959598,
+      "affine_macro_f1": 0.794644078400621,
+      "jitter_macro_f1": 0.9195551245945851,
+      "accuracy": 0.94,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.7933020683020683,
+      "train_cv_f1": [
+        0.8613636363636363,
+        0.7033068783068783,
+        0.8613636363636363
+      ],
+      "weights": {
+        "mesa_raw": 1,
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.26,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.898750841750842,
+      "train_cv_f1": [
+        0.9326599326599329,
+        0.8644781144781145,
+        0.9326599326599329
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.26,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": 0.898750841750842,
+      "train_cv_f1": [
+        0.9326599326599329,
+        0.8644781144781145,
+        0.9326599326599329
+      ],
+      "weights": {
+        "rawMR": 0.5,
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.26,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9427455759259704,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9361266226294752,
+      "accuracy": 0.9433333333333334,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.2,
+        "strength": 1,
+        "cv_f1": [
+          0.6877104377104377,
+          0.8644781144781145,
+          0.7596801346801346
+        ],
+        "reference_n_cal": 120,
+        "test_alarm_rate": [
+          0.2733333333333333,
+          0.9533333333333334,
+          0.29333333333333333
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.27,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.9700700661271681,
+      "affine_macro_f1": 0.9533340911882019,
+      "jitter_macro_f1": 0.9735508983467601,
+      "accuracy": 0.97,
+      "n_train": 300,
+      "n_test": 300,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6903818845748901,
+        "mesa": 0.0902075469493866
+      },
+      "runtime_seconds": 28.27,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9630709077858789,
+      "affine_macro_f1": 0.9232029339160354,
+      "jitter_macro_f1": 0.9562667346678567,
+      "accuracy": 0.9630709426627794,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 0.9393939393939394,
+      "train_cv_f1": [
+        1,
+        0.898989898989899,
+        0.898989898989899
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.73,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.965986266063615,
+      "affine_macro_f1": 0.965986266063615,
+      "jitter_macro_f1": 0.9562680563675051,
+      "accuracy": 0.9659863945578231,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.74,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.965986266063615,
+      "affine_macro_f1": 0.965986266063615,
+      "jitter_macro_f1": 0.9562680563675051,
+      "accuracy": 0.9659863945578231,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.74,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9339163613010464,
+      "affine_macro_f1": 0.9339163613010464,
+      "jitter_macro_f1": 0.9241895874263262,
+      "accuracy": 0.9339164237123421,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.75,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9339163613010464,
+      "affine_macro_f1": 0.9339163613010464,
+      "jitter_macro_f1": 0.9241895874263262,
+      "accuracy": 0.9339164237123421,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.76,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.965986266063615,
+      "affine_macro_f1": 0.965986266063615,
+      "jitter_macro_f1": 0.9562680563675051,
+      "accuracy": 0.9659863945578231,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.76,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.965986266063615,
+      "affine_macro_f1": 0.965986266063615,
+      "jitter_macro_f1": 0.9562680563675051,
+      "accuracy": 0.9659863945578231,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": 1,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.77,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9630709077858789,
+      "affine_macro_f1": 0.956267560739499,
+      "jitter_macro_f1": 0.9562667346678567,
+      "accuracy": 0.9630709426627794,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0.5,
+        "cv_f1": [
+          1,
+          1,
+          0.898989898989899
+        ],
+        "reference_n_cal": 27,
+        "test_alarm_rate": [
+          0.011661807580174927,
+          0.9387755102040817,
+          0.012633624878522837
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.78,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.965986266063615,
+      "affine_macro_f1": 0.965986266063615,
+      "jitter_macro_f1": 0.9562680563675051,
+      "accuracy": 0.9659863945578231,
+      "n_train": 67,
+      "n_test": 1029,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.6455257534980774,
+        "mesa": 0.11267434060573578
+      },
+      "runtime_seconds": 29.78,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9028201680382494,
+      "affine_macro_f1": 0.8036228842199387,
+      "jitter_macro_f1": 0.11268692956133032,
+      "accuracy": 0.9085714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.75552528423957,
+      "train_cv_f1": [
+        0.9425685425685426,
+        0.8830447330447331,
+        0.19518576661433804
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.68,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.9084463942788324,
+      "affine_macro_f1": 0.9084463942788324,
+      "jitter_macro_f1": 0.10576499118165784,
+      "accuracy": 0.9142857142857143,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.7656796536796536,
+      "train_cv_f1": [
+        0.9425685425685426,
+        0.9425685425685426,
+        0.13852813852813853
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.68,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9084463942788324,
+      "affine_macro_f1": 0.8656927180289028,
+      "jitter_macro_f1": 0.1076193034291342,
+      "accuracy": 0.9142857142857143,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.7671585618682393,
+      "train_cv_f1": [
+        0.9425685425685426,
+        0.9425685425685426,
+        0.18161408483989128
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 0.5
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.68,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.6711803323013886,
+      "affine_macro_f1": 0.6711803323013886,
+      "jitter_macro_f1": 0.47769979606039914,
+      "accuracy": 0.6685714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.6171694570602134,
+      "train_cv_f1": [
+        0.6592518592518593,
+        0.6592518592518593,
+        0.46796821292619617
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.69,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.6711803323013886,
+      "affine_macro_f1": 0.6711803323013886,
+      "jitter_macro_f1": 0.47769979606039914,
+      "accuracy": 0.6685714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.6171694570602134,
+      "train_cv_f1": [
+        0.6592518592518593,
+        0.6592518592518593,
+        0.46796821292619617
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.69,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.8970412925948951,
+      "affine_macro_f1": 0.8970412925948951,
+      "jitter_macro_f1": 0.18671443499029708,
+      "accuracy": 0.9028571428571428,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.7815722055722055,
+      "train_cv_f1": [
+        0.9425685425685426,
+        0.9425685425685426,
+        0.24713064713064714
+      ],
+      "weights": {
+        "shapeMR": 1,
+        "generic_shape": 0.4
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.7,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.8970412925948951,
+      "affine_macro_f1": 0.8970412925948951,
+      "jitter_macro_f1": 0.18671443499029708,
+      "accuracy": 0.9028571428571428,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": 0.7815722055722055,
+      "train_cv_f1": [
+        0.9425685425685426,
+        0.9425685425685426,
+        0.24713064713064714
+      ],
+      "weights": {
+        "shapeMR": 1,
+        "mesa_shape": 0.4
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.7,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9028201680382494,
+      "affine_macro_f1": 0.8970412925948951,
+      "jitter_macro_f1": 0.11206811206811207,
+      "accuracy": 0.9085714285714286,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.1,
+        "strength": 1,
+        "cv_f1": [
+          0.9425685425685426,
+          0.9425685425685426,
+          0.22233800682076543
+        ],
+        "reference_n_cal": 70,
+        "test_alarm_rate": [
+          0.022857142857142857,
+          0.9828571428571429,
+          0.022857142857142857
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.7,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Fish",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.8970412925948951,
+      "affine_macro_f1": 0.8970412925948951,
+      "jitter_macro_f1": 0.18671443499029708,
+      "accuracy": 0.9028571428571428,
+      "n_train": 175,
+      "n_test": 175,
+      "n_labeled": 35,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Generic dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.18448804318904877,
+        "mesa": 0.051464471966028214
+      },
+      "runtime_seconds": 40.71,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.9845004326362897,
+      "affine_macro_f1": 0.9501030630062889,
+      "jitter_macro_f1": 0.982249023741327,
+      "accuracy": 0.9844444444444445,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.9851851851851852,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9326599326599326
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.66,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.9613077397299636,
+      "affine_macro_f1": 0.9613077397299636,
+      "jitter_macro_f1": 0.9656781655888887,
+      "accuracy": 0.9611111111111111,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.9181414141414141,
+      "train_cv_f1": [
+        0.9326599326599326,
+        0.9326599326599326,
+        0.8666666666666667
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.67,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.9845004326362897,
+      "affine_macro_f1": 0.9501030630062889,
+      "jitter_macro_f1": 0.982249023741327,
+      "accuracy": 0.9844444444444445,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.9851851851851852,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9326599326599326
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.67,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.9568975466112457,
+      "affine_macro_f1": 0.9568975466112457,
+      "jitter_macro_f1": 0.9503493842288845,
+      "accuracy": 0.9566666666666667,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.9851851851851852,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9326599326599326
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.68,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.9568975466112457,
+      "affine_macro_f1": 0.9568975466112457,
+      "jitter_macro_f1": 0.9503493842288845,
+      "accuracy": 0.9566666666666667,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.9851851851851852,
+      "train_cv_f1": [
+        1,
+        1,
+        0.9326599326599326
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.68,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.9701429345381306,
+      "affine_macro_f1": 0.9701429345381306,
+      "jitter_macro_f1": 0.9690368848560938,
+      "accuracy": 0.97,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.992,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1,
+        "generic_shape": 0.4
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.69,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.9701429345381306,
+      "affine_macro_f1": 0.9701429345381306,
+      "jitter_macro_f1": 0.9690368848560938,
+      "accuracy": 0.97,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": 0.992,
+      "train_cv_f1": [
+        1,
+        1,
+        1
+      ],
+      "weights": {
+        "shapeMR": 1,
+        "mesa_shape": 0.4
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.7,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.9845004326362897,
+      "affine_macro_f1": 0.9501030630062889,
+      "jitter_macro_f1": 0.982249023741327,
+      "accuracy": 0.9844444444444445,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          1,
+          1,
+          0.9326599326599326
+        ],
+        "reference_n_cal": 12,
+        "test_alarm_rate": [
+          0,
+          0,
+          0
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.7,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.9701429345381306,
+      "affine_macro_f1": 0.9701429345381306,
+      "jitter_macro_f1": 0.9690368848560938,
+      "accuracy": 0.97,
+      "n_train": 30,
+      "n_test": 900,
+      "n_labeled": 15,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Generic dual-path hybrid",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.401693731546402,
+        "mesa": 0.24570569396018982
+      },
+      "runtime_seconds": 29.71,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.3794642857142857,
+      "affine_macro_f1": 0.4478150957024197,
+      "jitter_macro_f1": 0.43863991662324125,
+      "accuracy": 0.43884892086330934,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.4579365079365079,
+      "train_cv_f1": [
+        0.375,
+        0.5238095238095238,
+        0.4949494949494949
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.41,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.3960273122284295,
+      "affine_macro_f1": 0.3953754578754579,
+      "jitter_macro_f1": 0.4464907914385266,
+      "accuracy": 0.4460431654676259,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.432479797979798,
+      "train_cv_f1": [
+        0.4949494949494949,
+        0.4,
+        0.375
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.41,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.3794642857142857,
+      "affine_macro_f1": 0.4377022653721683,
+      "jitter_macro_f1": 0.43419267299864317,
+      "accuracy": 0.43884892086330934,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.47255555555555556,
+      "train_cv_f1": [
+        0.375,
+        0.5833333333333333,
+        0.4949494949494949
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 0.5
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.42,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.4168484645074677,
+      "affine_macro_f1": 0.44440406976744184,
+      "jitter_macro_f1": 0.4085106382978724,
+      "accuracy": 0.460431654676259,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.38250000000000006,
+      "train_cv_f1": [
+        0.4,
+        0.375,
+        0.4
+      ],
+      "weights": {
+        "generic_raw": 1,
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.43,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.44139829342141484,
+      "affine_macro_f1": 0.4117149145082106,
+      "jitter_macro_f1": 0.4053312856516016,
+      "accuracy": 0.4748201438848921,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.36896969696969695,
+      "train_cv_f1": [
+        0.2,
+        0.4949494949494949,
+        0.4949494949494949
+      ],
+      "weights": {
+        "mesa_shape": 1,
+        "stats": 0.1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.43,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.3794642857142857,
+      "affine_macro_f1": 0.4377022653721683,
+      "jitter_macro_f1": 0.43419267299864317,
+      "accuracy": 0.43884892086330934,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.47255555555555556,
+      "train_cv_f1": [
+        0.375,
+        0.5833333333333333,
+        0.4949494949494949
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 0.5
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.44,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.3794642857142857,
+      "affine_macro_f1": 0.4377022653721683,
+      "jitter_macro_f1": 0.43419267299864317,
+      "accuracy": 0.43884892086330934,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.47255555555555556,
+      "train_cv_f1": [
+        0.375,
+        0.5833333333333333,
+        0.4949494949494949
+      ],
+      "weights": {
+        "rawMR": 1,
+        "shapeMR": 0.5
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.44,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.3794642857142857,
+      "affine_macro_f1": 0.4377022653721683,
+      "jitter_macro_f1": 0.43863991662324125,
+      "accuracy": 0.43884892086330934,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 1,
+        "cv_f1": [
+          0.375,
+          0.5833333333333333,
+          0.4949494949494949
+        ],
+        "reference_n_cal": 129,
+        "test_alarm_rate": [
+          0.02158273381294964,
+          0.9928057553956835,
+          0.02158273381294964
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.45,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.3794642857142857,
+      "affine_macro_f1": 0.4377022653721683,
+      "jitter_macro_f1": 0.43419267299864317,
+      "accuracy": 0.43884892086330934,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.14563143253326416,
+        "mesa": 0.0736161321401596
+      },
+      "runtime_seconds": 80.46,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.7709859783375591,
+      "affine_macro_f1": 0.7603659766742203,
+      "jitter_macro_f1": 0.19908337740172746,
+      "accuracy": 0.78099173553719,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5599124579124579,
+      "train_cv_f1": [
+        0.686026936026936,
+        0.6737373737373739,
+        0.134006734006734
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.06,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.776652021042206,
+      "affine_macro_f1": 0.776652021042206,
+      "jitter_macro_f1": 0.22379674360350688,
+      "accuracy": 0.7892561983471075,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5596300249458145,
+      "train_cv_f1": [
+        0.6638047138047138,
+        0.6638047138047138,
+        0.1902834008097166
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.06,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.7709859783375591,
+      "affine_macro_f1": 0.7603659766742203,
+      "jitter_macro_f1": 0.19908337740172746,
+      "accuracy": 0.78099173553719,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5599124579124579,
+      "train_cv_f1": [
+        0.686026936026936,
+        0.6737373737373739,
+        0.134006734006734
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.07,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.3116236621109833,
+      "affine_macro_f1": 0.3116236621109833,
+      "jitter_macro_f1": 0.3077721475773624,
+      "accuracy": 0.32231404958677684,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.3220940355940356,
+      "train_cv_f1": [
+        0.31403318903318905,
+        0.31403318903318905,
+        0.3506734006734007
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.08,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.3116236621109833,
+      "affine_macro_f1": 0.3116236621109833,
+      "jitter_macro_f1": 0.3077721475773624,
+      "accuracy": 0.32231404958677684,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.3220940355940356,
+      "train_cv_f1": [
+        0.31403318903318905,
+        0.31403318903318905,
+        0.3506734006734007
+      ],
+      "weights": {
+        "mesa_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.08,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.7709859783375591,
+      "affine_macro_f1": 0.7603659766742203,
+      "jitter_macro_f1": 0.19908337740172746,
+      "accuracy": 0.78099173553719,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5599124579124579,
+      "train_cv_f1": [
+        0.686026936026936,
+        0.6737373737373739,
+        0.134006734006734
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.09,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.7709859783375591,
+      "affine_macro_f1": 0.7603659766742203,
+      "jitter_macro_f1": 0.19908337740172746,
+      "accuracy": 0.78099173553719,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5599124579124579,
+      "train_cv_f1": [
+        0.686026936026936,
+        0.6737373737373739,
+        0.134006734006734
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.09,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.7709859783375591,
+      "affine_macro_f1": 0.7603659766742203,
+      "jitter_macro_f1": 0.19908337740172746,
+      "accuracy": 0.78099173553719,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 0,
+        "cv_f1": [
+          0.686026936026936,
+          0.6737373737373739,
+          0.134006734006734
+        ],
+        "reference_n_cal": 80,
+        "test_alarm_rate": [
+          0.004132231404958678,
+          0.9380165289256198,
+          0.004132231404958678
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.1,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2601,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.7709859783375591,
+      "affine_macro_f1": 0.7603659766742203,
+      "jitter_macro_f1": 0.19908337740172746,
+      "accuracy": 0.78099173553719,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Dual MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.2851879298686981,
+        "mesa": 0.10804863274097443
+      },
+      "runtime_seconds": 50.11,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.7902750811382496,
+      "affine_macro_f1": 0.7650286511763729,
+      "jitter_macro_f1": 0.08579501669663499,
+      "accuracy": 0.7975206611570248,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5429119722869723,
+      "train_cv_f1": [
+        0.6801346801346803,
+        0.6585081585081585,
+        0.09375
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.09,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.8061191954027912,
+      "affine_macro_f1": 0.8061191954027912,
+      "jitter_macro_f1": 0.08560858305586384,
+      "accuracy": 0.8140495867768595,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5767619047619048,
+      "train_cv_f1": [
+        0.7148148148148148,
+        0.7148148148148148,
+        0.08730158730158731
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.1,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.8061191954027912,
+      "affine_macro_f1": 0.8061191954027912,
+      "jitter_macro_f1": 0.08560858305586384,
+      "accuracy": 0.8140495867768595,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5767619047619048,
+      "train_cv_f1": [
+        0.7148148148148148,
+        0.7148148148148148,
+        0.08730158730158731
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.1,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.3657671195737307,
+      "affine_macro_f1": 0.3657671195737307,
+      "jitter_macro_f1": 0.3404554292876835,
+      "accuracy": 0.371900826446281,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.27794107744107743,
+      "train_cv_f1": [
+        0.29966329966329963,
+        0.29966329966329963,
+        0.20092592592592595
+      ],
+      "weights": {
+        "generic_shape": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.11,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.27218923548942253,
+      "affine_macro_f1": 0.1801191979312122,
+      "jitter_macro_f1": 0.280993771294493,
+      "accuracy": 0.2644628099173554,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.2868428915425819,
+      "train_cv_f1": [
+        0.38663243075007775,
+        0.21825396825396826,
+        0.2238791423001949
+      ],
+      "weights": {
+        "mesa_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.11,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.8061191954027912,
+      "affine_macro_f1": 0.8061191954027912,
+      "jitter_macro_f1": 0.08560858305586384,
+      "accuracy": 0.8140495867768595,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5767619047619048,
+      "train_cv_f1": [
+        0.7148148148148148,
+        0.7148148148148148,
+        0.08730158730158731
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.12,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.8061191954027912,
+      "affine_macro_f1": 0.8061191954027912,
+      "jitter_macro_f1": 0.08560858305586384,
+      "accuracy": 0.8140495867768595,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": 0.5767619047619048,
+      "train_cv_f1": [
+        0.7148148148148148,
+        0.7148148148148148,
+        0.08730158730158731
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.12,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.7861121269752954,
+      "affine_macro_f1": 0.8061191954027912,
+      "jitter_macro_f1": 0.08579501669663499,
+      "accuracy": 0.7933884297520661,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.1,
+        "strength": 1,
+        "cv_f1": [
+          0.7552188552188551,
+          0.7148148148148148,
+          0.09375
+        ],
+        "reference_n_cal": 80,
+        "test_alarm_rate": [
+          0.03305785123966942,
+          0.9628099173553719,
+          0.03305785123966942
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.12,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "OSULeaf",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.8061191954027912,
+      "affine_macro_f1": 0.8061191954027912,
+      "jitter_macro_f1": 0.08560858305586384,
+      "accuracy": 0.8140495867768595,
+      "n_train": 200,
+      "n_test": 242,
+      "n_labeled": 30,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.21530400216579437,
+        "mesa": 0.10796277225017548
+      },
+      "runtime_seconds": 49.13,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "Raw MultiRocket",
+      "clean_macro_f1": 0.47875,
+      "affine_macro_f1": 0.4675983436853002,
+      "jitter_macro_f1": 0.36940084476195445,
+      "accuracy": 0.48201438848920863,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.8345959595959597,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.7916666666666667,
+        0.7916666666666667
+      ],
+      "weights": {
+        "rawMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.47,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "Canonical MultiRocket",
+      "clean_macro_f1": 0.4919590643274854,
+      "affine_macro_f1": 0.47983367983367986,
+      "jitter_macro_f1": 0.424192212096106,
+      "accuracy": 0.49640287769784175,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.875378787878788,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.7916666666666667
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.48,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "Dual MultiRocket",
+      "clean_macro_f1": 0.4919590643274854,
+      "affine_macro_f1": 0.47983367983367986,
+      "jitter_macro_f1": 0.424192212096106,
+      "accuracy": 0.49640287769784175,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.875378787878788,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.7916666666666667
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.48,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "Generic learned-only",
+      "clean_macro_f1": 0.5875815935696175,
+      "affine_macro_f1": 0.4780765503875969,
+      "jitter_macro_f1": 0.5750603378921963,
+      "accuracy": 0.60431654676259,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.5814141414141414,
+      "train_cv_f1": [
+        0.6,
+        0.4949494949494949,
+        0.696969696969697
+      ],
+      "weights": {
+        "generic_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.49,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "MESA learned-only",
+      "clean_macro_f1": 0.5561941251596424,
+      "affine_macro_f1": 0.5799450549450549,
+      "jitter_macro_f1": 0.5498752455274194,
+      "accuracy": 0.5683453237410072,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.696969696969697,
+      "train_cv_f1": [
+        0.696969696969697,
+        0.696969696969697,
+        0.696969696969697
+      ],
+      "weights": {
+        "mesa_raw": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.5,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "Generic dual-path hybrid",
+      "clean_macro_f1": 0.4919590643274854,
+      "affine_macro_f1": 0.47983367983367986,
+      "jitter_macro_f1": 0.424192212096106,
+      "accuracy": 0.49640287769784175,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.875378787878788,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.7916666666666667
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.5,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "MESA dual-path hybrid",
+      "clean_macro_f1": 0.4919590643274854,
+      "affine_macro_f1": 0.47983367983367986,
+      "jitter_macro_f1": 0.424192212096106,
+      "accuracy": 0.49640287769784175,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": 0.875378787878788,
+      "train_cv_f1": [
+        0.898989898989899,
+        0.898989898989899,
+        0.7916666666666667
+      ],
+      "weights": {
+        "shapeMR": 1
+      },
+      "selected": null,
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.51,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "MESA SPC hybrid",
+      "clean_macro_f1": 0.47875,
+      "affine_macro_f1": 0.47983367983367986,
+      "jitter_macro_f1": 0.36940084476195445,
+      "accuracy": 0.48201438848920863,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": null,
+      "chart_policy": {
+        "alpha": 0.05,
+        "strength": 1,
+        "cv_f1": [
+          0.898989898989899,
+          0.898989898989899,
+          0.7916666666666667
+        ],
+        "reference_n_cal": 129,
+        "test_alarm_rate": [
+          0.02158273381294964,
+          1,
+          0.02158273381294964
+        ]
+      },
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.51,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    },
+    {
+      "dataset": "Earthquakes",
+      "seed": 2602,
+      "method": "TRAIN-selected admissible",
+      "clean_macro_f1": 0.4919590643274854,
+      "affine_macro_f1": 0.47983367983367986,
+      "jitter_macro_f1": 0.424192212096106,
+      "accuracy": 0.49640287769784175,
+      "n_train": 322,
+      "n_test": 139,
+      "n_labeled": 10,
+      "train_cv_objective": null,
+      "train_cv_f1": null,
+      "weights": null,
+      "selected": "Canonical MultiRocket",
+      "chart_policy": null,
+      "concept_rmse_train": {
+        "generic": 0.13024067878723145,
+        "mesa": 0.07628043740987778
+      },
+      "runtime_seconds": 87.52,
+      "status": "EXECUTED",
+      "synthetic_shift_assumption": "label-preserving offset/trend and jitter"
+    }
+  ]
+}
