@@ -1,0 +1,54 @@
+name: MESA label-efficient graph SSL development evaluation
+on:
+  push:
+    branches: [mesa-graph-ssl-experiment-2026]
+    paths: ['.github/workflows/mesa-graph-trial.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    strategy:
+      fail-fast: false
+      matrix:
+        dataset: [GunPoint, ItalyPowerDemand, BasicMotions]
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      NUMBA_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'aeon==1.6.0' 'scikit-learn>=1.5,<1.10'
+      - name: Restore checked source code
+        run: |
+          base64 -d MESA_SSL/bench_neuro_ssl.py.gz.b64 | gzip -dc > bench_neuro_ssl.py
+          base64 -d MESA_SSL/mesa_mr_experiment.py.gz.b64 | gzip -dc > mesa_mr_experiment.py
+          echo 'd5578abed721e1ab0cafb9c45e13ca7999ef1b2b1d26fe516b96a09e64467860  bench_neuro_ssl.py' | sha256sum -c -
+          echo 'd269f6fc030bf26705c4b0b92f4c0c71516e8aec5a58131db4ba817afddd4884  mesa_mr_experiment.py' | sha256sum -c -
+          python -m py_compile bench_neuro_ssl.py mesa_mr_experiment.py MESA_SSL/mesa_graph_inductive.py
+      - name: Graph SSL experiment
+        run: |
+          python -m MESA_SSL.mesa_graph_inductive --dataset "${{ matrix.dataset }}" --seeds 410 411 412 \
+            --epochs 25 --out "results/${{ matrix.dataset }}"
+      - name: Archive dependencies and evaluation source
+        if: always()
+        run: |
+          mkdir -p "results/${{ matrix.dataset }}"
+          python -m pip freeze > "results/${{ matrix.dataset }}/requirements.txt"
+          cp MESA_SSL/mesa_graph_inductive.py "results/${{ matrix.dataset }}/mesa_graph_inductive.py" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesa-graph-dev-${{ matrix.dataset }}
+          path: results/${{ matrix.dataset }}/
+          if-no-files-found: warn
+          retention-days: 30
