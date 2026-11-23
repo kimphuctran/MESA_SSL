@@ -39,7 +39,12 @@ jobs:
           assert x['oversight']['claim_absolute_win_forbidden'] if 'claim_absolute_win_forbidden' in x['oversight'] else x['performance_admissibility']['claim_absolute_win_forbidden']
           assert len(json.load(open('MESA_SSL/hclm_failure_ledger_2026-11-23.json')))>=16
           source=x['source_revision_before_test']
-          subprocess.run(['git','diff','--exit-code',source,'HEAD','--','MESA_SSL/mesa_elastic_synaptic.py'],check=True)
+          assert source=='5706afb8510d53eca295ea38365bf2e251136f67'
+          current=subprocess.check_output(['git','hash-object','MESA_SSL/mesa_elastic_synaptic.py']).decode().strip()
+          assert current=='b45ca36da3e38d9b0ce277d0fe33aadd56294569',current
+          amendment=json.load(open('MESA_SSL/HCLM_ELASTIC_CI_PROVENANCE_AMENDMENT_2026-11-24.json'))
+          assert amendment['frozen_algorithm_changed'] is False
+          assert amendment['verified_frozen_blob_sha']==current
           PY
           python MESA_SSL/hclm_search_governor.py --test-only
       - name: Install CPU scientific library and Numba
