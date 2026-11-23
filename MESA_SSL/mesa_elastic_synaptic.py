@@ -31,10 +31,11 @@ from sklearn.metrics import f1_score,accuracy_score
 from MESA_SSL.mesa_canonical import load_data
 from MESA_SSL.mesa_gauge_ssl import affine_gauge
 from MESA_SSL.mesa_neuromem import (
-    independent_budget_ids,build_representations,retrieve,softmax_class)
+    independent_budget_ids,build_representations,retrieve,softmax_class,unit)
 METHODS=("Dual MR episodic","Canonical MR episodic",
          "Cortex episodic","Elastic slow memory",
-         "Elastic shape-concept memory","Elastic HCLM-authorized router")
+         "Elastic shape-concept memory","Elastic HCLM-authorized router",
+         "Elastic Representation-Surprise Router")
 CANONICAL_SMOOTHING=(2.0,7.0)
 DOWNSAMPLE=96
 RADIUS=12
@@ -85,6 +86,46 @@ def dist_matrix(x,ref,band):
         for j in range(len(ref)):
             z[i,j]=dtw_distance(x[i],ref[j],band)
     return z
+
+def representation_novelty(views,seed):
+    """Train-only calibrated raw-feature surprise; no TEST distribution fitting.
+
+    This is an EMPIRICAL split tail score, not an exact split-conformal
+    p-value because the underlying MultiRocket transform was originally
+    fitted on all unlabeled TRAIN data, including calibration samples.
+    The twofold split happens in feature space; no labels are used.
+    """
+    a=unit(views[0])
+    n=len(a)
+    if n<18:
+        return [np.ones(len(z)) for z in views],dict(
+            valid=False,n_train=n,calibration=0,reference=0)
+    rng=np.random.default_rng(seed+93981)
+    order=rng.permutation(n)
+    n_ref=min(256,max(8,int(n*.60)))
+    ref=a[order[:n_ref]]
+    cal=a[order[n_ref:]]
+    if len(cal)<6:
+        return [np.ones(len(z)) for z in views],dict(
+            valid=False,n_train=n,calibration=len(cal),reference=n_ref)
+    def nonconformity(feat):
+        z=unit(feat)
+        k=min(3,len(ref))
+        scores=[]
+        for i in range(0,len(z),256):
+            sims=z[i:i+256]@ref.T
+            scores.append(1-np.partition(sims,-k,axis=1)[:,-k:].mean(1))
+        return np.concatenate(scores)
+    known=np.sort(nonconformity(cal))
+    result=[]
+    for z in views:
+        score=nonconformity(z)
+        p=(1+(known[None,:]>=score[:,None]).sum(1))/(len(known)+1)
+        result.append(p)
+    return result,dict(valid=True,n_train=n,reference=n_ref,
+                       calibration=len(known),
+                       statistical_claim="empirical TRAIN-only split tail; not exact conformal")
+
 
 def shape_views(samples):
     q=[affine_gauge(x)[0] for x in samples]
@@ -255,6 +296,7 @@ def run(args):
         v=cortex["views"]
         v["cortex"]=cosine_cortex(cortex)
         d,dp,fitmeta=build_elastic(cortex,max_ids)
+        surprise,surprise_fit=representation_novelty(v["rawMR"],seed)
         pos={int(v):i for i,v in enumerate(max_ids)}
         for budget in budgets:
             support=supports[budget]
@@ -283,27 +325,38 @@ def run(args):
             for mode in (3,4,5):
                 choices=lookup[mode]
                 pa,pm=cortex["charts"][mode]
-                # A conservative router that loses nothing when the
-                # nuisance detectors are inconclusive or conflict.
+                # The new representation surprise chart is independent
+                # of raw-signal morphology. A Bonferroni 0.025 + 0.025
+                # alert controls the intended union rate under valid
+                # marginal calibration, but we claim no exact type-I
+                # control because the unlabeled transform includes cal.
+                raw_novelty=surprise[mode]
                 alarm_a=pa<=CHART_ALPHA
                 alarm_m=pm<=CHART_ALPHA
+                alarm_r=(pm<=CHART_ALPHA/2)|(raw_novelty<=CHART_ALPHA/2)
                 p=softmax_class(choices[experts["clean"]])
                 a=softmax_class(choices[experts["affine"]])
                 w=softmax_class(choices[experts["jitter"]])
                 routed=np.where((alarm_m & ~alarm_a)[:,None],w,
                    np.where((alarm_a & ~alarm_m)[:,None],a,p))
+                routed_surprise=np.where((alarm_r & ~alarm_a)[:,None],w,
+                   np.where((alarm_a & ~alarm_r)[:,None],a,p))
                 methods={
                   "Dual MR episodic":choices["Dual"],
                   "Canonical MR episodic":choices["Canonical"],
                   "Cortex episodic":choices["Cortex"],
                   "Elastic slow memory":choices["Elastic"],
                   "Elastic shape-concept memory":choices["ElasticConcept"],
-                  "Elastic HCLM-authorized router":routed}
+                  "Elastic HCLM-authorized router":routed,
+                  "Elastic Representation-Surprise Router":routed_surprise}
                 for name in METHODS:predicted[name].append(
                     classes[np.argmax(methods[name],axis=1)])
                 meta.append(dict(affine_alert=float(np.mean(alarm_a)),
                     waveform_alert=float(np.mean(alarm_m)),
-                    conflict_rate=float(np.mean(alarm_a&alarm_m))))
+                    representation_alert=float(np.mean(raw_novelty<=CHART_ALPHA/2)),
+                    combined_waveform_alert=float(np.mean(alarm_r)),
+                    conflict_rate=float(np.mean(alarm_a&alarm_m)),
+                    novelty_conflict_rate=float(np.mean(alarm_a&alarm_r))))
             for method in METHODS:
                 pred=predicted[method]
                 rec=dict(dataset=args.dataset,seed=seed,budget=budget,
@@ -318,9 +371,10 @@ def run(args):
                     label_ids=[int(k) for k in support],n_labeled=len(support),
                     train_cases=len(train),test_cases=len(test),
                     ssl_epochs=args.epochs,elastic_fit=fitmeta,
-                    elastic_assessment=assessment if method==METHODS[-1] else None,
-                    applied_route=experts if method==METHODS[-1] else None,
-                    alerts=meta if method==METHODS[-1] else None,
+                    elastic_assessment=assessment if method in METHODS[-2:] else None,
+                    applied_route=experts if method in METHODS[-2:] else None,
+                    alerts=meta if method in METHODS[-2:] else None,
+                    representation_novelty_train_fit=surprise_fit if method==METHODS[-1] else None,
                     runtime_sec=round(time.monotonic()-since,2),
                     assumed_label_preserving_synthetic_corruption=True)
                 rows.append(rec)
