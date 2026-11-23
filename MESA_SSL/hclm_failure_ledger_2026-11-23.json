@@ -252,5 +252,24 @@
     "control": "Label priors as mathematical regularizers until real-world physical constraints verified",
     "verification": "Domain-specific interventions and causal concept truth",
     "provenance": "MESA_SSL/BIOPHYSICS_ARCHITECTURE.md"
+  },
+  {
+    "id": "F17",
+    "topic": "Conservative HCLM-specified fallback passes baseline risks but does not beat incumbent riskgate",
+    "hypothesis": "Safe fallback policy dominates the incumbent risk-gated decision rule",
+    "finding": "Frozen new four-task, two-seed experiment: five-shot HCLM-guarded vs Dual MR achieved clean -0.00190, affine +0.00103 and jitter +0.06884; yet compared directly against incumbent risk-gated it scored clean -0.00251, affine -0.00405 and jitter -0.00952. It passes the predeclared baseline risk envelope but is not a stronger incumbent.",
+    "datasets": [
+      "Computers",
+      "Strawberry",
+      "ToeSegmentation1",
+      "ToeSegmentation2"
+    ],
+    "severity": "high",
+    "control": "From the next research iteration onward, require predeclared paired non-inferiority to BOTH safe reference and current incumbent; do not revisit or optimize the spent TEST sets. Stop retuning affine chart; prioritize full baselines and stronger independent evidence.",
+    "verification": "Head-to-head full-MultiRocket/TS2Vec/TimeMAE/MOMENT and two-level predeclared governance on brand-new UCR datasets.",
+    "completed_experiment_ids": [
+      "AFFINE_FALLBACK_CALIBRATION"
+    ],
+    "provenance": "MESA_SSL/HCLM_AFFINE_FROZEN_RUN_2026-11-23.json"
   }
 ]
