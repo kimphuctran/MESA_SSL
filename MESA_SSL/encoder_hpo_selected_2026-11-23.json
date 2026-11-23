@@ -1,0 +1,649 @@
+{
+  "research_date": "2026-11-23",
+  "repo": "kimphuctran/MESA_SSL",
+  "branch": "mesa-encoder-hpo-2026",
+  "run": 45217129377,
+  "trials_per_encoder_family": 18,
+  "selected_hyperparameters": [
+    {
+      "dataset": "BasicMotions",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.946785618102283,
+      "best_trial": 8,
+      "params": {
+        "lr": 0.001100576953284666,
+        "representation_dim": 144,
+        "mask_ratio": 0.2106433808627381,
+        "input_noise": 0.07476068399696736,
+        "harmonic_amplitude": 0.21601545216752743,
+        "epochs": 12,
+        "warmup_epochs": 0,
+        "schedule": "constant",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200527
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.9338758948997481,
+      "best_trial": 9,
+      "params": {
+        "lr": 0.001591730323220953,
+        "representation_dim": 96,
+        "mask_ratio": 0.19794017302181588,
+        "input_noise": 0.09380831217509962,
+        "harmonic_amplitude": 0.327922654421138,
+        "epochs": 12,
+        "warmup_epochs": 0,
+        "schedule": "cosine",
+        "lambda_concept": 0.3998495736898445,
+        "lambda_equiv": 0.10220148139808946
+      },
+      "job_id": 137841200527
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.947533717791742,
+      "best_trial": 4,
+      "params": {
+        "lr": 0.0017362055574348654,
+        "representation_dim": 48,
+        "mask_ratio": 0.16752846967802182,
+        "input_noise": 0.06029810397476324,
+        "harmonic_amplitude": 0.07240618082905373,
+        "epochs": 16,
+        "warmup_epochs": 3,
+        "schedule": "cosine",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200572
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.8758843373735834,
+      "best_trial": 5,
+      "params": {
+        "lr": 0.0025295614887455814,
+        "representation_dim": 48,
+        "mask_ratio": 0.2617585176435917,
+        "input_noise": 0.05971324016780455,
+        "harmonic_amplitude": 0.30939275188113213,
+        "epochs": 12,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.08366790869505704,
+        "lambda_equiv": 0.22208418506573321
+      },
+      "job_id": 137841200572
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.8482286341128814,
+      "best_trial": 16,
+      "params": {
+        "lr": 0.0011769478820236393,
+        "representation_dim": 144,
+        "mask_ratio": 0.1490873824439797,
+        "input_noise": 0.04752485350412945,
+        "harmonic_amplitude": 0.20250005181708466,
+        "epochs": 12,
+        "warmup_epochs": 1,
+        "schedule": "cosine",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200611
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.8783921876414337,
+      "best_trial": 6,
+      "params": {
+        "lr": 0.0019674174477428037,
+        "representation_dim": 96,
+        "mask_ratio": 0.2838540271314732,
+        "input_noise": 0.046926069680061605,
+        "harmonic_amplitude": 0.2484966970921265,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "cosine",
+        "lambda_concept": 0.30116781482115634,
+        "lambda_equiv": 0.08507978897523899
+      },
+      "job_id": 137841200611
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.9988636219625987,
+      "best_trial": 12,
+      "params": {
+        "lr": 0.0008611417549019251,
+        "representation_dim": 96,
+        "mask_ratio": 0.1098547349035133,
+        "input_noise": 0.11879944326681069,
+        "harmonic_amplitude": 0.31189383739461646,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200638
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.9993385563685974,
+      "best_trial": 17,
+      "params": {
+        "lr": 0.0007239885000215883,
+        "representation_dim": 144,
+        "mask_ratio": 0.08643550418919572,
+        "input_noise": 0.011317199846829336,
+        "harmonic_amplitude": 0.22594820059849172,
+        "epochs": 8,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.3331682276389396,
+        "lambda_equiv": 1.0072199163867008
+      },
+      "job_id": 137841200638
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.807157489233468,
+      "best_trial": 1,
+      "params": {
+        "lr": 0.0016833598890447935,
+        "representation_dim": 144,
+        "mask_ratio": 0.17065682756136852,
+        "input_noise": 0.0750006626540661,
+        "harmonic_amplitude": 0.34329752614998216,
+        "epochs": 12,
+        "warmup_epochs": 0,
+        "schedule": "constant",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200660
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.7961806725649835,
+      "best_trial": 15,
+      "params": {
+        "lr": 0.001889421064553377,
+        "representation_dim": 96,
+        "mask_ratio": 0.18396572753229712,
+        "input_noise": 0.01288991549813129,
+        "harmonic_amplitude": 0.12100434490940497,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "constant",
+        "lambda_concept": 0.14437785857436045,
+        "lambda_equiv": 0.27716180519791833
+      },
+      "job_id": 137841200660
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.9781703514825522,
+      "best_trial": 15,
+      "params": {
+        "lr": 0.002371249179861676,
+        "representation_dim": 48,
+        "mask_ratio": 0.15433214895385544,
+        "input_noise": 0.01657853566992439,
+        "harmonic_amplitude": 0.22802303993972345,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200683
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.9941287050594558,
+      "best_trial": 16,
+      "params": {
+        "lr": 0.0024152988168802394,
+        "representation_dim": 144,
+        "mask_ratio": 0.21898953229653975,
+        "input_noise": 0.08107985991177197,
+        "harmonic_amplitude": 0.3210094878384181,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 1.3933866595815547,
+        "lambda_equiv": 0.37659442190899706
+      },
+      "job_id": 137841200683
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.8846480819007065,
+      "best_trial": 17,
+      "params": {
+        "lr": 0.0002792755542846965,
+        "representation_dim": 144,
+        "mask_ratio": 0.214745858166846,
+        "input_noise": 0.03887899446459821,
+        "harmonic_amplitude": 0.23650339893793587,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "cosine",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200695
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.964384816852557,
+      "best_trial": 17,
+      "params": {
+        "lr": 0.0018244778723090734,
+        "representation_dim": 48,
+        "mask_ratio": 0.21085582525965998,
+        "input_noise": 0.02057652309652114,
+        "harmonic_amplitude": 0.09451272792626116,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "constant",
+        "lambda_concept": 0.10563209703218468,
+        "lambda_equiv": 0.7571175998442603
+      },
+      "job_id": 137841200695
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.9290803461269144,
+      "best_trial": 14,
+      "params": {
+        "lr": 0.0002946158704414792,
+        "representation_dim": 144,
+        "mask_ratio": 0.12840828797918546,
+        "input_noise": 0.06371612416217629,
+        "harmonic_amplitude": 0.09719207723206628,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200702
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.9290054574869415,
+      "best_trial": 7,
+      "params": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "job_id": 137841200702
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.9889884148518919,
+      "best_trial": 15,
+      "params": {
+        "lr": 0.0027536074358483703,
+        "representation_dim": 48,
+        "mask_ratio": 0.19744614506975997,
+        "input_noise": 0.024634912858245973,
+        "harmonic_amplitude": 0.16910560643438094,
+        "epochs": 12,
+        "warmup_epochs": 1,
+        "schedule": "constant",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200718
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.9099435937486272,
+      "best_trial": 11,
+      "params": {
+        "lr": 0.0029954995409858325,
+        "representation_dim": 96,
+        "mask_ratio": 0.11040452007206601,
+        "input_noise": 0.06996983834958098,
+        "harmonic_amplitude": 0.04313670003757818,
+        "epochs": 12,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.6841348187454611,
+        "lambda_equiv": 0.0794750248629416
+      },
+      "job_id": 137841200718
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.9845034667938342,
+      "best_trial": 8,
+      "params": {
+        "lr": 0.00022155023720801014,
+        "representation_dim": 144,
+        "mask_ratio": 0.13143392130012113,
+        "input_noise": 0.016991170356693102,
+        "harmonic_amplitude": 0.06220993706189016,
+        "epochs": 12,
+        "warmup_epochs": 2,
+        "schedule": "cosine",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200742
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.9985989766765107,
+      "best_trial": 14,
+      "params": {
+        "lr": 0.0011606305153342798,
+        "representation_dim": 48,
+        "mask_ratio": 0.2645896283009689,
+        "input_noise": 0.05739923947073086,
+        "harmonic_amplitude": 0.20869400338269395,
+        "epochs": 16,
+        "warmup_epochs": 0,
+        "schedule": "constant",
+        "lambda_concept": 0.13184966310398225,
+        "lambda_equiv": 0.08782869226417825
+      },
+      "job_id": 137841200742
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.7041348089212806,
+      "best_trial": 17,
+      "params": {
+        "lr": 0.0011270409101833514,
+        "representation_dim": 96,
+        "mask_ratio": 0.24435549106014406,
+        "input_noise": 0.0574695988728294,
+        "harmonic_amplitude": 0.29134558215521594,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200752
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.7515039873003969,
+      "best_trial": 17,
+      "params": {
+        "lr": 0.0008457887810542071,
+        "representation_dim": 96,
+        "mask_ratio": 0.10364885772810029,
+        "input_noise": 0.011705341795219792,
+        "harmonic_amplitude": 0.30227206583196253,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.8022213535752447,
+        "lambda_equiv": 1.4311143597580367
+      },
+      "job_id": 137841200752
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.8760061235027885,
+      "best_trial": 8,
+      "params": {
+        "lr": 0.001397467924324583,
+        "representation_dim": 144,
+        "mask_ratio": 0.23687532331733063,
+        "input_noise": 0.06523042115473313,
+        "harmonic_amplitude": 0.09415316085118443,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200790
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.8857005102712083,
+      "best_trial": 8,
+      "params": {
+        "lr": 0.00035544878795372843,
+        "representation_dim": 144,
+        "mask_ratio": 0.08680402623504306,
+        "input_noise": 0.011121353823081218,
+        "harmonic_amplitude": 0.1570761747479615,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.1059108120277939,
+        "lambda_equiv": 0.3532269037893029
+      },
+      "job_id": 137841200790
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.9830082489269706,
+      "best_trial": 0,
+      "params": {
+        "lr": 0.0024978575660031454,
+        "representation_dim": 144,
+        "mask_ratio": 0.20773227896375662,
+        "input_noise": 0.06425300635013251,
+        "harmonic_amplitude": 0.1633165857525072,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "constant",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841200837
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.9280549617245412,
+      "best_trial": 7,
+      "params": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "job_id": 137841200837
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.6732483655110919,
+      "best_trial": 16,
+      "params": {
+        "lr": 0.00032713263811864283,
+        "representation_dim": 96,
+        "mask_ratio": 0.29149589329596,
+        "input_noise": 0.05550326699584485,
+        "harmonic_amplitude": 0.13417067223303467,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "cosine",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841201505
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.6891258932276314,
+      "best_trial": 13,
+      "params": {
+        "lr": 0.00037349425259760607,
+        "representation_dim": 96,
+        "mask_ratio": 0.2415768244122382,
+        "input_noise": 0.07294444513617039,
+        "harmonic_amplitude": 0.31191410316804397,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 0.6779408405903544,
+        "lambda_equiv": 0.45095830238444184
+      },
+      "job_id": 137841201505
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1521,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.8083739154661306,
+      "best_trial": 5,
+      "params": {
+        "lr": 0.002413204830621883,
+        "representation_dim": 48,
+        "mask_ratio": 0.1945137321666756,
+        "input_noise": 0.010757776087501185,
+        "harmonic_amplitude": 0.15859589775479513,
+        "epochs": 8,
+        "warmup_epochs": 1,
+        "schedule": "constant",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841203999
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1521,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.8194664314796603,
+      "best_trial": 14,
+      "params": {
+        "lr": 0.0007237566068516565,
+        "representation_dim": 144,
+        "mask_ratio": 0.18941875381906312,
+        "input_noise": 0.07619377897231427,
+        "harmonic_amplitude": 0.28129761933766695,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "cosine",
+        "lambda_concept": 0.22068417495444884,
+        "lambda_equiv": 1.47957951848737
+      },
+      "job_id": 137841203999
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1522,
+      "encoder_family": "generic",
+      "selected_train_objective": 0.8878117192457011,
+      "best_trial": 15,
+      "params": {
+        "lr": 0.002672431174271177,
+        "representation_dim": 48,
+        "mask_ratio": 0.23641427435572546,
+        "input_noise": 0.04899447315273609,
+        "harmonic_amplitude": 0.2889445678895931,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "job_id": 137841204460
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1522,
+      "encoder_family": "MESA",
+      "selected_train_objective": 0.8306242470010154,
+      "best_trial": 13,
+      "params": {
+        "lr": 0.0018263875018982194,
+        "representation_dim": 48,
+        "mask_ratio": 0.26304346359597436,
+        "input_noise": 0.024825165633678634,
+        "harmonic_amplitude": 0.2947706804938808,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.24261200921301404,
+        "lambda_equiv": 0.06080010741216614
+      },
+      "job_id": 137841204460
+    }
+  ]
+}
