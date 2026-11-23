@@ -101,6 +101,8 @@ if __name__=="__main__":
     p.add_argument("--output",default="results/hclm_postrun_decision.json")
     args=p.parse_args()
     with open(args.results,encoding="utf-8") as f:rows=json.load(f)
+    if isinstance(rows,dict):
+        rows=rows.get("rows",rows.get("records",[]))
     with open(args.contract,encoding="utf-8") as f:contract=json.load(f)
     result=audit(rows,contract)
     path=Path(args.output);path.parent.mkdir(parents=True,exist_ok=True)
