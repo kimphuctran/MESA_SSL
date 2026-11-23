@@ -1,0 +1,44 @@
+name: HCLM governed post-run evidence acceptance and failure feedback
+on:
+  push:
+    branches: [hclm-affine-fallback-sandbox-2026]
+    paths: ['.github/workflows/hclm-postrun-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply exactly the frozen risk rules to archived completed TEST
+        run: |
+          python -m MESA_SSL.hclm_sandbox_post_audit \
+            --results MESA_SSL/HCLM_AFFINE_FROZEN_RUN_2026-11-23.json \
+            --contract MESA_SSL/HCLM_FROZEN_AFFINE_EXPERIMENT_2026-11-23.json \
+            --output results/hclm_postrun_decision.json
+      - name: Enforce no unauthorized SOTA or merge action
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("results/hclm_postrun_decision.json").read_text())
+          assert len(x["results"])==3
+          assert x["human_required_before_promotion"] is True
+          assert x["all_new_test_sets_now_development"] is True
+          assert x["no_posthoc_optimization_from_these_test_labels"] is True
+          for shot,review in x["results"].items():
+              assert review["promotion"]=="FORBIDDEN"
+              assert review["allowed_action"] in [
+                "RESEARCH_SANDBOX_CANDIDATE","REJECT_OR_REVISE_IN_SANDBOX"]
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hclm-final-risk-acceptance-audit
+          path: results/hclm_postrun_decision.json
+          retention-days: 30
