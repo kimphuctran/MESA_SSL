@@ -74,7 +74,14 @@ class PyramidalTokens(nn.Module):
         # Keep unfiltered raw information AND an independent anti-alias
         # path. CNN comparisons suggested simple pooled roughness tokens
         # over-react to waveform noise. The clean stream is never dropped.
-        self.proj=nn.Linear(5*channels,dim)
+        # Learn local motifs before token formation, not only moments.
+        # The raw original statistics remain in parallel with convolutional
+        # views, preserving class-relevant mean/trend and robust detail.
+        self.dw3=nn.Conv1d(channels,channels,3,padding=1,groups=channels)
+        self.dw7=nn.Conv1d(channels,channels,7,padding=3,groups=channels)
+        self.dw15=nn.Conv1d(channels,channels,15,padding=7,groups=channels)
+        self.mix=nn.Conv1d(3*channels,2*channels,1)
+        self.proj=nn.Linear(9*channels,dim)
         self.scale=nn.Parameter(torch.randn(len(self.bins),dim)*.02)
         self.norm=nn.LayerNorm(dim)
     def forward(self,x):
@@ -85,6 +92,9 @@ class PyramidalTokens(nn.Module):
         smooth=F.avg_pool1d(F.pad(y,(pad,pad),mode="replicate"),
                             kernel_size=window,stride=1)
         dy=torch.abs(y[:,:,1:]-y[:,:,:-1]) if x.size(1)>1 else torch.zeros_like(y)
+        conv=F.gelu(self.mix(torch.cat((
+            F.gelu(self.dw3(y)),F.gelu(self.dw7(y)),
+            F.gelu(self.dw15(y))),dim=1)))
         out=[]
         for level,n in enumerate(self.bins):
             mu=F.adaptive_avg_pool1d(y,n).transpose(1,2)
@@ -92,7 +102,11 @@ class PyramidalTokens(nn.Module):
             rough=F.adaptive_avg_pool1d(dy,n).transpose(1,2)
             smooth_mu=F.adaptive_avg_pool1d(smooth,n).transpose(1,2)
             smooth_rms=F.adaptive_avg_pool1d(smooth.square(),n).clamp_min(1.e-8).sqrt().transpose(1,2)
-            token=self.proj(torch.cat((mu,energy,rough,smooth_mu,smooth_rms),dim=-1))
+            motifs_avg=F.adaptive_avg_pool1d(conv,n).transpose(1,2)
+            motifs_peak=F.adaptive_max_pool1d(conv,n).transpose(1,2)
+            token=self.proj(torch.cat((
+                mu,energy,rough,smooth_mu,smooth_rms,
+                motifs_avg,motifs_peak),dim=-1))
             token=token+self.scale[level]+pos_encoding(n,token.size(-1),
                 device=x.device,dtype=x.dtype)
             out.append(token)
