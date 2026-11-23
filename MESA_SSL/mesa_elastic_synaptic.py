@@ -104,13 +104,6 @@ def build_elastic(cortex,max_ids):
         for i,sigma in enumerate(CANONICAL_SMOOTHING):
             sm=gaussian_filter1d(arr,sigma,axis=1,mode="reflect")
             scales[i].append(np.ascontiguousarray(sm,dtype=np.float64))
-    matrices=[]
-    for mode in range(6):
-        x=[]
-        for i in range(2):
-            x.append(dist_matrix(scales[i][mode],
-                                 scales[i][0][max_ids],RADIUS))
-        matrices.append(.45*x[0]+.55*x[1])
     # Multiplicative normalization uses ONLY random pairs of unlabeled TRAIN,
     # not distances or targets in any TEST set.
     rng=np.random.default_rng(28441)
@@ -244,7 +237,7 @@ def run(args):
     for seed in args.seeds:
         since=time.monotonic()
         supports=independent_budget_ids(y,seed,budgets)
-        max_ids=supports[-1 if -1 in supports else max(budgets)]
+        max_ids=supports[max(budgets)]
         cortex=build_representations(train,test,seed,args.epochs,
                                     args.hidden,args.dim)
         v=cortex["views"]
