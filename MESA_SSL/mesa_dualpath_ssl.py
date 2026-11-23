@@ -433,7 +433,12 @@ def two_chart_policy(ctrain,cprobes,ctests,queries,choices,K,idx,y,
     if not restricted:
         choices_allowed+=["Generic learned-only","Generic dual-path hybrid"]
     def pick(mode):
-        return sorted(choices_allowed,key=lambda name:(
+        # Under affine shift only a bounded, predeclared invariant/hybrid
+        # class is admissible: pure learned embeddings were too unstable
+        # when chosen from five labels/class in development tests.
+        allowed=(choices_allowed if mode==2 else
+                 [n for n in choices_allowed if "learned-only" not in n])
+        return sorted(allowed,key=lambda name:(
              -choices[name]["cv_f1"][mode]+.007*(
                 len(choices[name]["weights"])-1),
              len(choices[name]["weights"]),name))[0]
