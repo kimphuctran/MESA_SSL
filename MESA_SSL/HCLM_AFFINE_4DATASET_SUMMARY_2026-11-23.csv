@@ -1,0 +1,241 @@
+dataset,budget,method,n,clean_mean,clean_sd,affine_mean,affine_sd,jitter_mean,jitter_sd
+"Computers",1,"Raw MR episodic",2,0.497442,0.263252,0.445656,0.158247,0.333333,0
+"Computers",1,"Canonical MR episodic",2,0.477134,0.235782,0.465183,0.251909,0.342101,0.012399
+"Computers",1,"Dual MR episodic",2,0.487356,0.238218,0.471355,0.232882,0.333333,0
+"Computers",1,"Slow cortex episodic",2,0.487911,0.206439,0.476798,0.195992,0.495421,0.215628
+"Computers",1,"DG episodic",2,0.484928,0.216651,0.487171,0.227296,0.361834,0.037435
+"Computers",1,"Physics episodic",2,0.479413,0.039078,0.463529,0.051295,0.45165,0.022146
+"Computers",1,"Predictive innovation episodic",2,0.437359,0.126388,0.437359,0.126388,0.451453,0.144417
+"Computers",1,"Hopfield physics episodic",2,0.479413,0.039078,0.463529,0.051295,0.45165,0.022146
+"Computers",1,"NeuroMem prior",2,0.488254,0.264623,0.476413,0.255527,0.349743,0.025727
+"Computers",1,"BioPhysics no homeostasis",2,0.49787,0.240232,0.475167,0.187712,0.417449,0.096542
+"Computers",1,"BioPhysics no cortex",2,0.481907,0.229033,0.478749,0.153374,0.375441,0.005675
+"Computers",1,"BioPhysics no physics",2,0.492604,0.258473,0.465094,0.262547,0.361825,0.04367
+"Computers",1,"BioPhysics no predictive",2,0.494771,0.237372,0.501902,0.199138,0.407845,0.065
+"Computers",1,"BioPhysics no Hopfield",2,0.481851,0.246003,0.45852,0.222572,0.411112,0.110948
+"Computers",1,"BioPhysics no context",2,0.479824,0.248652,0.481904,0.23101,0.427579,0.097991
+"Computers",1,"BioPhysics full",2,0.485449,0.217752,0.466445,0.194523,0.437343,0.084183
+"Computers",1,"BioPhysics safe TRAIN",2,0.487356,0.238218,0.471355,0.232882,0.333333,0
+"Computers",1,"BioPhysics risk-gated",2,0.485083,0.219053,0.466244,0.239073,0.358326,0.04551
+"Computers",1,"BioPhysics HCLM-guarded",2,0.485333,0.230014,0.472786,0.230858,0.348847,0.026995
+"Computers",1,"Raw MR ridge",2,0.497442,0.263252,0.445656,0.158247,0.333333,0
+"Computers",3,"Raw MR episodic",2,0.566045,0.171326,0.492679,0.009849,0.471559,0.092159
+"Computers",3,"Canonical MR episodic",2,0.545628,0.140145,0.542514,0.138639,0.514977,0.043953
+"Computers",3,"Dual MR episodic",2,0.565605,0.144572,0.537836,0.1146,0.499063,0.08144
+"Computers",3,"Slow cortex episodic",2,0.566163,0.138332,0.533527,0.182041,0.564831,0.128901
+"Computers",3,"DG episodic",2,0.530671,0.171199,0.516004,0.217623,0.546427,0.0091
+"Computers",3,"Physics episodic",2,0.506837,0.125867,0.47291,0.065272,0.4876,0.090319
+"Computers",3,"Predictive innovation episodic",2,0.514348,0.070799,0.514348,0.070799,0.502439,0.029618
+"Computers",3,"Hopfield physics episodic",2,0.511125,0.114227,0.477076,0.020435,0.481466,0.063709
+"Computers",3,"NeuroMem prior",2,0.56042,0.163095,0.542811,0.167678,0.525448,0.08521
+"Computers",3,"BioPhysics no homeostasis",2,0.544733,0.185574,0.516193,0.152805,0.518557,0.073384
+"Computers",3,"BioPhysics no cortex",2,0.532156,0.175111,0.518512,0.122985,0.481104,0.018953
+"Computers",3,"BioPhysics no physics",2,0.55649,0.185955,0.530624,0.158972,0.549613,0.05135
+"Computers",3,"BioPhysics no predictive",2,0.516946,0.184829,0.518369,0.163532,0.516441,0.046822
+"Computers",3,"BioPhysics no Hopfield",2,0.5523,0.191909,0.508077,0.188647,0.520073,0.108246
+"Computers",3,"BioPhysics no context",2,0.542714,0.182719,0.503578,0.151241,0.520815,0.086404
+"Computers",3,"BioPhysics full",2,0.538495,0.188686,0.511395,0.16487,0.520815,0.086404
+"Computers",3,"BioPhysics safe TRAIN",2,0.554536,0.154775,0.543247,0.168295,0.560587,0.134904
+"Computers",3,"BioPhysics risk-gated",2,0.567027,0.16091,0.528279,0.167745,0.516383,0.055254
+"Computers",3,"BioPhysics HCLM-guarded",2,0.569631,0.157228,0.540166,0.124982,0.508457,0.074766
+"Computers",3,"Raw MR ridge",2,0.634982,0.05588,0.489665,0.028173,0.404969,0.010334
+"Computers",5,"Raw MR episodic",2,0.599132,0.13077,0.502739,0.018053,0.419995,0.122558
+"Computers",5,"Canonical MR episodic",2,0.555721,0.141816,0.565287,0.149008,0.401996,0.060157
+"Computers",5,"Dual MR episodic",2,0.587115,0.131098,0.579237,0.110919,0.396236,0.088958
+"Computers",5,"Slow cortex episodic",2,0.612161,0.038309,0.566124,0.087295,0.623582,0.030295
+"Computers",5,"DG episodic",2,0.548904,0.106544,0.56856,0.163193,0.51851,0.020963
+"Computers",5,"Physics episodic",2,0.516152,0.061812,0.527312,0.011908,0.538483,0.063012
+"Computers",5,"Predictive innovation episodic",2,0.469344,0.076185,0.469344,0.076185,0.502606,0.055478
+"Computers",5,"Hopfield physics episodic",2,0.514412,0.060499,0.51651,0.016078,0.531346,0.068036
+"Computers",5,"NeuroMem prior",2,0.60155,0.116595,0.598862,0.130535,0.539937,0.11177
+"Computers",5,"BioPhysics no homeostasis",2,0.537158,0.066685,0.550434,0.097683,0.547816,0.022463
+"Computers",5,"BioPhysics no cortex",2,0.521979,0.060316,0.527456,0.079362,0.472692,0.071687
+"Computers",5,"BioPhysics no physics",2,0.572916,0.093695,0.586804,0.120456,0.555296,0.068438
+"Computers",5,"BioPhysics no predictive",2,0.561652,0.098122,0.553686,0.127715,0.512945,0.009282
+"Computers",5,"BioPhysics no Hopfield",2,0.547571,0.069872,0.56992,0.127323,0.545618,0.00266
+"Computers",5,"BioPhysics no context",2,0.543066,0.062065,0.562174,0.120866,0.530324,0.03292
+"Computers",5,"BioPhysics full",2,0.54543,0.070289,0.539109,0.102371,0.530609,0.027423
+"Computers",5,"BioPhysics safe TRAIN",2,0.566832,0.102414,0.564328,0.089835,0.552071,0.131426
+"Computers",5,"BioPhysics risk-gated",2,0.596431,0.112462,0.592435,0.111062,0.455382,0.061584
+"Computers",5,"BioPhysics HCLM-guarded",2,0.60024,0.123998,0.583369,0.122926,0.436042,0.084489
+"Computers",5,"Raw MR ridge",2,0.637226,0.071098,0.470732,0.007719,0.422411,0.125975
+"Strawberry",1,"Raw MR episodic",2,0.557169,0.074646,0.544117,0.06589,0.262948,0
+"Strawberry",1,"Canonical MR episodic",2,0.532064,0.036312,0.532064,0.036312,0.262948,0
+"Strawberry",1,"Dual MR episodic",2,0.54177,0.059334,0.533338,0.044176,0.262948,0
+"Strawberry",1,"Slow cortex episodic",2,0.465055,0.045684,0.488903,0.014819,0.469593,0.043207
+"Strawberry",1,"DG episodic",2,0.562596,0.069411,0.562449,0.039843,0.272269,0.013181
+"Strawberry",1,"Physics episodic",2,0.521101,0.061851,0.474435,0.002711,0.450725,0.089686
+"Strawberry",1,"Predictive innovation episodic",2,0.419236,0.05053,0.419236,0.05053,0.300008,0.05241
+"Strawberry",1,"Hopfield physics episodic",2,0.521101,0.061851,0.474435,0.002711,0.450725,0.089686
+"Strawberry",1,"NeuroMem prior",2,0.525774,0.051636,0.525276,0.021646,0.496274,0.044525
+"Strawberry",1,"BioPhysics no homeostasis",2,0.518264,0.049849,0.500758,0.012579,0.438331,0.004572
+"Strawberry",1,"BioPhysics no cortex",2,0.526638,0.05519,0.498678,0.003016,0.454585,0.098407
+"Strawberry",1,"BioPhysics no physics",2,0.523557,0.031906,0.493969,0.013611,0.381326,0.167412
+"Strawberry",1,"BioPhysics no predictive",2,0.529394,0.075344,0.505869,0.019783,0.463314,0.064382
+"Strawberry",1,"BioPhysics no Hopfield",2,0.519029,0.046448,0.489456,0.020683,0.431979,0.004636
+"Strawberry",1,"BioPhysics no context",2,0.536074,0.076782,0.503659,0.005939,0.440862,0.075474
+"Strawberry",1,"BioPhysics full",2,0.518428,0.051826,0.492272,0.008167,0.444563,0.01679
+"Strawberry",1,"BioPhysics safe TRAIN",2,0.54177,0.059334,0.533338,0.044176,0.262948,0
+"Strawberry",1,"BioPhysics risk-gated",2,0.548687,0.059426,0.512487,0.041454,0.469593,0.043207
+"Strawberry",1,"BioPhysics HCLM-guarded",2,0.54522,0.057748,0.533338,0.044176,0.467517,0.040272
+"Strawberry",1,"Raw MR ridge",2,0.557169,0.074646,0.544117,0.06589,0.262948,0
+"Strawberry",3,"Raw MR episodic",2,0.739326,0.091642,0.722825,0.077827,0.363022,0.040199
+"Strawberry",3,"Canonical MR episodic",2,0.747583,0.072633,0.747583,0.072633,0.327198,0.090863
+"Strawberry",3,"Dual MR episodic",2,0.742153,0.068654,0.745153,0.079034,0.327198,0.090863
+"Strawberry",3,"Slow cortex episodic",2,0.601588,0.060129,0.491977,0.069094,0.591167,0.062193
+"Strawberry",3,"DG episodic",2,0.671274,0.124574,0.692336,0.116325,0.327198,0.090863
+"Strawberry",3,"Physics episodic",2,0.63059,0.085664,0.580411,0.081214,0.41376,0.029052
+"Strawberry",3,"Predictive innovation episodic",2,0.51133,0.063129,0.51133,0.063129,0.274559,0.01642
+"Strawberry",3,"Hopfield physics episodic",2,0.639355,0.083665,0.593309,0.09214,0.421454,0.018195
+"Strawberry",3,"NeuroMem prior",2,0.6905,0.124168,0.697486,0.066837,0.620284,0.093668
+"Strawberry",3,"BioPhysics no homeostasis",2,0.659073,0.091605,0.644234,0.04464,0.49073,0.098921
+"Strawberry",3,"BioPhysics no cortex",2,0.663529,0.097908,0.632879,0.063143,0.417819,0.013054
+"Strawberry",3,"BioPhysics no physics",2,0.685358,0.109738,0.672526,0.021829,0.428303,0.220574
+"Strawberry",3,"BioPhysics no predictive",2,0.668683,0.108941,0.654344,0.068355,0.422882,0.027839
+"Strawberry",3,"BioPhysics no Hopfield",2,0.658789,0.102597,0.638302,0.056658,0.491092,0.135294
+"Strawberry",3,"BioPhysics no context",2,0.664326,0.102779,0.64253,0.068261,0.412259,0.012815
+"Strawberry",3,"BioPhysics full",2,0.661998,0.099487,0.637772,0.053779,0.473303,0.074275
+"Strawberry",3,"BioPhysics safe TRAIN",2,0.736734,0.087976,0.733368,0.092737,0.363022,0.040199
+"Strawberry",3,"BioPhysics risk-gated",2,0.729005,0.10991,0.728378,0.08449,0.565731,0.026221
+"Strawberry",3,"BioPhysics HCLM-guarded",2,0.724913,0.100338,0.745153,0.079034,0.547454,0.052069
+"Strawberry",3,"Raw MR ridge",2,0.674287,0.055463,0.677098,0.056514,0.470056,0.010545
+"Strawberry",5,"Raw MR episodic",2,0.754068,0.01393,0.744783,0.000935,0.391447,0
+"Strawberry",5,"Canonical MR episodic",2,0.77315,0.024474,0.77315,0.024474,0.391447,0
+"Strawberry",5,"Dual MR episodic",2,0.765801,0.023405,0.769115,0.029224,0.391447,0
+"Strawberry",5,"Slow cortex episodic",2,0.639333,0.040352,0.510442,0.083478,0.642488,0.04753
+"Strawberry",5,"DG episodic",2,0.758364,0.028246,0.757904,0.028845,0.391447,0
+"Strawberry",5,"Physics episodic",2,0.65984,0.047951,0.620838,0.064262,0.397753,0.010336
+"Strawberry",5,"Predictive innovation episodic",2,0.518318,0.070857,0.518318,0.070857,0.279188,0.016307
+"Strawberry",5,"Hopfield physics episodic",2,0.612826,0.052578,0.586245,0.07824,0.475848,0.098443
+"Strawberry",5,"NeuroMem prior",2,0.718841,0.031987,0.747023,0.059051,0.679783,0.033994
+"Strawberry",5,"BioPhysics no homeostasis",2,0.686664,0.047278,0.680829,0.011757,0.552001,0.035889
+"Strawberry",5,"BioPhysics no cortex",2,0.689567,0.04061,0.674698,0.050278,0.420893,0.024055
+"Strawberry",5,"BioPhysics no physics",2,0.717648,0.027581,0.714796,0.062933,0.606232,0.051396
+"Strawberry",5,"BioPhysics no predictive",2,0.683747,0.058004,0.681176,0.004123,0.526031,0.166088
+"Strawberry",5,"BioPhysics no Hopfield",2,0.702537,0.0366,0.699464,0.022345,0.623436,0.010048
+"Strawberry",5,"BioPhysics no context",2,0.701752,0.028175,0.69292,0.01309,0.543148,0.185323
+"Strawberry",5,"BioPhysics full",2,0.667995,0.061949,0.668427,0.006614,0.513796,0.077079
+"Strawberry",5,"BioPhysics safe TRAIN",2,0.690017,0.093094,0.714474,0.058507,0.479873,0.125053
+"Strawberry",5,"BioPhysics risk-gated",2,0.741893,0.019731,0.766561,0.029173,0.625727,0.023826
+"Strawberry",5,"BioPhysics HCLM-guarded",2,0.745088,0.005888,0.769115,0.029224,0.62701,0.022013
+"Strawberry",5,"Raw MR ridge",2,0.712939,0.026199,0.67817,0.009515,0.269963,0.00992
+"ToeSegmentation1",1,"Raw MR episodic",2,0.643958,0.170776,0.605467,0.146009,0.57118,0.170739
+"ToeSegmentation1",1,"Canonical MR episodic",2,0.64396,0.161256,0.64396,0.161256,0.436557,0.040087
+"ToeSegmentation1",1,"Dual MR episodic",2,0.65585,0.199165,0.644647,0.190876,0.484045,0.050397
+"ToeSegmentation1",1,"Slow cortex episodic",2,0.700853,0.08333,0.638129,0.04648,0.71063,0.084337
+"ToeSegmentation1",1,"DG episodic",2,0.581867,0.055259,0.577837,0.08589,0.482017,0.06114
+"ToeSegmentation1",1,"Physics episodic",2,0.555278,0.033061,0.533352,0.014662,0.48327,0.031505
+"ToeSegmentation1",1,"Predictive innovation episodic",2,0.517138,0.002997,0.517138,0.002997,0.381889,0.030575
+"ToeSegmentation1",1,"Hopfield physics episodic",2,0.555278,0.033061,0.533352,0.014662,0.48327,0.031505
+"ToeSegmentation1",1,"NeuroMem prior",2,0.675705,0.111865,0.656982,0.069129,0.66637,0.135948
+"ToeSegmentation1",1,"BioPhysics no homeostasis",2,0.598426,0.095599,0.586756,0.057176,0.519798,0.020582
+"ToeSegmentation1",1,"BioPhysics no cortex",2,0.596107,0.068686,0.555915,0.026265,0.450348,0.010781
+"ToeSegmentation1",1,"BioPhysics no physics",2,0.665507,0.170757,0.637912,0.139794,0.537848,0.099066
+"ToeSegmentation1",1,"BioPhysics no predictive",2,0.615967,0.069367,0.596923,0.073784,0.525855,0.000891
+"ToeSegmentation1",1,"BioPhysics no Hopfield",2,0.608478,0.111869,0.603537,0.095473,0.514683,0.024925
+"ToeSegmentation1",1,"BioPhysics no context",2,0.586753,0.093945,0.585589,0.077445,0.51832,0.013985
+"ToeSegmentation1",1,"BioPhysics full",2,0.587614,0.080309,0.573492,0.051123,0.512342,0.000021
+"ToeSegmentation1",1,"BioPhysics safe TRAIN",2,0.65585,0.199165,0.644647,0.190876,0.484045,0.050397
+"ToeSegmentation1",1,"BioPhysics risk-gated",2,0.668388,0.174446,0.656078,0.129801,0.559266,0.051094
+"ToeSegmentation1",1,"BioPhysics HCLM-guarded",2,0.65585,0.199165,0.644647,0.190876,0.484045,0.050397
+"ToeSegmentation1",1,"Raw MR ridge",2,0.643958,0.170776,0.605467,0.146009,0.57118,0.170739
+"ToeSegmentation1",3,"Raw MR episodic",2,0.714067,0.166453,0.703518,0.138954,0.531854,0.017216
+"ToeSegmentation1",3,"Canonical MR episodic",2,0.712491,0.089769,0.712491,0.089769,0.442724,0.114785
+"ToeSegmentation1",3,"Dual MR episodic",2,0.718903,0.123855,0.714618,0.117475,0.457159,0.107837
+"ToeSegmentation1",3,"Slow cortex episodic",2,0.758644,0.01979,0.647949,0.06248,0.761527,0.0356
+"ToeSegmentation1",3,"DG episodic",2,0.636967,0.065952,0.630526,0.068662,0.479824,0.101983
+"ToeSegmentation1",3,"Physics episodic",2,0.571272,0.058411,0.559674,0.016765,0.529728,0.020802
+"ToeSegmentation1",3,"Predictive innovation episodic",2,0.641732,0.109205,0.641732,0.109205,0.441019,0.177772
+"ToeSegmentation1",3,"Hopfield physics episodic",2,0.591651,0.07743,0.560641,0.001269,0.557892,0.008861
+"ToeSegmentation1",3,"NeuroMem prior",2,0.814664,0.068476,0.751842,0.040431,0.686623,0.063935
+"ToeSegmentation1",3,"BioPhysics no homeostasis",2,0.712215,0.046234,0.694453,0.010196,0.639377,0.094218
+"ToeSegmentation1",3,"BioPhysics no cortex",2,0.659381,0.071193,0.663517,0.004418,0.561951,0.097465
+"ToeSegmentation1",3,"BioPhysics no physics",2,0.795707,0.046444,0.738425,0.022545,0.567873,0.214793
+"ToeSegmentation1",3,"BioPhysics no predictive",2,0.698621,0.095173,0.70272,0.02964,0.642676,0.033514
+"ToeSegmentation1",3,"BioPhysics no Hopfield",2,0.725656,0.052622,0.70724,0.022887,0.612063,0.163793
+"ToeSegmentation1",3,"BioPhysics no context",2,0.694811,0.052356,0.694522,0.00382,0.636216,0.086408
+"ToeSegmentation1",3,"BioPhysics full",2,0.694811,0.052356,0.681228,0.008506,0.639824,0.074876
+"ToeSegmentation1",3,"BioPhysics safe TRAIN",2,0.775566,0.043721,0.744907,0.074639,0.558631,0.251339
+"ToeSegmentation1",3,"BioPhysics risk-gated",2,0.727464,0.111748,0.744753,0.074858,0.468294,0.123584
+"ToeSegmentation1",3,"BioPhysics HCLM-guarded",2,0.718903,0.123855,0.714618,0.117475,0.457159,0.107837
+"ToeSegmentation1",3,"Raw MR ridge",2,0.780431,0.149048,0.775822,0.143239,0.505781,0.07991
+"ToeSegmentation1",5,"Raw MR episodic",2,0.760133,0.041402,0.743774,0.003776,0.559181,0.272797
+"ToeSegmentation1",5,"Canonical MR episodic",2,0.736832,0.019506,0.736832,0.019506,0.572337,0.303742
+"ToeSegmentation1",5,"Dual MR episodic",2,0.756768,0.002775,0.745986,0.025811,0.557135,0.294751
+"ToeSegmentation1",5,"Slow cortex episodic",2,0.77861,0.025559,0.646913,0.009319,0.76786,0.03482
+"ToeSegmentation1",5,"DG episodic",2,0.67168,0.042402,0.674033,0.051578,0.537411,0.231897
+"ToeSegmentation1",5,"Physics episodic",2,0.608058,0.005029,0.570177,0.031323,0.523528,0.035868
+"ToeSegmentation1",5,"Predictive innovation episodic",2,0.667803,0.01048,0.667803,0.01048,0.531118,0.283501
+"ToeSegmentation1",5,"Hopfield physics episodic",2,0.605848,0.001515,0.575535,0.051612,0.555742,0.036498
+"ToeSegmentation1",5,"NeuroMem prior",2,0.820374,0.011073,0.749597,0.01218,0.729483,0.13772
+"ToeSegmentation1",5,"BioPhysics no homeostasis",2,0.763616,0.00088,0.715849,0.026803,0.645723,0.136814
+"ToeSegmentation1",5,"BioPhysics no cortex",2,0.692476,0.01797,0.700072,0.022742,0.532431,0.145831
+"ToeSegmentation1",5,"BioPhysics no physics",2,0.79473,0.013782,0.740461,0.043883,0.631938,0.2826
+"ToeSegmentation1",5,"BioPhysics no predictive",2,0.737117,0.023752,0.697793,0.013421,0.623104,0.063855
+"ToeSegmentation1",5,"BioPhysics no Hopfield",2,0.752381,0.003428,0.720068,0.014283,0.643656,0.179975
+"ToeSegmentation1",5,"BioPhysics no context",2,0.746494,0.004625,0.722641,0.023727,0.647457,0.134361
+"ToeSegmentation1",5,"BioPhysics full",2,0.750865,0.007675,0.702506,0.001583,0.649909,0.137829
+"ToeSegmentation1",5,"BioPhysics safe TRAIN",2,0.756768,0.002775,0.745986,0.025811,0.557135,0.294751
+"ToeSegmentation1",5,"BioPhysics risk-gated",2,0.758858,0.00018,0.737346,0.013593,0.556934,0.294467
+"ToeSegmentation1",5,"BioPhysics HCLM-guarded",2,0.756768,0.002775,0.745986,0.025811,0.557135,0.294751
+"ToeSegmentation1",5,"Raw MR ridge",2,0.774027,0.009225,0.774039,0.01562,0.550399,0.272716
+"ToeSegmentation2",1,"Raw MR episodic",2,0.600796,0.043658,0.593889,0.053425,0.656467,0.006227
+"ToeSegmentation2",1,"Canonical MR episodic",2,0.660007,0.028368,0.660007,0.028368,0.641676,0.01469
+"ToeSegmentation2",1,"Dual MR episodic",2,0.619403,0.0361,0.613031,0.035664,0.656467,0.006227
+"ToeSegmentation2",1,"Slow cortex episodic",2,0.579243,0.145458,0.512582,0.048171,0.591768,0.158906
+"ToeSegmentation2",1,"DG episodic",2,0.615855,0.000665,0.624379,0.025729,0.53617,0.123062
+"ToeSegmentation2",1,"Physics episodic",2,0.529273,0.010056,0.511649,0.019306,0.530187,0.082232
+"ToeSegmentation2",1,"Predictive innovation episodic",2,0.41367,0.042892,0.41367,0.042892,0.443191,0.008431
+"ToeSegmentation2",1,"Hopfield physics episodic",2,0.529273,0.010056,0.511649,0.019306,0.530187,0.082232
+"ToeSegmentation2",1,"NeuroMem prior",2,0.639036,0.037612,0.636654,0.043088,0.642029,0.026645
+"ToeSegmentation2",1,"BioPhysics no homeostasis",2,0.586636,0.001664,0.550447,0.016179,0.638154,0.032124
+"ToeSegmentation2",1,"BioPhysics no cortex",2,0.580188,0.042161,0.569067,0.031712,0.62227,0.042135
+"ToeSegmentation2",1,"BioPhysics no physics",2,0.605847,0.042436,0.617567,0.050581,0.627238,0.005727
+"ToeSegmentation2",1,"BioPhysics no predictive",2,0.576632,0.033047,0.574657,0.038266,0.651399,0.033377
+"ToeSegmentation2",1,"BioPhysics no Hopfield",2,0.58363,0.002586,0.565893,0.010858,0.623364,0.011207
+"ToeSegmentation2",1,"BioPhysics no context",2,0.570388,0.016141,0.569552,0.005683,0.626673,0.048361
+"ToeSegmentation2",1,"BioPhysics full",2,0.570388,0.016141,0.546136,0.010082,0.652255,0.012183
+"ToeSegmentation2",1,"BioPhysics safe TRAIN",2,0.619403,0.0361,0.613031,0.035664,0.656467,0.006227
+"ToeSegmentation2",1,"BioPhysics risk-gated",2,0.653588,0.017033,0.667202,0.018192,0.668134,0.052107
+"ToeSegmentation2",1,"BioPhysics HCLM-guarded",2,0.619403,0.0361,0.613031,0.035664,0.656467,0.006227
+"ToeSegmentation2",1,"Raw MR ridge",2,0.600796,0.043658,0.593889,0.053425,0.656467,0.006227
+"ToeSegmentation2",3,"Raw MR episodic",2,0.649659,0.087464,0.655302,0.12388,0.687341,0.049889
+"ToeSegmentation2",3,"Canonical MR episodic",2,0.683622,0.073476,0.683622,0.073476,0.67864,0.07842
+"ToeSegmentation2",3,"Dual MR episodic",2,0.677669,0.092247,0.677669,0.092247,0.698247,0.065313
+"ToeSegmentation2",3,"Slow cortex episodic",2,0.630994,0.099468,0.529281,0.032714,0.631827,0.083622
+"ToeSegmentation2",3,"DG episodic",2,0.646871,0.069695,0.642555,0.097558,0.606531,0.066188
+"ToeSegmentation2",3,"Physics episodic",2,0.538692,0.046341,0.543788,0.110085,0.516947,0.105422
+"ToeSegmentation2",3,"Predictive innovation episodic",2,0.564406,0.120209,0.564406,0.120209,0.562004,0.166254
+"ToeSegmentation2",3,"Hopfield physics episodic",2,0.534049,0.027899,0.531807,0.100402,0.522805,0.10051
+"ToeSegmentation2",3,"NeuroMem prior",2,0.703796,0.043863,0.66526,0.065749,0.712445,0.085392
+"ToeSegmentation2",3,"BioPhysics no homeostasis",2,0.633296,0.059121,0.59748,0.119964,0.643418,0.081898
+"ToeSegmentation2",3,"BioPhysics no cortex",2,0.620456,0.10717,0.62313,0.103997,0.64308,0.117876
+"ToeSegmentation2",3,"BioPhysics no physics",2,0.686913,0.068821,0.633416,0.067821,0.649237,0.176096
+"ToeSegmentation2",3,"BioPhysics no predictive",2,0.636062,0.045687,0.607633,0.105605,0.64305,0.049562
+"ToeSegmentation2",3,"BioPhysics no Hopfield",2,0.618768,0.029952,0.603979,0.100439,0.630546,0.108726
+"ToeSegmentation2",3,"BioPhysics no context",2,0.619899,0.048705,0.59298,0.106111,0.626369,0.10282
+"ToeSegmentation2",3,"BioPhysics full",2,0.626913,0.058625,0.602793,0.11245,0.635582,0.070816
+"ToeSegmentation2",3,"BioPhysics safe TRAIN",2,0.683239,0.072934,0.671709,0.056629,0.698007,0.10581
+"ToeSegmentation2",3,"BioPhysics risk-gated",2,0.699401,0.073201,0.679173,0.046074,0.730211,0.072032
+"ToeSegmentation2",3,"BioPhysics HCLM-guarded",2,0.677669,0.092247,0.677669,0.092247,0.698247,0.065313
+"ToeSegmentation2",3,"Raw MR ridge",2,0.646654,0.091715,0.667195,0.107061,0.735747,0.092597
+"ToeSegmentation2",5,"Raw MR episodic",2,0.694295,0.046907,0.702857,0.070037,0.719918,0.02174
+"ToeSegmentation2",5,"Canonical MR episodic",2,0.71994,0.045878,0.71994,0.045878,0.729167,0.03482
+"ToeSegmentation2",5,"Dual MR episodic",2,0.721228,0.066528,0.717696,0.071523,0.733606,0.028542
+"ToeSegmentation2",5,"Slow cortex episodic",2,0.672092,0.015506,0.572073,0.024608,0.672092,0.015506
+"ToeSegmentation2",5,"DG episodic",2,0.668166,0.003584,0.66338,0.044849,0.690212,0.032826
+"ToeSegmentation2",5,"Physics episodic",2,0.583555,0.05085,0.535427,0.057958,0.564828,0.073787
+"ToeSegmentation2",5,"Predictive innovation episodic",2,0.631585,0.061904,0.631585,0.061904,0.576245,0.023357
+"ToeSegmentation2",5,"Hopfield physics episodic",2,0.571,0.033094,0.536919,0.055043,0.537972,0.050092
+"ToeSegmentation2",5,"NeuroMem prior",2,0.735933,0.02326,0.678549,0.03566,0.768231,0.006498
+"ToeSegmentation2",5,"BioPhysics no homeostasis",2,0.703819,0.021393,0.635751,0.083922,0.71473,0.014403
+"ToeSegmentation2",5,"BioPhysics no cortex",2,0.666771,0.062272,0.641713,0.075491,0.687527,0.006038
+"ToeSegmentation2",5,"BioPhysics no physics",2,0.723709,0.017212,0.694404,0.069967,0.753438,0
+"ToeSegmentation2",5,"BioPhysics no predictive",2,0.685601,0.047921,0.608794,0.070455,0.685259,0.008056
+"ToeSegmentation2",5,"BioPhysics no Hopfield",2,0.70281,0.009415,0.6367,0.093561,0.712944,0.029906
+"ToeSegmentation2",5,"BioPhysics no context",2,0.692679,0.061196,0.633795,0.097669,0.705995,0.014196
+"ToeSegmentation2",5,"BioPhysics full",2,0.684177,0.049172,0.635751,0.083922,0.691797,0.005884
+"ToeSegmentation2",5,"BioPhysics safe TRAIN",2,0.727885,0.057114,0.727885,0.057114,0.729167,0.03482
+"ToeSegmentation2",5,"BioPhysics risk-gated",2,0.736201,0.045353,0.736018,0.045613,0.753829,0.000058
+"ToeSegmentation2",5,"BioPhysics HCLM-guarded",2,0.721228,0.066528,0.717696,0.071523,0.733606,0.028542
+"ToeSegmentation2",5,"Raw MR ridge",2,0.727538,0.011898,0.716309,0.027778,0.756963,0.018504
