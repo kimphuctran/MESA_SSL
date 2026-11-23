@@ -71,18 +71,28 @@ class PyramidalTokens(nn.Module):
     def __init__(self, channels, dim, bins=(8,16,24)):
         super().__init__()
         self.bins=tuple(bins)
-        self.proj=nn.Linear(3*channels,dim)
+        # Keep unfiltered raw information AND an independent anti-alias
+        # path. CNN comparisons suggested simple pooled roughness tokens
+        # over-react to waveform noise. The clean stream is never dropped.
+        self.proj=nn.Linear(5*channels,dim)
         self.scale=nn.Parameter(torch.randn(len(self.bins),dim)*.02)
         self.norm=nn.LayerNorm(dim)
     def forward(self,x):
         y=x.transpose(1,2)
+        # Edge replication avoids introducing artificial zero-padded shocks.
+        pad=min(4,max(1,x.size(1)//2))
+        window=2*pad+1
+        smooth=F.avg_pool1d(F.pad(y,(pad,pad),mode="replicate"),
+                            kernel_size=window,stride=1)
         dy=torch.abs(y[:,:,1:]-y[:,:,:-1]) if x.size(1)>1 else torch.zeros_like(y)
         out=[]
         for level,n in enumerate(self.bins):
             mu=F.adaptive_avg_pool1d(y,n).transpose(1,2)
             energy=F.adaptive_avg_pool1d(y.square(),n).clamp_min(1.e-8).sqrt().transpose(1,2)
             rough=F.adaptive_avg_pool1d(dy,n).transpose(1,2)
-            token=self.proj(torch.cat((mu,energy,rough),dim=-1))
+            smooth_mu=F.adaptive_avg_pool1d(smooth,n).transpose(1,2)
+            smooth_rms=F.adaptive_avg_pool1d(smooth.square(),n).clamp_min(1.e-8).sqrt().transpose(1,2)
+            token=self.proj(torch.cat((mu,energy,rough,smooth_mu,smooth_rms),dim=-1))
             token=token+self.scale[level]+pos_encoding(n,token.size(-1),
                 device=x.device,dtype=x.dtype)
             out.append(token)
@@ -243,6 +253,15 @@ def fit_ssl(x_train,seed,mechanism=True,attention="routed",
             sine=.25*torch.randn((len(x),1,x.shape[2]))
             harmonic=x+sine*torch.sin(timeharm)[None,:,None]
             altered=net(harmonic)
+            # A separate, broader waveform view is introduced only on TRAIN.
+            # It targets a different failure mode from additive affine drift.
+            rnd_amp=(.035+.075*torch.rand((len(x),1,1)))
+            waveform=x+rnd_amp*torch.randn_like(x)
+            wave_amp=.025+.060*torch.rand((len(x),1,x.shape[2]))
+            waveform=waveform+wave_amp*torch.sin(
+                timeharm[None,:,None]*torch.randint(1,4,
+                  (len(x),1,x.shape[2])).float())
+            corrupted=net(waveform)
             # Core SSL objectives are the same in generic and MESA variants.
             shape_consistency=(1-F.cosine_similarity(
                 clean["shape"],aug["shape"]).mean())
@@ -253,8 +272,13 @@ def fit_ssl(x_train,seed,mechanism=True,attention="routed",
             variance=sum(F.relu(.45-clean[k].std(dim=0,unbiased=False)).mean()
                          for k in ("raw","shape"))
             spectrum=F.smooth_l1_loss(clean["freq_pred"],band_spectrum(x))
-            loss=.24*shape_consistency+.12*raw_consistency
-            loss=loss+.17*affine_consistency+.08*variance+.35*spectrum
+            noise_shape_consistency=1-F.cosine_similarity(
+                clean["shape"],corrupted["shape"]).mean()
+            denoise_spectrum=F.smooth_l1_loss(
+                corrupted["freq_pred"],band_spectrum(x))
+            loss=.20*shape_consistency+.10*raw_consistency
+            loss=loss+.15*affine_consistency+.06*variance+.28*spectrum
+            loss=loss+.15*noise_shape_consistency+.10*denoise_spectrum
             # Direct gradients to both learned streams; analytic concept
             # targets provide a checked counterfactual mechanism ablation.
             raw_target=clean["concept"]
