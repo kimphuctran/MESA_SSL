@@ -1,0 +1,3014 @@
+{
+  "research_date": "2026-11-23",
+  "repository": "kimphuctran/MESA_SSL",
+  "branch": "mesa-encoder-hpo-2026",
+  "protocol": "MESA-selected hyperparameters fixed on TRAIN; identical seed/architecture/augmentation draws and scheduler; mechanism positive vs exactly zero weights",
+  "provenance": {
+    "run": 45220095525,
+    "original_hpo_run": 45217129377,
+    "jobs": [
+      {
+        "dataset": "ItalyPowerDemand",
+        "job_id": 137851705242,
+        "records": 8
+      },
+      {
+        "dataset": "SyntheticControl",
+        "job_id": 137851705833,
+        "records": 8
+      },
+      {
+        "dataset": "GunPoint",
+        "job_id": 137851705861,
+        "records": 8
+      },
+      {
+        "dataset": "GunPointAgeSpan",
+        "job_id": 137851705899,
+        "records": 8
+      },
+      {
+        "dataset": "CBF",
+        "job_id": 137851706005,
+        "records": 8
+      },
+      {
+        "dataset": "ECGFiveDays",
+        "job_id": 137851706008,
+        "records": 8
+      },
+      {
+        "dataset": "Meat",
+        "job_id": 137851706013,
+        "records": 8
+      },
+      {
+        "dataset": "BasicMotions",
+        "job_id": 137851706078,
+        "records": 8
+      }
+    ],
+    "primary_hpo_reproduction": [
+      {
+        "dataset": "BasicMotions",
+        "difference": 0
+      },
+      {
+        "dataset": "CBF",
+        "difference": 0
+      },
+      {
+        "dataset": "ECGFiveDays",
+        "difference": 0
+      },
+      {
+        "dataset": "GunPoint",
+        "difference": 0
+      },
+      {
+        "dataset": "GunPointAgeSpan",
+        "difference": 0
+      },
+      {
+        "dataset": "ItalyPowerDemand",
+        "difference": 0
+      },
+      {
+        "dataset": "Meat",
+        "difference": 0
+      },
+      {
+        "dataset": "SyntheticControl",
+        "difference": 0
+      }
+    ]
+  },
+  "overall": [
+    {
+      "readout": "latent",
+      "mechanism": {
+        "clean": 0.777385,
+        "affine": 0.777385,
+        "jitter": 0.725213,
+        "concept_rmse": 0.112833
+      },
+      "zero_loss": {
+        "clean": 0.766746,
+        "affine": 0.766746,
+        "jitter": 0.711057,
+        "concept_rmse": 0.550654
+      },
+      "delta": {
+        "clean": 0.010639,
+        "jitter": 0.014156,
+        "concept_rmse": -0.437821
+      }
+    },
+    {
+      "readout": "latent+canonical",
+      "mechanism": {
+        "clean": 0.869856,
+        "affine": 0.869856,
+        "jitter": 0.645167,
+        "concept_rmse": 0.112833
+      },
+      "zero_loss": {
+        "clean": 0.872068,
+        "affine": 0.872068,
+        "jitter": 0.647071,
+        "concept_rmse": 0.550654
+      },
+      "delta": {
+        "clean": -0.002212,
+        "jitter": -0.001904,
+        "concept_rmse": -0.437821
+      }
+    }
+  ],
+  "deltas_by_dataset": [
+    {
+      "dataset": "BasicMotions",
+      "latent_clean_delta": -0.072018,
+      "latent_jitter_delta": -0.006071,
+      "latent_canonical_clean_delta": 0,
+      "latent_canonical_jitter_delta": 0,
+      "rmse_delta": -0.13683
+    },
+    {
+      "dataset": "CBF",
+      "latent_clean_delta": 0.008469,
+      "latent_jitter_delta": -0.002123,
+      "latent_canonical_clean_delta": 0,
+      "latent_canonical_jitter_delta": 0,
+      "rmse_delta": -0.277195
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "latent_clean_delta": 0.145508,
+      "latent_jitter_delta": 0.056085,
+      "latent_canonical_clean_delta": 0,
+      "latent_canonical_jitter_delta": 0,
+      "rmse_delta": -0.989865
+    },
+    {
+      "dataset": "GunPoint",
+      "latent_clean_delta": -0.00701,
+      "latent_jitter_delta": -0.001071,
+      "latent_canonical_clean_delta": 0,
+      "latent_canonical_jitter_delta": 0,
+      "rmse_delta": -0.354234
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "latent_clean_delta": -0.003857,
+      "latent_jitter_delta": -0.017512,
+      "latent_canonical_clean_delta": 0,
+      "latent_canonical_jitter_delta": 0,
+      "rmse_delta": -0.518279
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "latent_clean_delta": 0.034511,
+      "latent_jitter_delta": 0.036145,
+      "latent_canonical_clean_delta": 0.005851,
+      "latent_canonical_jitter_delta": 0.007296,
+      "rmse_delta": -0.725081
+    },
+    {
+      "dataset": "Meat",
+      "latent_clean_delta": -0.009531,
+      "latent_jitter_delta": 0.050015,
+      "latent_canonical_clean_delta": 0,
+      "latent_canonical_jitter_delta": 0,
+      "rmse_delta": -0.343282
+    },
+    {
+      "dataset": "SyntheticControl",
+      "latent_clean_delta": -0.010955,
+      "latent_jitter_delta": -0.00222,
+      "latent_canonical_clean_delta": -0.023543,
+      "latent_canonical_jitter_delta": -0.022524,
+      "rmse_delta": -0.157802
+    }
+  ],
+  "summary": [
+    {
+      "dataset": "BasicMotions",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.748189,
+      "clean_f1_sd": 0.017326,
+      "affine_f1_mean": 0.748189,
+      "jitter_f1_mean": 0.711736,
+      "concept_rmse_mean": 0.108744,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.987469,
+      "clean_f1_sd": 0.017722,
+      "affine_f1_mean": 0.987469,
+      "jitter_f1_mean": 0.739887,
+      "concept_rmse_mean": 0.108744,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.820207,
+      "clean_f1_sd": 0.033563,
+      "affine_f1_mean": 0.820207,
+      "jitter_f1_mean": 0.717807,
+      "concept_rmse_mean": 0.245574,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.987469,
+      "clean_f1_sd": 0.017722,
+      "affine_f1_mean": 0.987469,
+      "jitter_f1_mean": 0.739887,
+      "concept_rmse_mean": 0.245574,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.914797,
+      "clean_f1_sd": 0.011919,
+      "affine_f1_mean": 0.914797,
+      "jitter_f1_mean": 0.893459,
+      "concept_rmse_mean": 0.177498,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.954548,
+      "clean_f1_sd": 0.012555,
+      "affine_f1_mean": 0.954548,
+      "jitter_f1_mean": 0.948856,
+      "concept_rmse_mean": 0.177498,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.906328,
+      "clean_f1_sd": 0.00149,
+      "affine_f1_mean": 0.906328,
+      "jitter_f1_mean": 0.895582,
+      "concept_rmse_mean": 0.454693,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.954548,
+      "clean_f1_sd": 0.012555,
+      "affine_f1_mean": 0.954548,
+      "jitter_f1_mean": 0.948856,
+      "concept_rmse_mean": 0.454693,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.911617,
+      "clean_f1_sd": 0.029465,
+      "affine_f1_mean": 0.911617,
+      "jitter_f1_mean": 0.812603,
+      "concept_rmse_mean": 0.117221,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.928948,
+      "clean_f1_sd": 0.024661,
+      "affine_f1_mean": 0.928948,
+      "jitter_f1_mean": 0.828678,
+      "concept_rmse_mean": 0.117221,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.766109,
+      "clean_f1_sd": 0.075248,
+      "affine_f1_mean": 0.766109,
+      "jitter_f1_mean": 0.756518,
+      "concept_rmse_mean": 1.107086,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.928948,
+      "clean_f1_sd": 0.024661,
+      "affine_f1_mean": 0.928948,
+      "jitter_f1_mean": 0.828678,
+      "concept_rmse_mean": 1.107086,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.700526,
+      "clean_f1_sd": 0.093035,
+      "affine_f1_mean": 0.700526,
+      "jitter_f1_mean": 0.683067,
+      "concept_rmse_mean": 0.095705,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.774181,
+      "clean_f1_sd": 0.14953,
+      "affine_f1_mean": 0.774181,
+      "jitter_f1_mean": 0.555493,
+      "concept_rmse_mean": 0.095705,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.707536,
+      "clean_f1_sd": 0.061941,
+      "affine_f1_mean": 0.707536,
+      "jitter_f1_mean": 0.684138,
+      "concept_rmse_mean": 0.449939,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.774181,
+      "clean_f1_sd": 0.14953,
+      "affine_f1_mean": 0.774181,
+      "jitter_f1_mean": 0.555493,
+      "concept_rmse_mean": 0.449939,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.817649,
+      "clean_f1_sd": 0.002355,
+      "affine_f1_mean": 0.817649,
+      "jitter_f1_mean": 0.768574,
+      "concept_rmse_mean": 0.110973,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.878757,
+      "clean_f1_sd": 0.005501,
+      "affine_f1_mean": 0.878757,
+      "jitter_f1_mean": 0.336134,
+      "concept_rmse_mean": 0.110973,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.821506,
+      "clean_f1_sd": 0.011938,
+      "affine_f1_mean": 0.821506,
+      "jitter_f1_mean": 0.786086,
+      "concept_rmse_mean": 0.629252,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.878757,
+      "clean_f1_sd": 0.005501,
+      "affine_f1_mean": 0.878757,
+      "jitter_f1_mean": 0.336134,
+      "concept_rmse_mean": 0.629252,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.934391,
+      "clean_f1_sd": 0.006195,
+      "affine_f1_mean": 0.934391,
+      "jitter_f1_mean": 0.873532,
+      "concept_rmse_mean": 0.110019,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.952849,
+      "clean_f1_sd": 0.014442,
+      "affine_f1_mean": 0.952849,
+      "jitter_f1_mean": 0.917796,
+      "concept_rmse_mean": 0.110019,
+      "mean_selected_fusion_weight": 0.2
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.89988,
+      "clean_f1_sd": 0.068737,
+      "affine_f1_mean": 0.89988,
+      "jitter_f1_mean": 0.837387,
+      "concept_rmse_mean": 0.8351,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.946998,
+      "clean_f1_sd": 0.013064,
+      "affine_f1_mean": 0.946998,
+      "jitter_f1_mean": 0.9105,
+      "concept_rmse_mean": 0.8351,
+      "mean_selected_fusion_weight": 0.5
+    },
+    {
+      "dataset": "Meat",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.61628,
+      "clean_f1_sd": 0.02097,
+      "affine_f1_mean": 0.61628,
+      "jitter_f1_mean": 0.501105,
+      "concept_rmse_mean": 0.09164,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "Meat",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.891041,
+      "clean_f1_sd": 0.035933,
+      "affine_f1_mean": 0.891041,
+      "jitter_f1_mean": 0.251832,
+      "concept_rmse_mean": 0.09164,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "Meat",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.625811,
+      "clean_f1_sd": 0.007491,
+      "affine_f1_mean": 0.625811,
+      "jitter_f1_mean": 0.45109,
+      "concept_rmse_mean": 0.434922,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "Meat",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.891041,
+      "clean_f1_sd": 0.035933,
+      "affine_f1_mean": 0.891041,
+      "jitter_f1_mean": 0.251832,
+      "concept_rmse_mean": 0.434922,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "SyntheticControl",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.575634,
+      "clean_f1_sd": 0.000692,
+      "affine_f1_mean": 0.575634,
+      "jitter_f1_mean": 0.557631,
+      "concept_rmse_mean": 0.090867,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "SyntheticControl",
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.591056,
+      "clean_f1_sd": 0.011495,
+      "affine_f1_mean": 0.591056,
+      "jitter_f1_mean": 0.582661,
+      "concept_rmse_mean": 0.090867,
+      "mean_selected_fusion_weight": 1
+    },
+    {
+      "dataset": "SyntheticControl",
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "n": 2,
+      "clean_f1_mean": 0.586589,
+      "clean_f1_sd": 0.022948,
+      "affine_f1_mean": 0.586589,
+      "jitter_f1_mean": 0.559851,
+      "concept_rmse_mean": 0.248669,
+      "mean_selected_fusion_weight": 0
+    },
+    {
+      "dataset": "SyntheticControl",
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "n": 2,
+      "clean_f1_mean": 0.614599,
+      "clean_f1_sd": 0.00803,
+      "affine_f1_mean": 0.614599,
+      "jitter_f1_mean": 0.605185,
+      "concept_rmse_mean": 0.248669,
+      "mean_selected_fusion_weight": 0.55
+    }
+  ],
+  "records": [
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9300100514665316,
+      "affine_macro_f1": 0.9300100514665316,
+      "jitter_macro_f1": 0.872679909439608,
+      "accuracy": 0.9300291545189504,
+      "concept_rmse": 0.07888710498809814,
+      "selected_train_hyperparameters": {
+        "lr": 0.0011606305153342798,
+        "representation_dim": 48,
+        "mask_ratio": 0.2645896283009689,
+        "input_noise": 0.05739923947073086,
+        "harmonic_amplitude": 0.20869400338269395,
+        "epochs": 16,
+        "warmup_epochs": 0,
+        "schedule": "constant",
+        "lambda_concept": 0.13184966310398225,
+        "lambda_equiv": 0.08782869226417825
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.13184966310398225,
+        "lambda_equiv": 0.08782869226417825
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.1983678638935089,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 27.426
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9426365583635767,
+      "affine_macro_f1": 0.9426365583635767,
+      "jitter_macro_f1": 0.9230983173411209,
+      "accuracy": 0.9426627793974732,
+      "concept_rmse": 0.07888710498809814,
+      "selected_train_hyperparameters": {
+        "lr": 0.0011606305153342798,
+        "representation_dim": 48,
+        "mask_ratio": 0.2645896283009689,
+        "input_noise": 0.05739923947073086,
+        "harmonic_amplitude": 0.20869400338269395,
+        "epochs": 16,
+        "warmup_epochs": 0,
+        "schedule": "constant",
+        "lambda_concept": 0.13184966310398225,
+        "lambda_equiv": 0.08782869226417825
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.13184966310398225,
+        "lambda_equiv": 0.08782869226417825
+      },
+      "train_loo_readout": {
+        "weight": 0.1,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.1983678638935089,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 27.438
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8512759957868286,
+      "affine_macro_f1": 0.8512759957868286,
+      "jitter_macro_f1": 0.7929747604838778,
+      "accuracy": 0.8513119533527697,
+      "concept_rmse": 1.2326581478118896,
+      "selected_train_hyperparameters": {
+        "lr": 0.0011606305153342798,
+        "representation_dim": 48,
+        "mask_ratio": 0.2645896283009689,
+        "input_noise": 0.05739923947073086,
+        "harmonic_amplitude": 0.20869400338269395,
+        "epochs": 16,
+        "warmup_epochs": 0,
+        "schedule": "constant",
+        "lambda_concept": 0.13184966310398225,
+        "lambda_equiv": 0.08782869226417825
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.19226565212011337,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 28.7
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9377608419524588,
+      "affine_macro_f1": 0.9377608419524588,
+      "jitter_macro_f1": 0.9191776479216447,
+      "accuracy": 0.9378036929057337,
+      "concept_rmse": 1.2326581478118896,
+      "selected_train_hyperparameters": {
+        "lr": 0.0011606305153342798,
+        "representation_dim": 48,
+        "mask_ratio": 0.2645896283009689,
+        "input_noise": 0.05739923947073086,
+        "harmonic_amplitude": 0.20869400338269395,
+        "epochs": 16,
+        "warmup_epochs": 0,
+        "schedule": "constant",
+        "lambda_concept": 0.13184966310398225,
+        "lambda_equiv": 0.08782869226417825
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.19226565212011337,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 28.712
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9387718093611781,
+      "affine_macro_f1": 0.9387718093611781,
+      "jitter_macro_f1": 0.8743845371312309,
+      "accuracy": 0.9387755102040817,
+      "concept_rmse": 0.14114993810653687,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007239885000215883,
+        "representation_dim": 144,
+        "mask_ratio": 0.08643550418919572,
+        "input_noise": 0.011317199846829336,
+        "harmonic_amplitude": 0.22594820059849172,
+        "epochs": 8,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.3331682276389396,
+        "lambda_equiv": 1.0072199163867008
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.3331682276389396,
+        "lambda_equiv": 1.0072199163867008
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.4496067613363266,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 1.015
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.963060860496225,
+      "affine_macro_f1": 0.963060860496225,
+      "jitter_macro_f1": 0.9124927242627883,
+      "accuracy": 0.9630709426627794,
+      "concept_rmse": 0.14114993810653687,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007239885000215883,
+        "representation_dim": 144,
+        "mask_ratio": 0.08643550418919572,
+        "input_noise": 0.011317199846829336,
+        "harmonic_amplitude": 0.22594820059849172,
+        "epochs": 8,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.3331682276389396,
+        "lambda_equiv": 1.0072199163867008
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.3331682276389396,
+        "lambda_equiv": 1.0072199163867008
+      },
+      "train_loo_readout": {
+        "weight": 0.3,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.4496067613363266,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 1.027
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9484841471881509,
+      "affine_macro_f1": 0.9484841471881509,
+      "jitter_macro_f1": 0.8817988066814447,
+      "accuracy": 0.9484936831875608,
+      "concept_rmse": 0.43754246830940247,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007239885000215883,
+        "representation_dim": 144,
+        "mask_ratio": 0.08643550418919572,
+        "input_noise": 0.011317199846829336,
+        "harmonic_amplitude": 0.22594820059849172,
+        "epochs": 8,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.3331682276389396,
+        "lambda_equiv": 1.0072199163867008
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.4363240599632263,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 1.794
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9562358171629695,
+      "affine_macro_f1": 0.9562358171629695,
+      "jitter_macro_f1": 0.9018227161730046,
+      "accuracy": 0.956268221574344,
+      "concept_rmse": 0.43754246830940247,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007239885000215883,
+        "representation_dim": 144,
+        "mask_ratio": 0.08643550418919572,
+        "input_noise": 0.011317199846829336,
+        "harmonic_amplitude": 0.22594820059849172,
+        "epochs": 8,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.3331682276389396,
+        "lambda_equiv": 1.0072199163867008
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 1,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.4363240599632263,
+      "n_train": 67,
+      "labelled_train": 10,
+      "n_test": 1029,
+      "seconds": 1.807
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5751447761835723,
+      "affine_macro_f1": 0.5751447761835723,
+      "jitter_macro_f1": 0.5409274562239267,
+      "accuracy": 0.6,
+      "concept_rmse": 0.10135981440544128,
+      "selected_train_hyperparameters": {
+        "lr": 0.00037349425259760607,
+        "representation_dim": 96,
+        "mask_ratio": 0.2415768244122382,
+        "input_noise": 0.07294444513617039,
+        "harmonic_amplitude": 0.31191410316804397,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 0.6779408405903544,
+        "lambda_equiv": 0.45095830238444184
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.6779408405903544,
+        "lambda_equiv": 0.45095830238444184
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 1,
+        "train_loo_macro_f1": 0.6809764309764311
+      },
+      "final_training_loss": 0.45659217834472654,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 30.112
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5991841413803248,
+      "affine_macro_f1": 0.5991841413803248,
+      "jitter_macro_f1": 0.576196787189695,
+      "accuracy": 0.61,
+      "concept_rmse": 0.10135981440544128,
+      "selected_train_hyperparameters": {
+        "lr": 0.00037349425259760607,
+        "representation_dim": 96,
+        "mask_ratio": 0.2415768244122382,
+        "input_noise": 0.07294444513617039,
+        "harmonic_amplitude": 0.31191410316804397,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 0.6779408405903544,
+        "lambda_equiv": 0.45095830238444184
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.6779408405903544,
+        "lambda_equiv": 0.45095830238444184
+      },
+      "train_loo_readout": {
+        "weight": 1,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.6843304843304843
+      },
+      "final_training_loss": 0.45659217834472654,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 30.159
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5703624797597726,
+      "affine_macro_f1": 0.5703624797597726,
+      "jitter_macro_f1": 0.5629534412587406,
+      "accuracy": 0.5733333333333334,
+      "concept_rmse": 0.2687511742115021,
+      "selected_train_hyperparameters": {
+        "lr": 0.00037349425259760607,
+        "representation_dim": 96,
+        "mask_ratio": 0.2415768244122382,
+        "input_noise": 0.07294444513617039,
+        "harmonic_amplitude": 0.31191410316804397,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 0.6779408405903544,
+        "lambda_equiv": 0.45095830238444184
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.6351851851851852
+      },
+      "final_training_loss": 0.44436832070350646,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 34.025
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6202773459703662,
+      "affine_macro_f1": 0.6202773459703662,
+      "jitter_macro_f1": 0.5931868094682257,
+      "accuracy": 0.63,
+      "concept_rmse": 0.2687511742115021,
+      "selected_train_hyperparameters": {
+        "lr": 0.00037349425259760607,
+        "representation_dim": 96,
+        "mask_ratio": 0.2415768244122382,
+        "input_noise": 0.07294444513617039,
+        "harmonic_amplitude": 0.31191410316804397,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 0.6779408405903544,
+        "lambda_equiv": 0.45095830238444184
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 1,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.6407407407407408
+      },
+      "final_training_loss": 0.44436832070350646,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 34.071
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5761239988041739,
+      "affine_macro_f1": 0.5761239988041739,
+      "jitter_macro_f1": 0.574333589507653,
+      "accuracy": 0.58,
+      "concept_rmse": 0.08037327229976654,
+      "selected_train_hyperparameters": {
+        "lr": 0.0008457887810542071,
+        "representation_dim": 96,
+        "mask_ratio": 0.10364885772810029,
+        "input_noise": 0.011705341795219792,
+        "harmonic_amplitude": 0.30227206583196253,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.8022213535752447,
+        "lambda_equiv": 1.4311143597580367
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.8022213535752447,
+        "lambda_equiv": 1.4311143597580367
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.7342657342657343
+      },
+      "final_training_loss": 0.4020414650440216,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 4.337
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.5829276191664661,
+      "affine_macro_f1": 0.5829276191664661,
+      "jitter_macro_f1": 0.5891253222635501,
+      "accuracy": 0.5866666666666667,
+      "concept_rmse": 0.08037327229976654,
+      "selected_train_hyperparameters": {
+        "lr": 0.0008457887810542071,
+        "representation_dim": 96,
+        "mask_ratio": 0.10364885772810029,
+        "input_noise": 0.011705341795219792,
+        "harmonic_amplitude": 0.30227206583196253,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.8022213535752447,
+        "lambda_equiv": 1.4311143597580367
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.8022213535752447,
+        "lambda_equiv": 1.4311143597580367
+      },
+      "train_loo_readout": {
+        "weight": 1,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.6660839160839161
+      },
+      "final_training_loss": 0.4020414650440216,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 4.386
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6028157175981977,
+      "affine_macro_f1": 0.6028157175981977,
+      "jitter_macro_f1": 0.556747708289551,
+      "accuracy": 0.63,
+      "concept_rmse": 0.2285858690738678,
+      "selected_train_hyperparameters": {
+        "lr": 0.0008457887810542071,
+        "representation_dim": 96,
+        "mask_ratio": 0.10364885772810029,
+        "input_noise": 0.011705341795219792,
+        "harmonic_amplitude": 0.30227206583196253,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.8022213535752447,
+        "lambda_equiv": 1.4311143597580367
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.6661616161616163
+      },
+      "final_training_loss": 0.39505411982536315,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 8.267
+    },
+    {
+      "dataset": "SyntheticControl",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.608921569791135,
+      "affine_macro_f1": 0.608921569791135,
+      "jitter_macro_f1": 0.6171841416662665,
+      "accuracy": 0.62,
+      "concept_rmse": 0.2285858690738678,
+      "selected_train_hyperparameters": {
+        "lr": 0.0008457887810542071,
+        "representation_dim": 96,
+        "mask_ratio": 0.10364885772810029,
+        "input_noise": 0.011705341795219792,
+        "harmonic_amplitude": 0.30227206583196253,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.8022213535752447,
+        "lambda_equiv": 1.4311143597580367
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0.1,
+        "ridge": 1,
+        "train_loo_macro_f1": 0.48484848484848486
+      },
+      "final_training_loss": 0.39505411982536315,
+      "n_train": 300,
+      "labelled_train": 30,
+      "n_test": 300,
+      "seconds": 8.327
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7663123167155426,
+      "affine_macro_f1": 0.7663123167155426,
+      "jitter_macro_f1": 0.7391304347826086,
+      "accuracy": 0.7733333333333333,
+      "concept_rmse": 0.13181360065937042,
+      "selected_train_hyperparameters": {
+        "lr": 0.0024152988168802394,
+        "representation_dim": 144,
+        "mask_ratio": 0.21898953229653975,
+        "input_noise": 0.08107985991177197,
+        "harmonic_amplitude": 0.3210094878384181,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 1.3933866595815547,
+        "lambda_equiv": 0.37659442190899706
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 1.3933866595815547,
+        "lambda_equiv": 0.37659442190899706
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.15560947358608246,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 19.19
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8799146059420031,
+      "affine_macro_f1": 0.8799146059420031,
+      "jitter_macro_f1": 0.7747030176141277,
+      "accuracy": 0.88,
+      "concept_rmse": 0.13181360065937042,
+      "selected_train_hyperparameters": {
+        "lr": 0.0024152988168802394,
+        "representation_dim": 144,
+        "mask_ratio": 0.21898953229653975,
+        "input_noise": 0.08107985991177197,
+        "harmonic_amplitude": 0.3210094878384181,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 1.3933866595815547,
+        "lambda_equiv": 0.37659442190899706
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 1.3933866595815547,
+        "lambda_equiv": 0.37659442190899706
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.15560947358608246,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 19.201
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7513354208878247,
+      "affine_macro_f1": 0.7513354208878247,
+      "jitter_macro_f1": 0.7373737373737375,
+      "accuracy": 0.76,
+      "concept_rmse": 0.5007286667823792,
+      "selected_train_hyperparameters": {
+        "lr": 0.0024152988168802394,
+        "representation_dim": 144,
+        "mask_ratio": 0.21898953229653975,
+        "input_noise": 0.08107985991177197,
+        "harmonic_amplitude": 0.3210094878384181,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 1.3933866595815547,
+        "lambda_equiv": 0.37659442190899706
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.12321057915687561,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 20.17
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8799146059420031,
+      "affine_macro_f1": 0.8799146059420031,
+      "jitter_macro_f1": 0.7747030176141277,
+      "accuracy": 0.88,
+      "concept_rmse": 0.5007286667823792,
+      "selected_train_hyperparameters": {
+        "lr": 0.0024152988168802394,
+        "representation_dim": 144,
+        "mask_ratio": 0.21898953229653975,
+        "input_noise": 0.08107985991177197,
+        "harmonic_amplitude": 0.3210094878384181,
+        "epochs": 8,
+        "warmup_epochs": 0,
+        "schedule": "linear",
+        "lambda_concept": 1.3933866595815547,
+        "lambda_equiv": 0.37659442190899706
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.12321057915687561,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 20.181
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6347402597402598,
+      "affine_macro_f1": 0.6347402597402598,
+      "jitter_macro_f1": 0.627003131331737,
+      "accuracy": 0.64,
+      "concept_rmse": 0.05959729477763176,
+      "selected_train_hyperparameters": {
+        "lr": 0.0025295614887455814,
+        "representation_dim": 48,
+        "mask_ratio": 0.2617585176435917,
+        "input_noise": 0.05971324016780455,
+        "harmonic_amplitude": 0.30939275188113213,
+        "epochs": 12,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.08366790869505704,
+        "lambda_equiv": 0.22208418506573321
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.08366790869505704,
+        "lambda_equiv": 0.22208418506573321
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.07312798500061035,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 1.365
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6684472278504329,
+      "affine_macro_f1": 0.6684472278504329,
+      "jitter_macro_f1": 0.336283185840708,
+      "accuracy": 0.68,
+      "concept_rmse": 0.05959729477763176,
+      "selected_train_hyperparameters": {
+        "lr": 0.0025295614887455814,
+        "representation_dim": 48,
+        "mask_ratio": 0.2617585176435917,
+        "input_noise": 0.05971324016780455,
+        "harmonic_amplitude": 0.30939275188113213,
+        "epochs": 12,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.08366790869505704,
+        "lambda_equiv": 0.22208418506573321
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.08366790869505704,
+        "lambda_equiv": 0.22208418506573321
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.07312798500061035,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 1.381
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6637374461979914,
+      "affine_macro_f1": 0.6637374461979914,
+      "jitter_macro_f1": 0.6309020845907424,
+      "accuracy": 0.6666666666666666,
+      "concept_rmse": 0.39914950728416443,
+      "selected_train_hyperparameters": {
+        "lr": 0.0025295614887455814,
+        "representation_dim": 48,
+        "mask_ratio": 0.2617585176435917,
+        "input_noise": 0.05971324016780455,
+        "harmonic_amplitude": 0.30939275188113213,
+        "epochs": 12,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.08366790869505704,
+        "lambda_equiv": 0.22208418506573321
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.07065281271934509,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 2.692
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6684472278504329,
+      "affine_macro_f1": 0.6684472278504329,
+      "jitter_macro_f1": 0.336283185840708,
+      "accuracy": 0.68,
+      "concept_rmse": 0.39914950728416443,
+      "selected_train_hyperparameters": {
+        "lr": 0.0025295614887455814,
+        "representation_dim": 48,
+        "mask_ratio": 0.2617585176435917,
+        "input_noise": 0.05971324016780455,
+        "harmonic_amplitude": 0.30939275188113213,
+        "epochs": 12,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.08366790869505704,
+        "lambda_equiv": 0.22208418506573321
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.07065281271934509,
+      "n_train": 50,
+      "labelled_train": 10,
+      "n_test": 150,
+      "seconds": 2.703
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8193144542417767,
+      "affine_macro_f1": 0.8193144542417767,
+      "jitter_macro_f1": 0.7650318309141838,
+      "accuracy": 0.819620253164557,
+      "concept_rmse": 0.11368601024150848,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007237566068516565,
+        "representation_dim": 144,
+        "mask_ratio": 0.18941875381906312,
+        "input_noise": 0.07619377897231427,
+        "harmonic_amplitude": 0.28129761933766695,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "cosine",
+        "lambda_concept": 0.22068417495444884,
+        "lambda_equiv": 1.47957951848737
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.22068417495444884,
+        "lambda_equiv": 1.47957951848737
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.8
+      },
+      "final_training_loss": 0.04214303443829218,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 19.898
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8748667336805873,
+      "affine_macro_f1": 0.8748667336805873,
+      "jitter_macro_f1": 0.33613445378151263,
+      "accuracy": 0.8765822784810127,
+      "concept_rmse": 0.11368601024150848,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007237566068516565,
+        "representation_dim": 144,
+        "mask_ratio": 0.18941875381906312,
+        "input_noise": 0.07619377897231427,
+        "harmonic_amplitude": 0.28129761933766695,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "cosine",
+        "lambda_concept": 0.22068417495444884,
+        "lambda_equiv": 1.47957951848737
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.22068417495444884,
+        "lambda_equiv": 1.47957951848737
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.8
+      },
+      "final_training_loss": 0.04214303443829218,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 19.916
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8299470996172084,
+      "affine_macro_f1": 0.8299470996172084,
+      "jitter_macro_f1": 0.8044151021250258,
+      "accuracy": 0.8322784810126582,
+      "concept_rmse": 0.5708622336387634,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007237566068516565,
+        "representation_dim": 144,
+        "mask_ratio": 0.18941875381906312,
+        "input_noise": 0.07619377897231427,
+        "harmonic_amplitude": 0.28129761933766695,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "cosine",
+        "lambda_concept": 0.22068417495444884,
+        "lambda_equiv": 1.47957951848737
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.8
+      },
+      "final_training_loss": 0.033382564783096313,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 23.139
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8748667336805873,
+      "affine_macro_f1": 0.8748667336805873,
+      "jitter_macro_f1": 0.33613445378151263,
+      "accuracy": 0.8765822784810127,
+      "concept_rmse": 0.5708622336387634,
+      "selected_train_hyperparameters": {
+        "lr": 0.0007237566068516565,
+        "representation_dim": 144,
+        "mask_ratio": 0.18941875381906312,
+        "input_noise": 0.07619377897231427,
+        "harmonic_amplitude": 0.28129761933766695,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "cosine",
+        "lambda_concept": 0.22068417495444884,
+        "lambda_equiv": 1.47957951848737
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.8
+      },
+      "final_training_loss": 0.033382564783096313,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 23.157
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8159839357429719,
+      "affine_macro_f1": 0.8159839357429719,
+      "jitter_macro_f1": 0.7721153846153846,
+      "accuracy": 0.8164556962025317,
+      "concept_rmse": 0.10826027393341064,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018263875018982194,
+        "representation_dim": 48,
+        "mask_ratio": 0.26304346359597436,
+        "input_noise": 0.024825165633678634,
+        "harmonic_amplitude": 0.2947706804938808,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.24261200921301404,
+        "lambda_equiv": 0.06080010741216614
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.24261200921301404,
+        "lambda_equiv": 0.06080010741216614
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.7916666666666667
+      },
+      "final_training_loss": 0.0351711188753446,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 3.761
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8826469673093715,
+      "affine_macro_f1": 0.8826469673093715,
+      "jitter_macro_f1": 0.33613445378151263,
+      "accuracy": 0.8829113924050633,
+      "concept_rmse": 0.10826027393341064,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018263875018982194,
+        "representation_dim": 48,
+        "mask_ratio": 0.26304346359597436,
+        "input_noise": 0.024825165633678634,
+        "harmonic_amplitude": 0.2947706804938808,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.24261200921301404,
+        "lambda_equiv": 0.06080010741216614
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.24261200921301404,
+        "lambda_equiv": 0.06080010741216614
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.0351711188753446,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 3.778
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8130646212463026,
+      "affine_macro_f1": 0.8130646212463026,
+      "jitter_macro_f1": 0.7677570046412354,
+      "accuracy": 0.8132911392405063,
+      "concept_rmse": 0.6876415610313416,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018263875018982194,
+        "representation_dim": 48,
+        "mask_ratio": 0.26304346359597436,
+        "input_noise": 0.024825165633678634,
+        "harmonic_amplitude": 0.2947706804938808,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.24261200921301404,
+        "lambda_equiv": 0.06080010741216614
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.7916666666666667
+      },
+      "final_training_loss": 0.02736438810825348,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 7.094
+    },
+    {
+      "dataset": "GunPointAgeSpan",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8826469673093715,
+      "affine_macro_f1": 0.8826469673093715,
+      "jitter_macro_f1": 0.33613445378151263,
+      "accuracy": 0.8829113924050633,
+      "concept_rmse": 0.6876415610313416,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018263875018982194,
+        "representation_dim": 48,
+        "mask_ratio": 0.26304346359597436,
+        "input_noise": 0.024825165633678634,
+        "harmonic_amplitude": 0.2947706804938808,
+        "epochs": 16,
+        "warmup_epochs": 2,
+        "schedule": "linear",
+        "lambda_concept": 0.24261200921301404,
+        "lambda_equiv": 0.06080010741216614
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.02736438810825348,
+      "n_train": 135,
+      "labelled_train": 10,
+      "n_test": 316,
+      "seconds": 7.113
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9232248550722018,
+      "affine_macro_f1": 0.9232248550722018,
+      "jitter_macro_f1": 0.8879461396737259,
+      "accuracy": 0.9233333333333333,
+      "concept_rmse": 0.12508077919483185,
+      "selected_train_hyperparameters": {
+        "lr": 0.001889421064553377,
+        "representation_dim": 96,
+        "mask_ratio": 0.18396572753229712,
+        "input_noise": 0.01288991549813129,
+        "harmonic_amplitude": 0.12100434490940497,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "constant",
+        "lambda_concept": 0.14437785857436045,
+        "lambda_equiv": 0.27716180519791833
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.14437785857436045,
+        "lambda_equiv": 0.27716180519791833
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.7979797979797979
+      },
+      "final_training_loss": 0.21205636858940125,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 28.403
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9456703217363837,
+      "affine_macro_f1": 0.9456703217363837,
+      "jitter_macro_f1": 0.939905361975328,
+      "accuracy": 0.9455555555555556,
+      "concept_rmse": 0.12508077919483185,
+      "selected_train_hyperparameters": {
+        "lr": 0.001889421064553377,
+        "representation_dim": 96,
+        "mask_ratio": 0.18396572753229712,
+        "input_noise": 0.01288991549813129,
+        "harmonic_amplitude": 0.12100434490940497,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "constant",
+        "lambda_concept": 0.14437785857436045,
+        "lambda_equiv": 0.27716180519791833
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.14437785857436045,
+        "lambda_equiv": 0.27716180519791833
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.8611111111111112
+      },
+      "final_training_loss": 0.21205636858940125,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 28.419
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9073809420159166,
+      "affine_macro_f1": 0.9073809420159166,
+      "jitter_macro_f1": 0.8997773115581335,
+      "accuracy": 0.9077777777777778,
+      "concept_rmse": 0.6005669832229614,
+      "selected_train_hyperparameters": {
+        "lr": 0.001889421064553377,
+        "representation_dim": 96,
+        "mask_ratio": 0.18396572753229712,
+        "input_noise": 0.01288991549813129,
+        "harmonic_amplitude": 0.12100434490940497,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "constant",
+        "lambda_concept": 0.14437785857436045,
+        "lambda_equiv": 0.27716180519791833
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.7979797979797979
+      },
+      "final_training_loss": 0.2074001133441925,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 30.105
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9456703217363837,
+      "affine_macro_f1": 0.9456703217363837,
+      "jitter_macro_f1": 0.939905361975328,
+      "accuracy": 0.9455555555555556,
+      "concept_rmse": 0.6005669832229614,
+      "selected_train_hyperparameters": {
+        "lr": 0.001889421064553377,
+        "representation_dim": 96,
+        "mask_ratio": 0.18396572753229712,
+        "input_noise": 0.01288991549813129,
+        "harmonic_amplitude": 0.12100434490940497,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "constant",
+        "lambda_concept": 0.14437785857436045,
+        "lambda_equiv": 0.27716180519791833
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.8611111111111112
+      },
+      "final_training_loss": 0.2074001133441925,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 30.125
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9063695132124371,
+      "affine_macro_f1": 0.9063695132124371,
+      "jitter_macro_f1": 0.8989710118303456,
+      "accuracy": 0.9055555555555556,
+      "concept_rmse": 0.2299160212278366,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.3866243064403534,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 2.533
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9634263301864756,
+      "affine_macro_f1": 0.9634263301864756,
+      "jitter_macro_f1": 0.9578058895301832,
+      "accuracy": 0.9633333333333334,
+      "concept_rmse": 0.2299160212278366,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.3866243064403534,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 2.553
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9052741561984519,
+      "affine_macro_f1": 0.9052741561984519,
+      "jitter_macro_f1": 0.8913875729623287,
+      "accuracy": 0.9044444444444445,
+      "concept_rmse": 0.3088182806968689,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.3805314004421234,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 3.908
+    },
+    {
+      "dataset": "CBF",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9634263301864756,
+      "affine_macro_f1": 0.9634263301864756,
+      "jitter_macro_f1": 0.9578058895301832,
+      "accuracy": 0.9633333333333334,
+      "concept_rmse": 0.3088182806968689,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.3805314004421234,
+      "n_train": 30,
+      "labelled_train": 15,
+      "n_test": 900,
+      "seconds": 3.928
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9324519542916505,
+      "affine_macro_f1": 0.9324519542916505,
+      "jitter_macro_f1": 0.81929316717365,
+      "accuracy": 0.9326364692218351,
+      "concept_rmse": 0.0979236513376236,
+      "selected_train_hyperparameters": {
+        "lr": 0.0029954995409858325,
+        "representation_dim": 96,
+        "mask_ratio": 0.11040452007206601,
+        "input_noise": 0.06996983834958098,
+        "harmonic_amplitude": 0.04313670003757818,
+        "epochs": 12,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.6841348187454611,
+        "lambda_equiv": 0.0794750248629416
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.6841348187454611,
+        "lambda_equiv": 0.0794750248629416
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.898989898989899
+      },
+      "final_training_loss": 0.15316414833068848,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 23.834
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9115098340437502,
+      "affine_macro_f1": 0.9115098340437502,
+      "jitter_macro_f1": 0.7559228271040899,
+      "accuracy": 0.9117305458768873,
+      "concept_rmse": 0.0979236513376236,
+      "selected_train_hyperparameters": {
+        "lr": 0.0029954995409858325,
+        "representation_dim": 96,
+        "mask_ratio": 0.11040452007206601,
+        "input_noise": 0.06996983834958098,
+        "harmonic_amplitude": 0.04313670003757818,
+        "epochs": 12,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.6841348187454611,
+        "lambda_equiv": 0.0794750248629416
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.6841348187454611,
+        "lambda_equiv": 0.0794750248629416
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.15316414833068848,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 23.843
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7129012008180953,
+      "affine_macro_f1": 0.7129012008180953,
+      "jitter_macro_f1": 0.7174712404646898,
+      "accuracy": 0.7131242740998839,
+      "concept_rmse": 1.202599048614502,
+      "selected_train_hyperparameters": {
+        "lr": 0.0029954995409858325,
+        "representation_dim": 96,
+        "mask_ratio": 0.11040452007206601,
+        "input_noise": 0.06996983834958098,
+        "harmonic_amplitude": 0.04313670003757818,
+        "epochs": 12,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.6841348187454611,
+        "lambda_equiv": 0.0794750248629416
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.8
+      },
+      "final_training_loss": 0.13703478872776031,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 24.916
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9115098340437502,
+      "affine_macro_f1": 0.9115098340437502,
+      "jitter_macro_f1": 0.7559228271040899,
+      "accuracy": 0.9117305458768873,
+      "concept_rmse": 1.202599048614502,
+      "selected_train_hyperparameters": {
+        "lr": 0.0029954995409858325,
+        "representation_dim": 96,
+        "mask_ratio": 0.11040452007206601,
+        "input_noise": 0.06996983834958098,
+        "harmonic_amplitude": 0.04313670003757818,
+        "epochs": 12,
+        "warmup_epochs": 1,
+        "schedule": "linear",
+        "lambda_concept": 0.6841348187454611,
+        "lambda_equiv": 0.0794750248629416
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.13703478872776031,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 24.925
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8907820445001026,
+      "affine_macro_f1": 0.8907820445001026,
+      "jitter_macro_f1": 0.805912771635326,
+      "accuracy": 0.8908246225319396,
+      "concept_rmse": 0.1365189403295517,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018244778723090734,
+        "representation_dim": 48,
+        "mask_ratio": 0.21085582525965998,
+        "input_noise": 0.02057652309652114,
+        "harmonic_amplitude": 0.09451272792626116,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "constant",
+        "lambda_concept": 0.10563209703218468,
+        "lambda_equiv": 0.7571175998442603
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.10563209703218468,
+        "lambda_equiv": 0.7571175998442603
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.10876045376062393,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 1.834
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9463856400259909,
+      "affine_macro_f1": 0.9463856400259909,
+      "jitter_macro_f1": 0.9014326366401727,
+      "accuracy": 0.9465737514518002,
+      "concept_rmse": 0.1365189403295517,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018244778723090734,
+        "representation_dim": 48,
+        "mask_ratio": 0.21085582525965998,
+        "input_noise": 0.02057652309652114,
+        "harmonic_amplitude": 0.09451272792626116,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "constant",
+        "lambda_concept": 0.10563209703218468,
+        "lambda_equiv": 0.7571175998442603
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.10563209703218468,
+        "lambda_equiv": 0.7571175998442603
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.10876045376062393,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 1.843
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8193177248831262,
+      "affine_macro_f1": 0.8193177248831262,
+      "jitter_macro_f1": 0.7955641897361179,
+      "accuracy": 0.8199767711962834,
+      "concept_rmse": 1.0115737915039062,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018244778723090734,
+        "representation_dim": 48,
+        "mask_ratio": 0.21085582525965998,
+        "input_noise": 0.02057652309652114,
+        "harmonic_amplitude": 0.09451272792626116,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "constant",
+        "lambda_concept": 0.10563209703218468,
+        "lambda_equiv": 0.7571175998442603
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.8
+      },
+      "final_training_loss": 0.10320042073726654,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 2.69
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9463856400259909,
+      "affine_macro_f1": 0.9463856400259909,
+      "jitter_macro_f1": 0.9014326366401727,
+      "accuracy": 0.9465737514518002,
+      "concept_rmse": 1.0115737915039062,
+      "selected_train_hyperparameters": {
+        "lr": 0.0018244778723090734,
+        "representation_dim": 48,
+        "mask_ratio": 0.21085582525965998,
+        "input_noise": 0.02057652309652114,
+        "harmonic_amplitude": 0.09451272792626116,
+        "epochs": 8,
+        "warmup_epochs": 2,
+        "schedule": "constant",
+        "lambda_concept": 0.10563209703218468,
+        "lambda_equiv": 0.7571175998442603
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.10320042073726654,
+      "n_train": 23,
+      "labelled_train": 10,
+      "n_test": 861,
+      "seconds": 2.699
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6311080443907768,
+      "affine_macro_f1": 0.6311080443907768,
+      "jitter_macro_f1": 0.5641025641025642,
+      "accuracy": 0.6333333333333333,
+      "concept_rmse": 0.07539055496454239,
+      "selected_train_hyperparameters": {
+        "lr": 0.0019674174477428037,
+        "representation_dim": 96,
+        "mask_ratio": 0.2838540271314732,
+        "input_noise": 0.046926069680061605,
+        "harmonic_amplitude": 0.2484966970921265,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "cosine",
+        "lambda_concept": 0.30116781482115634,
+        "lambda_equiv": 0.08507978897523899
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.30116781482115634,
+        "lambda_equiv": 0.08507978897523899
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.06262131780385971,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 22.127
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9164495505958921,
+      "affine_macro_f1": 0.9164495505958921,
+      "jitter_macro_f1": 0.33699633699633696,
+      "accuracy": 0.9166666666666666,
+      "concept_rmse": 0.07539055496454239,
+      "selected_train_hyperparameters": {
+        "lr": 0.0019674174477428037,
+        "representation_dim": 96,
+        "mask_ratio": 0.2838540271314732,
+        "input_noise": 0.046926069680061605,
+        "harmonic_amplitude": 0.2484966970921265,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "cosine",
+        "lambda_concept": 0.30116781482115634,
+        "lambda_equiv": 0.08507978897523899
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.30116781482115634,
+        "lambda_equiv": 0.08507978897523899
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.06262131780385971,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 22.169
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6311080443907768,
+      "affine_macro_f1": 0.6311080443907768,
+      "jitter_macro_f1": 0.44523809523809527,
+      "accuracy": 0.6333333333333333,
+      "concept_rmse": 0.4437391757965088,
+      "selected_train_hyperparameters": {
+        "lr": 0.0019674174477428037,
+        "representation_dim": 96,
+        "mask_ratio": 0.2838540271314732,
+        "input_noise": 0.046926069680061605,
+        "harmonic_amplitude": 0.2484966970921265,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "cosine",
+        "lambda_concept": 0.30116781482115634,
+        "lambda_equiv": 0.08507978897523899
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.05778415501117706,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 26.289
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.9164495505958921,
+      "affine_macro_f1": 0.9164495505958921,
+      "jitter_macro_f1": 0.33699633699633696,
+      "accuracy": 0.9166666666666666,
+      "concept_rmse": 0.4437391757965088,
+      "selected_train_hyperparameters": {
+        "lr": 0.0019674174477428037,
+        "representation_dim": 96,
+        "mask_ratio": 0.2838540271314732,
+        "input_noise": 0.046926069680061605,
+        "harmonic_amplitude": 0.2484966970921265,
+        "epochs": 12,
+        "warmup_epochs": 3,
+        "schedule": "cosine",
+        "lambda_concept": 0.30116781482115634,
+        "lambda_equiv": 0.08507978897523899
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.05778415501117706,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 26.319
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.6014514266864589,
+      "affine_macro_f1": 0.6014514266864589,
+      "jitter_macro_f1": 0.4381078691423519,
+      "accuracy": 0.6,
+      "concept_rmse": 0.10788911581039429,
+      "selected_train_hyperparameters": {
+        "lr": 0.00035544878795372843,
+        "representation_dim": 144,
+        "mask_ratio": 0.08680402623504306,
+        "input_noise": 0.011121353823081218,
+        "harmonic_amplitude": 0.1570761747479615,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.1059108120277939,
+        "lambda_equiv": 0.3532269037893029
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.1059108120277939,
+        "lambda_equiv": 0.3532269037893029
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.28242552280426025,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 3.078
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8656330749354004,
+      "affine_macro_f1": 0.8656330749354004,
+      "jitter_macro_f1": 0.16666666666666666,
+      "accuracy": 0.8666666666666667,
+      "concept_rmse": 0.10788911581039429,
+      "selected_train_hyperparameters": {
+        "lr": 0.00035544878795372843,
+        "representation_dim": 144,
+        "mask_ratio": 0.08680402623504306,
+        "input_noise": 0.011121353823081218,
+        "harmonic_amplitude": 0.1570761747479615,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.1059108120277939,
+        "lambda_equiv": 0.3532269037893029
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.1059108120277939,
+        "lambda_equiv": 0.3532269037893029
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.28242552280426025,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 3.121
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.620513824108201,
+      "affine_macro_f1": 0.620513824108201,
+      "jitter_macro_f1": 0.45694110309186503,
+      "accuracy": 0.6166666666666667,
+      "concept_rmse": 0.42610567808151245,
+      "selected_train_hyperparameters": {
+        "lr": 0.00035544878795372843,
+        "representation_dim": 144,
+        "mask_ratio": 0.08680402623504306,
+        "input_noise": 0.011121353823081218,
+        "harmonic_amplitude": 0.1570761747479615,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.1059108120277939,
+        "lambda_equiv": 0.3532269037893029
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.9326599326599326
+      },
+      "final_training_loss": 0.2781262695789337,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 5.866
+    },
+    {
+      "dataset": "Meat",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.8656330749354004,
+      "affine_macro_f1": 0.8656330749354004,
+      "jitter_macro_f1": 0.16666666666666666,
+      "accuracy": 0.8666666666666667,
+      "concept_rmse": 0.42610567808151245,
+      "selected_train_hyperparameters": {
+        "lr": 0.00035544878795372843,
+        "representation_dim": 144,
+        "mask_ratio": 0.08680402623504306,
+        "input_noise": 0.011121353823081218,
+        "harmonic_amplitude": 0.1570761747479615,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.1059108120277939,
+        "lambda_equiv": 0.3532269037893029
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.2781262695789337,
+      "n_train": 60,
+      "labelled_train": 15,
+      "n_test": 60,
+      "seconds": 5.909
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7604401028145813,
+      "affine_macro_f1": 0.7604401028145813,
+      "jitter_macro_f1": 0.7469155844155844,
+      "accuracy": 0.775,
+      "concept_rmse": 0.09384353458881378,
+      "selected_train_hyperparameters": {
+        "lr": 0.001591730323220953,
+        "representation_dim": 96,
+        "mask_ratio": 0.19794017302181588,
+        "input_noise": 0.09380831217509962,
+        "harmonic_amplitude": 0.327922654421138,
+        "epochs": 12,
+        "warmup_epochs": 0,
+        "schedule": "cosine",
+        "lambda_concept": 0.3998495736898445,
+        "lambda_equiv": 0.10220148139808946
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.3998495736898445,
+        "lambda_equiv": 0.10220148139808946
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.9494949494949495
+      },
+      "final_training_loss": 0.3588294982910156,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 26.025
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1521,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.974937343358396,
+      "affine_macro_f1": 0.974937343358396,
+      "jitter_macro_f1": 0.7178683385579938,
+      "accuracy": 0.975,
+      "concept_rmse": 0.09384353458881378,
+      "selected_train_hyperparameters": {
+        "lr": 0.001591730323220953,
+        "representation_dim": 96,
+        "mask_ratio": 0.19794017302181588,
+        "input_noise": 0.09380831217509962,
+        "harmonic_amplitude": 0.327922654421138,
+        "epochs": 12,
+        "warmup_epochs": 0,
+        "schedule": "cosine",
+        "lambda_concept": 0.3998495736898445,
+        "lambda_equiv": 0.10220148139808946
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.3998495736898445,
+        "lambda_equiv": 0.10220148139808946
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9494949494949495
+      },
+      "final_training_loss": 0.3588294982910156,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 26.031
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.843939393939394,
+      "affine_macro_f1": 0.843939393939394,
+      "jitter_macro_f1": 0.7590579710144927,
+      "accuracy": 0.85,
+      "concept_rmse": 0.3433248996734619,
+      "selected_train_hyperparameters": {
+        "lr": 0.001591730323220953,
+        "representation_dim": 96,
+        "mask_ratio": 0.19794017302181588,
+        "input_noise": 0.09380831217509962,
+        "harmonic_amplitude": 0.327922654421138,
+        "epochs": 12,
+        "warmup_epochs": 0,
+        "schedule": "cosine",
+        "lambda_concept": 0.3998495736898445,
+        "lambda_equiv": 0.10220148139808946
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.1,
+        "train_loo_macro_f1": 0.8958333333333334
+      },
+      "final_training_loss": 0.34902092814445496,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 26.453
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1521,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.974937343358396,
+      "affine_macro_f1": 0.974937343358396,
+      "jitter_macro_f1": 0.7178683385579938,
+      "accuracy": 0.975,
+      "concept_rmse": 0.3433248996734619,
+      "selected_train_hyperparameters": {
+        "lr": 0.001591730323220953,
+        "representation_dim": 96,
+        "mask_ratio": 0.19794017302181588,
+        "input_noise": 0.09380831217509962,
+        "harmonic_amplitude": 0.327922654421138,
+        "epochs": 12,
+        "warmup_epochs": 0,
+        "schedule": "cosine",
+        "lambda_concept": 0.3998495736898445,
+        "lambda_equiv": 0.10220148139808946
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9494949494949495
+      },
+      "final_training_loss": 0.34902092814445496,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 26.459
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7359370648844332,
+      "affine_macro_f1": 0.7359370648844332,
+      "jitter_macro_f1": 0.6765567765567766,
+      "accuracy": 0.75,
+      "concept_rmse": 0.12364360690116882,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9494949494949495
+      },
+      "final_training_loss": 0.4332961142063141,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 0.4
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1522,
+      "method": "MESA-mechanism-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 0.761904761904762,
+      "accuracy": 1,
+      "concept_rmse": 0.12364360690116882,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.4332961142063141,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 0.406
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent",
+      "status": "EXECUTED",
+      "clean_macro_f1": 0.7964743589743589,
+      "affine_macro_f1": 0.7964743589743589,
+      "jitter_macro_f1": 0.6765567765567766,
+      "accuracy": 0.8,
+      "concept_rmse": 0.14782392978668213,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 0.9027777777777778
+      },
+      "final_training_loss": 0.4288283586502075,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 0.725
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 1522,
+      "method": "Same-config-zero-loss",
+      "readout": "latent+canonical",
+      "status": "EXECUTED",
+      "clean_macro_f1": 1,
+      "affine_macro_f1": 1,
+      "jitter_macro_f1": 0.761904761904762,
+      "accuracy": 1,
+      "concept_rmse": 0.14782392978668213,
+      "selected_train_hyperparameters": {
+        "lr": 0.00020576496838532732,
+        "representation_dim": 144,
+        "mask_ratio": 0.18150493120767225,
+        "input_noise": 0.019150045092803377,
+        "harmonic_amplitude": 0.15113496162437112,
+        "epochs": 8,
+        "warmup_epochs": 3,
+        "schedule": "linear",
+        "lambda_concept": 0.0943510053603537,
+        "lambda_equiv": 0.3318547628115799
+      },
+      "used_mechanism_weights": {
+        "lambda_concept": 0,
+        "lambda_equiv": 0
+      },
+      "train_loo_readout": {
+        "weight": 0,
+        "ridge": 0.01,
+        "train_loo_macro_f1": 1
+      },
+      "final_training_loss": 0.4288283586502075,
+      "n_train": 40,
+      "labelled_train": 20,
+      "n_test": 40,
+      "seconds": 0.732
+    }
+  ]
+}
