@@ -138,9 +138,15 @@ def cluster_bootstrap(matched,level=.95,replicates=2000,seed=20261123):
     for _ in range(replicates):
         # Resample tasks, then independently resample their paired seeds.
         take=[rng.choice(tasks) for _ in tasks]
+        # The same resampled paired observations are used for ALL metrics;
+        # independent resampling per metric would destroy the joint
+        # clean/affine/jitter risk dependence.
+        paired_draws=[
+            [rng.choice(matched[d]) for _ in matched[d]] for d in take
+        ]
         for k in METRICS:
-            value=mean(mean(rng.choice(matched[d])["delta"][k]
-                            for _ in matched[d]) for d in take)
+            value=mean(mean(obs["delta"][k] for obs in sub)
+                       for sub in paired_draws)
             sampled[k].append(value)
     def pct(a,q):
         a=sorted(a)
