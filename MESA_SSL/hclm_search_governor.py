@@ -252,12 +252,18 @@ def plan_next_action(interval,governance,ledger,limits):
             hypothesis="Build another network only after controlled baselines",
             score=.25,cost_units=7,scope="SANDBOX"),
     ]
+    completed={name for item in ledger for name in
+               item.get("completed_experiment_ids",[])}
     for x in options:
-        x["priority_per_cost"]=x["score"]/x["cost_units"]
+        x["already_executed"]=x["id"] in completed
+        x["priority_per_cost"]=(x["score"]/x["cost_units"]
+             if not x["already_executed"] else None)
         x["historical_test_reuse_for_confirmatory_evidence"]=False
-    # No experiment may be labeled a confirmatory validation on a dataset
-    # already inspected in this multi-iteration research history.
-    ordered=sorted(options,key=lambda x:(-x["priority_per_cost"],x["id"]))
+    # The HCLM feedback ledger stops repeated tuning of the same completed
+    # experiment after its TEST has been inspected.
+    available=[x for x in options if not x["already_executed"]]
+    if not available:raise ValueError("No unused admissible research actions")
+    ordered=sorted(available,key=lambda x:(-x["priority_per_cost"],x["id"]))
     nxt=ordered[0]
     return dict(
         action=("PROMOTION_PERMITTED" if governance["admissible_for_promotion"]
@@ -269,7 +275,8 @@ def plan_next_action(interval,governance,ledger,limits):
             observed_failure_clean=interval["clean_macro_f1"]["mean"],
             observed_jitter_gain=interval["jitter_macro_f1"]["mean"],
             decision_entropy_proxy=uncertainty,
-            feedback_integrated_from_failures=len(ledger)),
+            feedback_integrated_from_failures=len(ledger),
+            blocked_completed_experiments=sorted(completed)),
         governed_controls=dict(
             allow_only=list(limits.permitted_actions),
             forbidden=list(limits.forbidden_actions),
@@ -313,6 +320,45 @@ def controller(archive,ledger,limits=Constraints(),budget=5):
             intervention_labels_are_unverified_assumptions=True))
 
 
+
+
+def integrate_completed_sandbox_feedback(hclm_audit,completed_archive):
+    """Reconcile a sandbox TEST event into the HCLM RESEARCH state.
+
+    TEST data is now consumed and can diagnose a failure, but never choose
+    revised parameters for its own validation. The old model and new model
+    are compared on exactly matched TRAIN support, dataset and seed IDs.
+    """
+    events=completed_archive.get("rows",completed_archive.get("records"))
+    if not events:raise ValueError("Missing completed feedback records")
+    b=5
+    matched,methods=paired_archive(events,b,
+                reference="BioPhysics risk-gated",
+                candidate="BioPhysics HCLM-guarded")
+    effect=cluster_bootstrap(matched,replicates=2000,seed=20261124)
+    summaries=dataset_summary(matched)
+    deltas={k:effect[k]["mean"] for k in METRICS}
+    used=set(x["dataset"] for x in events)
+    original=set(hclm_audit["source_provenance"]["validation_datasets"])
+    hclm_audit["feedback_from_executed_sandbox"]=dict(
+      run_id=completed_archive.get("run"),
+      affected_budget=b,
+      comparison="HCLM-guarded minus incumbent BioPhysics risk-gated",
+      paired_delta=deltas,
+      descriptive_uncertainty=effect,
+      per_dataset=summaries,
+      new_datasets_now_development=sorted(used),
+      no_confirmatory_reuse=True,
+      incumbent_improvement_on_all_three=False if any(v<0 for v in deltas.values()) else True)
+    hclm_audit["source_provenance"]["all_examined_validation_datasets"]=sorted(original|used)
+    hclm_audit["governed_decision"]["additional_feedback"]=(
+      "The previous sandbox was executed: baseline risk limits passed, "
+      "but the new candidate slightly underperformed the incumbent on "
+      "matched clean/affine/jitter metrics. Do not repeat that same "
+      "experiment or tune on the four consumed TEST datasets.")
+    return hclm_audit
+
+
 def numerical_tests():
     # The paired test must refuse a fake improvement with different supports.
     r={"dataset":"Toy","seed":1,"budget":3,"status":"EXECUTED",
@@ -348,12 +394,17 @@ if __name__=="__main__":
     ap.add_argument("--out",default="results/hclm_search")
     ap.add_argument("--budget",type=int,default=5)
     ap.add_argument("--test-only",action="store_true")
+    ap.add_argument("--feedback-archive",default=None,
+          help="Previously completed sandbox TEST records, now consumed as development feedback")
     args=ap.parse_args()
     numerical_tests()
     if not args.test_only:
         archive=load_json(args.archive)
         ledger=load_json(args.ledger)
         audit=controller(archive,ledger,budget=args.budget)
+        if args.feedback_archive:
+            feedback=load_json(args.feedback_archive)
+            audit=integrate_completed_sandbox_feedback(audit,feedback)
         output=Path(args.out);output.mkdir(parents=True,exist_ok=True)
         content=json.dumps(audit,indent=2,allow_nan=False)
         (output/"governance_decision.json").write_text(content,encoding="utf-8")
