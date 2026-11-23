@@ -1,4 +1,4 @@
-name: MESA-DP structural SSL: development and untouched UCR holdout
+name: 'MESA-DP structural SSL development and untouched UCR holdout'
 on:
   push:
     branches: [mesa-dualpath-structural-2026]
