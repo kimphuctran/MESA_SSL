@@ -1,0 +1,75 @@
+name: HCLM matched full 10k MR on frozen ElasticSynapse holdout
+on:
+  push:
+    branches: [hclm-fullbaseline-challenge-2026]
+    paths: ['.github/workflows/hclm-full-mr-elastic-matched.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        dataset: [CricketX, MedicalImages, Worms, Yoga]
+        seed: [3801,3802]
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      NUMBA_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install faithful aeon and baseline dependencies
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'aeon==1.6.0' 'scikit-learn>=1.5,<1.10'
+      - name: Check TRAIN-only class eligibility and frozen experiment contract
+        run: |
+          python - <<'PY'
+          import json
+          from aeon.datasets import load_classification
+          import numpy as np
+          from os import environ
+          c=json.load(open('MESA_SSL/HCLM_MATCHED_ELASTIC_FULLMR_CONTRACT_2026-11-24.json'))
+          assert c['datasets']==['CricketX','MedicalImages','Worms','Yoga']
+          assert c['seeds']==[3801,3802]
+          assert c['benchmark_parameters']['n_kernels']==10000
+          x,y=load_classification('${{ matrix.dataset }}',split='TRAIN')
+          cls,counts=np.unique(y,return_counts=True)
+          print('TRAIN_ELIGIBILITY_JSON=',json.dumps({'dataset':'${{ matrix.dataset }}',
+              'n_train':len(y),'classes':len(cls),'smallest_class':int(min(counts))}))
+          if min(counts)<5:
+              raise RuntimeError('INELIGIBLE: fewer than five labeled TRAIN observations/class')
+          PY
+          base64 -d MESA_SSL/bench_neuro_ssl.py.gz.b64 | gzip -dc > bench_neuro_ssl.py
+          base64 -d MESA_SSL/mesa_mr_experiment.py.gz.b64 | gzip -dc > mesa_mr_experiment.py
+          echo 'd5578abed721e1ab0cafb9c45e13ca7999ef1b2b1d26fe516b96a09e64467860  bench_neuro_ssl.py' | sha256sum -c -
+          echo 'd269f6fc030bf26705c4b0b92f4c0c71516e8aec5a58131db4ba817afddd4884  mesa_mr_experiment.py' | sha256sum -c -
+          python -m py_compile MESA_SSL/hclm_full_mr_challenge.py
+      - name: Execute exact same frozen support seeds as ElasticSynapse
+        run: |
+          python -m MESA_SSL.hclm_full_mr_challenge \
+            --dataset "${{ matrix.dataset }}" --seed "${{ matrix.seed }}" \
+            --budgets 1 3 5 --kernels 10000 --batch 128 \
+            --out "results/${{ matrix.dataset }}_${{ matrix.seed }}"
+      - name: Preserve negatives, source, environment, frozen contract
+        if: always()
+        run: |
+          mkdir -p "results/${{ matrix.dataset }}_${{ matrix.seed }}"
+          cp MESA_SSL/HCLM_MATCHED_ELASTIC_FULLMR_CONTRACT_2026-11-24.json "results/${{ matrix.dataset }}_${{ matrix.seed }}/frozen_contract.json"
+          cp MESA_SSL/hclm_full_mr_challenge.py "results/${{ matrix.dataset }}_${{ matrix.seed }}/source.py"
+          python -m pip freeze > "results/${{ matrix.dataset }}_${{ matrix.seed }}/requirements.txt"
+          git rev-parse HEAD > "results/${{ matrix.dataset }}_${{ matrix.seed }}/commit.txt"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fullMR10k-elastic-matched-${{ matrix.dataset }}-${{ matrix.seed }}
+          path: results/${{ matrix.dataset }}_${{ matrix.seed }}/
+          retention-days: 30
