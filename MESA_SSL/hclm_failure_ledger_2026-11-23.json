@@ -1,0 +1,256 @@
+[
+  {
+    "id": "F01",
+    "topic": "Representation loss",
+    "hypothesis": "Invariant canonicalization improves all tasks",
+    "finding": "False: SyntheticControl discriminative mean/trend; raw versus canonical clean Macro-F1 about 0.931 vs 0.622 in dual-path studies",
+    "datasets": [
+      "SyntheticControl"
+    ],
+    "severity": "critical",
+    "control": "Retain exact raw/mean/slope/scale path, never force shape-only representation",
+    "verification": "Raw/canonical dual and concept ablation on completely new tasks",
+    "provenance": "MESA_SSL/DUALCHART_RESULTS_2026-11-23.md"
+  },
+  {
+    "id": "F02",
+    "topic": "Overoptimized small-sample hyperparameters",
+    "hypothesis": "Optuna TPE produces universal performance improvement",
+    "finding": "HPO MESA clean mean 0.777 vs fixed MESA 0.806 on eight dataset benchmark; jitter 0.725 vs 0.705",
+    "datasets": [
+      "GunPoint",
+      "ItalyPowerDemand",
+      "BasicMotions",
+      "CBF",
+      "ECGFiveDays",
+      "SyntheticControl",
+      "Meat",
+      "GunPointAgeSpan"
+    ],
+    "severity": "high",
+    "control": "Limit search degrees of freedom, nested TRAIN validation, require independent holdout",
+    "verification": "Compare predeclared simple candidate with full HPO on fresh archives",
+    "provenance": "MESA_SSL/ENCODER_HPO_RESULTS_2026-11-23.md"
+  },
+  {
+    "id": "F03",
+    "topic": "Mechanism supervision is not classification generalization",
+    "hypothesis": "Accurate analytic concepts guarantee superior Macro-F1",
+    "finding": "Mechanism-aligned concept RMSE about 0.113 vs 0.551, but fixed fusion clean Macro-F1 0.870 vs zero-loss 0.872",
+    "datasets": [
+      "GunPoint",
+      "BasicMotions",
+      "Meat"
+    ],
+    "severity": "high",
+    "control": "Always compare mechanism-on/zero-loss paired seed architectures, and report concept fidelity separately",
+    "verification": "Real domain concept targets and paired classification",
+    "provenance": "MESA_SSL/MECHANISM_ABLATION_RESULTS_2026-11-23.md"
+  },
+  {
+    "id": "F04",
+    "topic": "Mean-slope chart blind to waveform noise",
+    "hypothesis": "One Hotelling-type mean/slope chart detects every perturbation",
+    "finding": "Fish and Car waveform jitter collapsed compact MultiRocket while mean/slope alarm did not switch appropriately",
+    "datasets": [
+      "Fish",
+      "Car"
+    ],
+    "severity": "high",
+    "control": "Keep independent waveform morphology chart and chart false-alarm audit",
+    "verification": "New perturbation families with signal-level alarms, misses, F1 and no TEST tuning",
+    "provenance": "MESA_SSL/DUALCHART_RESULTS_2026-11-23.md"
+  },
+  {
+    "id": "F05",
+    "topic": "Performance attribution to MESA",
+    "hypothesis": "MESA hybrid improvement must be due to learned neural features",
+    "finding": "Kernel selector often gives zero MESA weight, leaving existing MultiRocket alone",
+    "datasets": [
+      "CBF",
+      "ItalyPowerDemand",
+      "BasicMotions"
+    ],
+    "severity": "high",
+    "control": "Archive nonzero feature weights and matched generic encoder; do not claim attribution for zero weight",
+    "verification": "Paired ablations with frozen feature contribution and information attribution",
+    "provenance": "MESA_SSL/DUALPATH_STRUCTURAL_AUDIT.md"
+  },
+  {
+    "id": "F06",
+    "topic": "Hard chart routing causes collateral losses",
+    "hypothesis": "A fixed chart threshold preserves normal and affine performance automatically",
+    "finding": "BioPhysics Risk-Gated 5-shot jitter +0.13491 versus dual episodic, clean -0.00955 and affine -0.02703 on independent four datasets",
+    "datasets": [
+      "DistalPhalanxOutlineAgeGroup",
+      "ProximalPhalanxOutlineCorrect",
+      "RefrigerationDevices",
+      "SonyAIBORobotSurface2"
+    ],
+    "severity": "critical",
+    "control": "Apply HCLM noninferiority limits for clean and affine BEFORE declaring any new chart policy admissible",
+    "verification": "TRAIN-only calibration of decision uncertainty on new fixed archive, paired risk-constrained acceptance",
+    "provenance": "MESA_SSL/RISK_GATED_BIOPHYSICS_DESIGN.md"
+  },
+  {
+    "id": "F07",
+    "topic": "Fixed expert fusion includes harmful priors",
+    "hypothesis": "More physics and Hopfield components always increase performance",
+    "finding": "Five-shot BioPhysics full and unconditional fusion often worse than Dual MR, with uneven class relevance",
+    "datasets": [
+      "BME",
+      "ECG200",
+      "MoteStrain",
+      "ShapeletSim",
+      "SonyAIBORobotSurface1"
+    ],
+    "severity": "critical",
+    "control": "No unconditional expert addition; component must pass marginal train-only benefit/risk test",
+    "verification": "Individual component ablation, cost and per-shift negative transfer",
+    "provenance": "MESA_SSL/BIOPHYSICS_HOLDOUT_AUDIT.md"
+  },
+  {
+    "id": "F08",
+    "topic": "Sparse DG codes are not guaranteed discriminative",
+    "hypothesis": "k-WTA pattern separation automatically improves every task",
+    "finding": "Sparse DG sometimes reduced Macro-F1 relative to less-complex cortical or MR episodic features",
+    "datasets": [
+      "GunPoint",
+      "Fish",
+      "SyntheticControl"
+    ],
+    "severity": "high",
+    "control": "Allow zero DG weight and monitor class collision/sparsity on TRAIN",
+    "verification": "Random expansion density and separation versus supervised outcomes",
+    "provenance": "MESA_SSL/biophysics_holdout_2026-11-23.json"
+  },
+  {
+    "id": "F09",
+    "topic": "Transformer architecture may learn poorly with few labels",
+    "hypothesis": "Concept-routed attention necessarily beats CNN",
+    "finding": "Early RouterFormer smoke failed Fish waveform jitter; convolutional MESA baseline substantially stronger with same short training",
+    "datasets": [
+      "Fish",
+      "GunPoint"
+    ],
+    "severity": "high",
+    "control": "Make CNN and ordinary dense Transformer fixed-budget comparators before changing architecture",
+    "verification": "Matched 12 epoch full-architecture experiments on untouched archives",
+    "provenance": "MESA_SSL/ROUTERFORMER_ARCHITECTURE.md"
+  },
+  {
+    "id": "F10",
+    "topic": "1-shot model selection impossible by ordinary LOO",
+    "hypothesis": "One support per class permits leave-one-label-out hyperparameter selection",
+    "finding": "Removing its only labeled sample removes an entire class, yielding invalid class-preserving CV",
+    "datasets": [
+      "GunPoint",
+      "BME",
+      "SonyAIBORobotSurface2"
+    ],
+    "severity": "critical",
+    "control": "Fixed 1-shot decision and no claimed train-validated superior expert",
+    "verification": "Nested 1/3/5-shot protocol with valid abstention from selection",
+    "provenance": "MESA_SSL/BIOPHYSICS_ARCHITECTURE.md"
+  },
+  {
+    "id": "F11",
+    "topic": "Sequential claim from independent classification cases",
+    "hypothesis": "Time-series dataset classification establishes SPC ARL0",
+    "finding": "Synthetic per-case UCR studies have no chronological process stream and thus cannot measure run length",
+    "datasets": [
+      "Fish",
+      "Car",
+      "CBF"
+    ],
+    "severity": "medium",
+    "control": "No ARL0, ARL1 or detection-delay statements without separate chronological streaming benchmarks",
+    "verification": "Independent in-control/out-of-control streams and proper ARL evaluation",
+    "provenance": "MESA_SSL/MESA_SPC_RESULTS_2026-11-23.md"
+  },
+  {
+    "id": "F12",
+    "topic": "Weak baseline and fairness gap",
+    "hypothesis": "Beating compact 336-kernel MultiRocket establishes SOTA",
+    "finding": "Matched full MultiRocket, Hydra+MultiRocket, TS2Vec, TimeMAE and MOMENT have not all been evaluated on the newest BioPhysics tasks",
+    "datasets": [
+      "DistalPhalanxOutlineAgeGroup",
+      "RefrigerationDevices"
+    ],
+    "severity": "critical",
+    "control": "Required full comparator audit before any broad claim",
+    "verification": "Identical UCR splits, seeds, label budgets, tuning budgets and hardware for strong baseline",
+    "provenance": "MESA_SSL/BIOPHYSICS_HOLDOUT_AUDIT.md"
+  },
+  {
+    "id": "F13",
+    "topic": "Repeated holdout inspection consumes independence",
+    "hypothesis": "A dataset remains unseen after repeated architecture changes respond to its TEST performance",
+    "finding": "Several datasets moved from initial holdout to development through repeated inspections",
+    "datasets": [
+      "Fish",
+      "Car",
+      "Ham",
+      "GunPoint",
+      "SyntheticControl",
+      "BME",
+      "ECG200",
+      "MoteStrain",
+      "ShapeletSim",
+      "SonyAIBORobotSurface1",
+      "DistalPhalanxOutlineAgeGroup",
+      "ProximalPhalanxOutlineCorrect",
+      "RefrigerationDevices",
+      "SonyAIBORobotSurface2"
+    ],
+    "severity": "critical",
+    "control": "Every previously inspected TEST becomes development; future confirmation must freeze new datasets/seeds FIRST",
+    "verification": "Immutable experiment contract and source-commit provenance for fresh holdout",
+    "provenance": "MESA_SSL/RISK_GATED_BIOPHYSICS_DESIGN.md"
+  },
+  {
+    "id": "F14",
+    "topic": "Too few datasets and random seeds",
+    "hypothesis": "Four datasets and two seeds prove broad superiority",
+    "finding": "Uncertainty can be large and negative transfer visible on individual domains",
+    "datasets": [
+      "RefrigerationDevices",
+      "MoteStrain",
+      "BME"
+    ],
+    "severity": "critical",
+    "control": "Paired clustered uncertainty intervals, no population claim; demand >=8 new tasks and >=5 paired seeds",
+    "verification": "Predeclared repeated experiments, multiple-comparison budget",
+    "provenance": "MESA_SSL/RISK_GATE_HOLDOUT_RESULTS_2026-11-23.md"
+  },
+  {
+    "id": "F15",
+    "topic": "Online loss bound conflated with static F1",
+    "hypothesis": "Bayesian regret bound ensures higher Macro-F1",
+    "finding": "Cumulative prequential log-loss upper bound ln K does not guarantee pointwise Macro-F1 or static evaluation improvement",
+    "datasets": [
+      "GunPoint",
+      "ItalyPowerDemand",
+      "BasicMotions"
+    ],
+    "severity": "high",
+    "control": "Separate online/causal label-feedback protocol from static UCR experiments",
+    "verification": "Audit appropriate metric and after-prediction label reveal",
+    "provenance": "MESA_SSL/EXPERIMENT_DECISION.md"
+  },
+  {
+    "id": "F16",
+    "topic": "Physical analogies overclaimed",
+    "hypothesis": "Heat semigroup and AR2 predictive prior are verified governing laws for all UCR sensors",
+    "finding": "Contractive analytical signal operators are useful priors but not validated physical mechanisms",
+    "datasets": [
+      "Fish",
+      "BME",
+      "ECG200"
+    ],
+    "severity": "medium",
+    "control": "Label priors as mathematical regularizers until real-world physical constraints verified",
+    "verification": "Domain-specific interventions and causal concept truth",
+    "provenance": "MESA_SSL/BIOPHYSICS_ARCHITECTURE.md"
+  }
+]
