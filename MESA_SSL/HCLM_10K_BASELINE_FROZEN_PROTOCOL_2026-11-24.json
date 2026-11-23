@@ -1,0 +1,96 @@
+{
+  "contract_id": "HCLM-MESA-FULLBASELINE-2026-11-24",
+  "date": "2026-11-24",
+  "authorization": {
+    "type": "HCLM-Governed next experiment after sandbox risk acceptance",
+    "earlier_research_governor": "MESA_SSL/hclm_search_governor.py",
+    "prior_decision_and_evidence": "MESA_SSL/HCLM_AFFINE_FROZEN_RUN_2026-11-23.json",
+    "prior_hclm_acceptance": "MESA_SSL/hclm_sandbox_post_audit.py",
+    "action": "MATCHED_FULL_BASELINE_AUDIT",
+    "reason": "Before another architecture search, establish whether prior gains remain against default n_kernels=10000 MultiRocket, while recording negative evidence.",
+    "promotion_forbidden": true
+  },
+  "pre_registered_before_new_test": true,
+  "data": {
+    "datasets": [
+      "ArrowHead",
+      "FaceFour",
+      "SwedishLeaf",
+      "ScreenType"
+    ],
+    "seeds": [
+      5801,
+      5802
+    ],
+    "budgets": [
+      1,
+      3,
+      5
+    ],
+    "train_test": "official UCR/UEA split",
+    "reuse_labels_only_for_evaluation": true,
+    "all_dataset_seeds_frozen": true
+  },
+  "models": {
+    "existing_reference": "Dual MR episodic (n_kernels=336)",
+    "existing_candidate": "BioPhysics HCLM-guarded",
+    "other_existing": [
+      "BioPhysics risk-gated",
+      "BioPhysics full",
+      "Raw MR ridge"
+    ],
+    "new_matched_strong_baselines": [
+      "Raw MultiRocket 10k episodic",
+      "Canonical MultiRocket 10k episodic",
+      "Dual MultiRocket 10k episodic",
+      "Raw MultiRocket 10k ridge"
+    ],
+    "full_mr_parameters": {
+      "n_kernels": 10000,
+      "max_dilations_per_kernel": 32,
+      "n_jobs": 1,
+      "random_state": "same seed as HCLM reference"
+    },
+    "same_label_ids": true,
+    "same_synthetic_perturbation_family": true,
+    "no_validation_on_test": true,
+    "no_hyperparameter_selection_from_test": true
+  },
+  "classification_protocol": {
+    "train_only_unlabeled_feature_fitting": true,
+    "episodic_classifier": "1-shot to 5-shot classwise max/prototype cosine similarity; fixed weighting",
+    "ridge_regularization": 0.1,
+    "shape_canonicalization": "same affine_gauge",
+    "waveform_jitter": "same signal_jitter, noise=.085, harmonic=.045",
+    "synthetic_affine": "same generate_affine_shift, seed+531, scale 1.20",
+    "min_f1_better_to_call_dominant": 0.01
+  },
+  "risk_gate": {
+    "paired_comparison": true,
+    "test_effects_are_diagnostic_not_tuning": true,
+    "clean_noninferiority": -0.01,
+    "affine_noninferiority": -0.01,
+    "minimum_jitter_improvement": 0.04,
+    "min_new_datasets_before_promotion": 8,
+    "min_seeds_before_promotion": 5,
+    "promotion_requires_full_ssl_baselines": [
+      "TS2Vec",
+      "TimeMAE",
+      "MOMENT"
+    ]
+  },
+  "constraints": {
+    "actions_allowed": [
+      "TRAIN",
+      "RUN_FROZEN_BENCHMARK",
+      "ARCHIVE_AUDIT"
+    ],
+    "forbidden": [
+      "DEPLOY",
+      "CLAIM_ABSOLUTE_WIN",
+      "MERGE_MASTER",
+      "RESELECT_ON_TEST"
+    ]
+  },
+  "note": "Passing this four-task pilot is NOT a formal state-of-the-art demonstration. These TEST tasks become development once inspected."
+}
