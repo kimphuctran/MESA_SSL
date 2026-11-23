@@ -1,0 +1,57 @@
+{
+  "contract_id": "HCLM-ELASTIC-MATCHED-FULLMR-2026-11-24",
+  "frozen_before_this_baseline_test": true,
+  "origin": "Mechanism preserving alternative ElasticSynapse; independent challenge requires identical 10k baseline and same support",
+  "original_elastic_contract": "https://github.com/kimphuctran/MESA_SSL/blob/mesa-elastic-synaptic-memory-2026/MESA_SSL/HCLM_ELASTIC_FROZEN_PROTOCOL_2026-11-24.json",
+  "datasets": [
+    "CricketX",
+    "MedicalImages",
+    "Worms",
+    "Yoga"
+  ],
+  "seeds": [
+    3801,
+    3802
+  ],
+  "budgets": [
+    1,
+    3,
+    5
+  ],
+  "native_ucr_train_test": true,
+  "label_ids": "MESA_SSL.mesa_neuromem.independent_budget_ids same seed, budget and labeled TRAIN",
+  "benchmark_parameters": {
+    "n_kernels": 10000,
+    "max_dilations_per_kernel": 32,
+    "n_jobs": 1,
+    "model_selection_test_aware": false,
+    "readout_methods": [
+      "Full MR raw episodic",
+      "Full MR canonical episodic",
+      "Full MR dual episodic",
+      "Full MR raw ridge"
+    ]
+  },
+  "steps": [
+    "Check min class TRAIN count >=5 without TEST labels",
+    "Fit full MultiRocket and StandardScaler on unlabeled TRAIN",
+    "Imprint per-budget labels from TRAIN support",
+    "Score official TEST only after all choices frozen",
+    "Archive all outcomes, including negative results and infeasible tasks"
+  ],
+  "governance": {
+    "hclm_role": "research process controller",
+    "no_cherry_picking": true,
+    "promotion_prohibited": true,
+    "master_unchanged": true,
+    "min_seeds_for_general_claim": 5,
+    "min_datasets_for_general_claim": 8,
+    "full_other_baselines_pending": [
+      "TS2Vec",
+      "TimeMAE",
+      "MOMENT",
+      "Hydra"
+    ]
+  },
+  "caveat": "This is a matched supplementary strong baseline on a frozen ElasticSynapse dataset roster; it does not retrospectively improve the incomplete ArrowHead/FaceFour/ScreenType/SwedishLeaf baseline archive."
+}
