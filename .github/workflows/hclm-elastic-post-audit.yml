@@ -1,0 +1,41 @@
+name: HCLM ElasticSynapse frozen post-evaluation risk audit
+on:
+  push:
+    branches: [mesa-elastic-synaptic-memory-2026]
+    paths: ['.github/workflows/hclm-elastic-post-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hclm_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compute paired HCLM admissibility against pretest frozen thresholds
+        run: |
+          python -m MESA_SSL.hclm_elastic_post_audit \
+            --archive MESA_SSL/HCLM_ELASTIC_INDEPENDENT_RESULTS_2026-11-24.json \
+            --contract MESA_SSL/HCLM_ELASTIC_FROZEN_PROTOCOL_2026-11-24.json \
+            --out results/hclm_elastic_decision.json
+      - name: Audit always blocks paper-SOTA and master merge
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('results/hclm_elastic_decision.json'))
+          assert x['n_records']==144
+          assert len(x['results'])==3
+          assert x['no_guarantee_of_universal_superiority']
+          for s in x['results'].values():
+              assert s['promoted'] is False
+              assert s['next_action']=='KEEP_SANDBOX_AND_RUN_STRONG_COMPARATORS'
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hclm-frozen-elastic-gate
+          path: results/hclm_elastic_decision.json
+          retention-days: 30
