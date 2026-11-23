@@ -44,3 +44,4 @@ jobs:
           echo "d5578abed721e1ab0cafb9c45e13ca7999ef1b2b1d26fe516b96a09e64467860  /tmp/bench_neuro_ssl.py" | sha256sum -c -
           echo "d269f6fc030bf26705c4b0b92f4c0c71516e8aec5a58131db4ba817afddd4884  /tmp/mesa_mr_experiment.py" | sha256sum -c -
           python -m py_compile /tmp/bench_neuro_ssl.py /tmp/mesa_mr_experiment.py
+# Standalone repository migration verified on main workflow branch.
