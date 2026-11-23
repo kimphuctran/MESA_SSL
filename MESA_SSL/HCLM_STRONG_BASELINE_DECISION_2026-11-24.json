@@ -1,0 +1,72 @@
+{
+  "research_date": "2026-11-24",
+  "controller_role": "HCLM external scientific search governor, not a neural layer",
+  "archived_full_mr_run": 45287492773,
+  "archived_elastic_run": 45287302968,
+  "frozen_baseline_contract": "MESA_SSL/HCLM_MATCHED_ELASTIC_FULLMR_CONTRACT_2026-11-24.json",
+  "full_run_completed": 8,
+  "fullMR_kernels": 10000,
+  "seed_and_label_id_integrity_verified": true,
+  "candidate": "Elastic HCLM-authorized router",
+  "challenger": "Full MR raw ridge (fixed predeclared 10k method)",
+  "acceptance_conditions": {
+    "clean": -0.01,
+    "affine": -0.01,
+    "jitter": 0.04
+  },
+  "budget_results": [
+    {
+      "budget": 1,
+      "clean": -0.014160533345757287,
+      "affine": -0.0029957610255655354,
+      "jitter": 0.031061742943491066,
+      "passed": {
+        "clean": false,
+        "affine": true,
+        "jitter": false
+      },
+      "eligible": false
+    },
+    {
+      "budget": 3,
+      "clean": -0.042896592400755884,
+      "affine": -0.010098167467274877,
+      "jitter": 0.0065860820019381094,
+      "passed": {
+        "clean": false,
+        "affine": false,
+        "jitter": false
+      },
+      "eligible": false
+    },
+    {
+      "budget": 5,
+      "clean": -0.05044363941204927,
+      "affine": -0.029974468941440513,
+      "jitter": 0.01958488844571099,
+      "passed": {
+        "clean": false,
+        "affine": false,
+        "jitter": false
+      },
+      "eligible": false
+    }
+  ],
+  "authorization": "REJECT_PROMOTION",
+  "next_action": "DESIGN_SANDBOX_WITH_PROTECTED_FULL_10K_BASELINE",
+  "next_architecture": "MESA RiskBounded Memory; fallback to full MultiRocket except validated specialist nuisance conditions",
+  "no_result_substitution_or_best_test_oracle": true,
+  "future_strong_baselines": [
+    "RocketPFN",
+    "Hydra",
+    "TS2Vec",
+    "TimeMAE",
+    "MOMENT"
+  ],
+  "untested_new_structure": "The next structure is a design candidate only; no heldout results yet",
+  "forbidden": [
+    "CLAIM_UNIVERSAL_WIN",
+    "DEPLOY",
+    "MERGE_MASTER"
+  ]
+}
