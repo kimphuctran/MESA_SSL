@@ -1,0 +1,57 @@
+name: MESA-SPC Bayesian grouped-augmentation robustness audit
+on:
+  push:
+    branches: [mesa-augmented-bo-2026]
+    paths: ['.github/workflows/mesa-bo-augmented.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 115
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        dataset: [GunPoint, ItalyPowerDemand, BasicMotions, Coffee, CBF, ECGFiveDays, Trace, SyntheticControl, Lightning2, Meat, DistalPhalanxOutlineCorrect, GunPointAgeSpan]
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      NUMBA_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible environment
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'aeon==1.6.0' 'scikit-learn>=1.5,<1.10' 'optuna>=4.5,<5'
+      - name: Recover upstream encoder and verify source
+        run: |
+          base64 -d MESA_SSL/bench_neuro_ssl.py.gz.b64 | gzip -dc > bench_neuro_ssl.py
+          base64 -d MESA_SSL/mesa_mr_experiment.py.gz.b64 | gzip -dc > mesa_mr_experiment.py
+          echo 'd5578abed721e1ab0cafb9c45e13ca7999ef1b2b1d26fe516b96a09e64467860  bench_neuro_ssl.py' | sha256sum -c -
+          echo 'd269f6fc030bf26705c4b0b92f4c0c71516e8aec5a58131db4ba817afddd4884  mesa_mr_experiment.py' | sha256sum -c -
+          python -m py_compile MESA_SSL/mesa_spc_bayesian.py MESA_SSL/mesa_bo_augmentation.py
+          python -c 'from MESA_SSL.mesa_bo_augmentation import test_group_leave_one_out; assert test_group_leave_one_out()'
+      - name: Group-held-out Bayesian augmentation and chart comparison
+        run: |
+          python -m MESA_SSL.mesa_bo_augmentation --dataset "${{ matrix.dataset }}" \
+            --seeds 901 902 --epochs 15 --budget 5 --trials 48 \
+            --out "results/${{ matrix.dataset }}"
+      - name: Archive original trial logs and fixed code
+        if: always()
+        run: |
+          mkdir -p "results/${{ matrix.dataset }}"
+          python -m pip freeze > "results/${{ matrix.dataset }}/requirements.txt"
+          cp MESA_SSL/mesa_bo_augmentation.py "results/${{ matrix.dataset }}/source.py" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesa-grouped-bayes-${{ matrix.dataset }}
+          path: results/${{ matrix.dataset }}/
+          if-no-files-found: warn
+          retention-days: 30
