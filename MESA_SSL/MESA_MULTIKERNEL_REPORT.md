@@ -23,7 +23,7 @@ Datasets: GunPoint, ItalyPowerDemand, BasicMotions (development seeds 304–306)
 | CBF | **0.977** | 0.927 | 0.977 | **0.958** | 0.956 |
 | ECGFiveDays | 0.901 | 0.827 | 0.902 | 0.878 | **0.912** |
 
-All values are Macro-F1 means across **three independent seeds**, rounded to three decimals. Bolded values represent selected within-row comparisons, **not a global SOTA ranking**. The two new dataset checks were not used for designing the candidate selection policy. Results are conditional on the chosen 5-label protocol and affine perturbation family.
+All values are Macro-F1 means across **three independent seeds**, rounded to three decimals. Bolded values represent selected within-row comparisons, **not a global SOTA ranking**. The three new dataset checks were not used for designing the candidate selection policy. Results are conditional on the chosen 5-label protocol and affine perturbation family.
 
 The shift-aware policy improves shifted Macro-F1 relative to raw MultiRocket on five of six datasets and ties on BasicMotions, but it **does not always exceed canonical MultiRocket**. A canonical-only representation achieves higher shifted Macro-F1 on ItalyPowerDemand, Coffee, and ECGFiveDays.
 
