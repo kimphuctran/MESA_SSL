@@ -253,10 +253,10 @@ def neuromem_decide(scores,chart,contexts=True,omit_dg=False,omit_cortex=False):
 
 def test_scientific_contract():
     rng=np.random.default_rng(501)
-    x=rng.normal(size=(20,32))
+    x=rng.normal(size=(28,32))
     sparse=DentateSparseExpansion(expand=96,active_fraction=.12,seed=2).fit(x)
     z=sparse.transform(x)
-    assert z.shape==(20,96)
+    assert z.shape==(28,96)
     assert np.isfinite(z).all()
     assert (z>=0).all()
     assert np.max(np.count_nonzero(z,axis=1))<=12
@@ -266,7 +266,7 @@ def test_scientific_contract():
     v=(unit(x),unit(x+.1),unit(x+.2),unit(x),unit(x),unit(x))
     classes=np.unique(y)
     pred=retrieve(v,ids[1],y,classes,[v[3]])
-    assert pred[0].shape==(20,4)
+    assert pred[0].shape==(28,4)
     weights=controlled_weights(np.array([1.,0.,1.]),
                                np.array([1.,1.,0.]))
     assert np.allclose(weights.sum(axis=1),1)
