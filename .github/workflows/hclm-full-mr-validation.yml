@@ -1,0 +1,71 @@
+name: HCLM frozen full-10k MultiRocket independent challenge
+on:
+  push:
+    branches: [hclm-fullbaseline-challenge-2026]
+    paths: ['.github/workflows/hclm-full-mr-validation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        dataset: [ArrowHead, FaceFour, SwedishLeaf, ScreenType]
+        seed: [5801, 5802]
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      NUMBA_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install 10k MR baseline dependencies
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'aeon==1.6.0' 'scikit-learn>=1.5,<1.10'
+      - name: Verify independently frozen HCLM full-baseline study
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('MESA_SSL/HCLM_10K_BASELINE_FROZEN_PROTOCOL_2026-11-24.json'))
+          assert x['pre_registered_before_new_test']
+          assert x['data']['datasets']==['ArrowHead','FaceFour','SwedishLeaf','ScreenType']
+          assert x['data']['seeds']==[5801,5802]
+          assert x['models']['full_mr_parameters']['n_kernels']==10000
+          assert x['constraints']['forbidden']==[
+            'DEPLOY','CLAIM_ABSOLUTE_WIN','MERGE_MASTER','RESELECT_ON_TEST']
+          PY
+      - name: Recover checked original experiment environment
+        run: |
+          base64 -d MESA_SSL/bench_neuro_ssl.py.gz.b64 | gzip -dc > bench_neuro_ssl.py
+          base64 -d MESA_SSL/mesa_mr_experiment.py.gz.b64 | gzip -dc > mesa_mr_experiment.py
+          echo 'd5578abed721e1ab0cafb9c45e13ca7999ef1b2b1d26fe516b96a09e64467860  bench_neuro_ssl.py' | sha256sum -c -
+          echo 'd269f6fc030bf26705c4b0b92f4c0c71516e8aec5a58131db4ba817afddd4884  mesa_mr_experiment.py' | sha256sum -c -
+          python -m py_compile MESA_SSL/hclm_full_mr_challenge.py
+      - name: Execute reference full 10,000 kernel MR with 1/3/5 shots
+        run: |
+          python -m MESA_SSL.hclm_full_mr_challenge \
+            --dataset "${{ matrix.dataset }}" --seed "${{ matrix.seed }}" \
+            --budgets 1 3 5 --kernels 10000 --batch 128 \
+            --out "results/${{ matrix.dataset }}_${{ matrix.seed }}"
+      - name: Preserve code, contract, environment and raw data
+        if: always()
+        run: |
+          mkdir -p "results/${{ matrix.dataset }}_${{ matrix.seed }}"
+          cp MESA_SSL/hclm_full_mr_challenge.py "results/${{ matrix.dataset }}_${{ matrix.seed }}/source.py"
+          cp MESA_SSL/HCLM_10K_BASELINE_FROZEN_PROTOCOL_2026-11-24.json "results/${{ matrix.dataset }}_${{ matrix.seed }}/frozen_contract.json"
+          python -m pip freeze > "results/${{ matrix.dataset }}_${{ matrix.seed }}/requirements.txt"
+          git rev-parse HEAD > "results/${{ matrix.dataset }}_${{ matrix.seed }}/source_sha.txt"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesa-fullMR10k-${{ matrix.dataset }}-${{ matrix.seed }}
+          path: results/${{ matrix.dataset }}_${{ matrix.seed }}/
+          retention-days: 30
