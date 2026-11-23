@@ -89,13 +89,26 @@ class MESASelectiveEncoder(nn.Module):
         self.concept_pred=nn.Sequential(nn.Linear(dim,dim),nn.GELU(),
                                         nn.Linear(dim,3*channels))
         self.freq_pred=nn.Linear(dim,8*channels)
+        self.shape_concept_pred=nn.Sequential(nn.Linear(dim,dim),nn.GELU(),
+                                             nn.Linear(dim,2*channels))
     def forward(self,x):
         canonical,concept=torch_decompose(x)
         raw=self.raw(x)
         shape=self.shape(canonical)
         return {"raw":raw,"shape":shape,"concept":concept,
                 "concept_pred":self.concept_pred(raw),
+                "shape_concept_pred":self.shape_concept_pred(shape),
                 "freq_pred":self.freq_pred(shape)}
+
+
+def shape_harmonic_targets(x):
+    """Two bounded harmonics of the canonical residual, not causal labels."""
+    q,_=torch_decompose(x)
+    tau=torch.linspace(0.,2*math.pi,q.shape[1],
+                       device=q.device,dtype=q.dtype)
+    a=(q*torch.cos(tau)[None,:,None]).mean(1)
+    b=(q*torch.sin(tau)[None,:,None]).mean(1)
+    return torch.cat([a,b],dim=-1)
 
 
 def band_spectrum(x):
@@ -106,7 +119,8 @@ def band_spectrum(x):
 
 def train_ssl(train, seed, mechanism=True, epochs=12, lr=.00075,
               hidden=40, dim=64, lambda_concept=.30,
-              lambda_equiv=.24, mask=.12, noise=.05):
+              lambda_equiv=.24, lambda_shape=.20,
+              lambda_shape_equiv=.16, mask=.12, noise=.05):
     """Paired controls use identical initialization and RNG consumption."""
     torch.manual_seed(int(seed))
     np.random.seed(int(seed))
@@ -143,6 +157,21 @@ def train_ssl(train, seed, mechanism=True, epochs=12, lr=.00075,
             trend=.35*torch.randn((len(base),1,base.shape[2]))
             shifted=base+offset+time_axis[None,:,None]*trend
             observed=net(shifted)
+            # The original mechanism objective left the shape tower
+            # unaffected because affine canonicalization was exact.
+            # A separate bounded harmonic intervention now acts on shape.
+            tt=torch.linspace(0,2*math.pi,base.size(1),
+                              device=base.device,dtype=base.dtype)
+            harmonic=base+.30*torch.randn((len(base),1,base.shape[2]))*(
+                torch.sin(tt)[None,:,None])
+            shape_modified=net(harmonic)
+            target_shape=shape_harmonic_targets(base)
+            delta_shape_target=shape_harmonic_targets(harmonic)-target_shape
+            shape_alignment=F.smooth_l1_loss(
+                clean["shape_concept_pred"],target_shape)
+            shape_equiv=F.smooth_l1_loss(
+                shape_modified["shape_concept_pred"]-
+                clean["shape_concept_pred"],delta_shape_target)
             expected_delta=observed["concept"]-clean["concept"]
             alignment=F.smooth_l1_loss(
                 clean["concept_pred"],clean["concept"])
@@ -152,7 +181,9 @@ def train_ssl(train, seed, mechanism=True, epochs=12, lr=.00075,
             loss=.30*invariance+.08*variance+.32*spectral
             w=float(mechanism)
             loss=loss+w*(lambda_concept*alignment+
-                         lambda_equiv*equivariance)
+                         lambda_equiv*equivariance+
+                         lambda_shape*shape_alignment+
+                         lambda_shape_equiv*shape_equiv)
             if not bool(torch.isfinite(loss)):
                 raise FloatingPointError("Nonfinite SSL loss")
             optim.zero_grad(set_to_none=True)
@@ -167,7 +198,8 @@ def train_ssl(train, seed, mechanism=True, epochs=12, lr=.00075,
 @torch.no_grad()
 def extract_nn(model, x):
     model.eval()
-    outputs={"raw":[],"shape":[],"concept_pred":[]}
+    outputs={"raw":[],"shape":[],"concept_pred":[],
+             "shape_concept_pred":[]}
     for ids in np.array_split(np.arange(len(x)),max(1,int(np.ceil(len(x)/64)))):
         out=model(torch.tensor(x[ids],dtype=torch.float32))
         for key in outputs:outputs[key].append(out[key].cpu().numpy())
@@ -347,6 +379,7 @@ def test_scientific_contract():
         for field in ("raw","shape"):
             assert z[field].shape==(4,32)
         assert z["concept_pred"].shape==(4,3*channels)
+        assert z["shape_concept_pred"].shape==(4,2*channels)
     return True
 
 
@@ -370,11 +403,16 @@ def evaluate(args):
             training.append(dict(dataset=args.dataset,seed=seed,
                      model=key,losses=curve))
         views,queries,concepts=features(train,test,seed,models)
-        concept_rmse={}
+        concept_rmse={};shape_concept_rmse={}
+        shape_target=shape_harmonic_targets(
+            torch.as_tensor(train,dtype=torch.float32)).detach().numpy()
         for model_name,net in models.items():
-            predicted=extract_nn(net,train)["concept_pred"]
+            representation=extract_nn(net,train)
+            predicted=representation["concept_pred"]
             concept_rmse[model_name]=float(np.sqrt(np.mean(
                 (predicted-concepts[0])**2)))
+            shape_concept_rmse[model_name]=float(np.sqrt(np.mean(
+                (representation["shape_concept_pred"]-shape_target)**2)))
         kernels=build_kernels(views,indices)
         choices={};predictions={}
         for family in METHODS[:7]:
@@ -410,6 +448,7 @@ def evaluate(args):
               selected=selected if name=="TRAIN-selected admissible" else None,
               chart_policy=policy if name=="MESA SPC hybrid" else None,
               concept_rmse_train=concept_rmse,
+              shape_concept_rmse_train=shape_concept_rmse,
               runtime_seconds=round(time.monotonic()-t0,2),
               status="EXECUTED",
               synthetic_shift_assumption="label-preserving offset/trend and jitter")
