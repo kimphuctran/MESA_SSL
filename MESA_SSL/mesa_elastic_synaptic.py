@@ -176,8 +176,10 @@ def select_train_only(v,dist,physics,y,support,columns,classes,
     projected physical features, and all training augmentations.
     No class-preserving LOO is possible with 1-shot: keep fixed defaults.
     """
-    chosen={"clean":"Dual","affine":"Canonical",
-            "jitter":"Cortex"}
+    # At one-shot there is no class-preserving LOO. Earlier MESA tests
+    # showed that forced canonical affine fallback can destroy class
+    # information even when shape invariance is algebraically exact.
+    chosen={"clean":"Dual","affine":"Dual","jitter":"Cortex"}
     metric={}
     if budget==1:
         return chosen,dict(reason="Fixed predeclared 1-shot policies; LOO invalid")
@@ -212,6 +214,16 @@ def select_train_only(v,dist,physics,y,support,columns,classes,
                                average="macro",zero_division=0))
             for name in names}
         metric[["clean","affine","jitter"][mode]]=f1
+    # Governed task adaptation: only replace the clean readout if TRAIN
+    # held-out episodes show substantial benefit and no severe jitter harm.
+    # This test is distinct from the nuisance-specific fallback decisions.
+    clean_candidate=max(("Cortex","ElasticConcept"),
+                        key=lambda z:(metric["clean"][z],z))
+    if (metric["clean"][clean_candidate]>=
+            metric["clean"]["Dual"]+.08 and
+        metric["jitter"][clean_candidate]>=
+            metric["jitter"]["Dual"]-.02):
+        chosen["clean"]=clean_candidate
     ref=metric["jitter"]["Dual"]
     eligible=("Cortex","Elastic","ElasticConcept")
     best=max(eligible,key=lambda z:(metric["jitter"][z],-eligible.index(z)))
