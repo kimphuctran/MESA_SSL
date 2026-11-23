@@ -85,7 +85,7 @@ def build_cache(dataset, seed, epochs, budget):
         }
     return dict(dataset=dataset, seed=seed, y=y, yt=yt, classes=classes,
                 labeled=labeled, target_idx=target_idx, Y=Y,
-                k=kernels, p=[p_train] + p_aug, ptest=p_test,
+                k=kernels, raw_views=views["raw"], p=[p_train] + p_aug, ptest=p_test,
                 chart_rates=chart_rates, chart_n_cal=len(chart["calibration"]),
                 chart_n_fit=chart["n_fit"], n_train=len(train), n_test=len(test))
 
