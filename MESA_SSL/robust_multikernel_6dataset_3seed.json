@@ -1,0 +1,2703 @@
+{
+  "created": "2026-11-23",
+  "repo": "kimphuctran/MESA_SSL",
+  "branch": "mesa-multikernel-experiment-2026",
+  "source_runs": [
+    45169860386,
+    45170164555
+  ],
+  "data": {
+    "n_records": 90,
+    "n_seeds": 3,
+    "n_datasets": 6,
+    "n_methods": 5,
+    "epochs": 25
+  },
+  "protocol": [
+    "Official aeon TRAIN/TEST per dataset",
+    "5 labelled TRAIN examples per class, labels selected by seed",
+    "Unlabelled TRAIN used for self-supervised pretraining and kernel feature fitting",
+    "Model and ridge selected with exact TRAIN-only augmented leave-one-out",
+    "Synthetic affine offset/trend on TEST assumed label preserving",
+    "MOMENT/TS2Vec not rerun in this specific branch; compare separately with official SSL benchmarks"
+  ],
+  "records": [
+    {
+      "dataset": "GunPoint",
+      "seed": 304,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9665939156385016,
+      "shifted_macro_f1": 0.8422857142857143,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.8453282828282829,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.89,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 304,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9464285714285714,
+      "shifted_macro_f1": 0.9464285714285714,
+      "accuracy": 0.9466666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.9,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 304,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9665939156385016,
+      "shifted_macro_f1": 0.9464285714285714,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.99,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 304,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9665939156385016,
+      "shifted_macro_f1": 0.9464285714285714,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 22.13,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 304,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9665939156385016,
+      "shifted_macro_f1": 0.9464285714285714,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 22.27,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 305,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9666533279978657,
+      "shifted_macro_f1": 0.8782467532467533,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.8484848484848485,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 3.15,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 305,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9666533279978657,
+      "shifted_macro_f1": 0.9666533279978657,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 3.16,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 305,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9666533279978657,
+      "shifted_macro_f1": 0.9666533279978657,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 3.24,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 305,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9666533279978657,
+      "shifted_macro_f1": 0.9666533279978657,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 3.38,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 305,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9666533279978657,
+      "shifted_macro_f1": 0.9666533279978657,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 3.52,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 306,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9733285917496444,
+      "shifted_macro_f1": 0.7435410334346504,
+      "accuracy": 0.9733333333333334,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.7916666666666667,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 2.91,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 306,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9666295884315907,
+      "shifted_macro_f1": 0.9666295884315907,
+      "accuracy": 0.9666666666666667,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 2.93,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 306,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9733285917496444,
+      "shifted_macro_f1": 0.9666295884315907,
+      "accuracy": 0.9733333333333334,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 3,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 306,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9733285917496444,
+      "shifted_macro_f1": 0.9666295884315907,
+      "accuracy": 0.9733333333333334,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 3.14,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "GunPoint",
+      "seed": 306,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9733285917496444,
+      "shifted_macro_f1": 0.9666295884315907,
+      "accuracy": 0.9733333333333334,
+      "n_labeled": 10,
+      "train_count": 50,
+      "test_count": 150,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.019011393503700937,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 3.27,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 304,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.8997513338964342,
+      "shifted_macro_f1": 0.8716996387927517,
+      "accuracy": 0.8999028182701652,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.9494949494949495,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 1,
+      "gauge_error": 6.556510925292969e-7,
+      "runtime_seconds": 18.78,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 304,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9092916851896261,
+      "shifted_macro_f1": 0.9092916851896261,
+      "accuracy": 0.9096209912536443,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 1,
+      "gauge_error": 6.556510925292969e-7,
+      "runtime_seconds": 18.8,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 304,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.8997513338964342,
+      "shifted_macro_f1": 0.9092916851896261,
+      "accuracy": 0.8999028182701652,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 1,
+      "gauge_error": 6.556510925292969e-7,
+      "runtime_seconds": 18.9,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 304,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.8997513338964342,
+      "shifted_macro_f1": 0.9092916851896261,
+      "accuracy": 0.8999028182701652,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 1,
+      "gauge_error": 6.556510925292969e-7,
+      "runtime_seconds": 19.07,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 304,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.8997513338964342,
+      "shifted_macro_f1": 0.9092916851896261,
+      "accuracy": 0.8999028182701652,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 1,
+      "gauge_error": 6.556510925292969e-7,
+      "runtime_seconds": 19.24,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 305,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9125356997144023,
+      "shifted_macro_f1": 0.8950412536266925,
+      "accuracy": 0.9125364431486881,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9990281827016521,
+      "gauge_error": 8.344650268554688e-7,
+      "runtime_seconds": 1.88,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 305,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9134137290403097,
+      "shifted_macro_f1": 0.9134137290403097,
+      "accuracy": 0.9135082604470359,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9990281827016521,
+      "gauge_error": 8.344650268554688e-7,
+      "runtime_seconds": 1.9,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 305,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9125356997144023,
+      "shifted_macro_f1": 0.8950412536266925,
+      "accuracy": 0.9125364431486881,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9990281827016521,
+      "gauge_error": 8.344650268554688e-7,
+      "runtime_seconds": 2.01,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 305,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9125356997144023,
+      "shifted_macro_f1": 0.8950412536266925,
+      "accuracy": 0.9125364431486881,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9990281827016521,
+      "gauge_error": 8.344650268554688e-7,
+      "runtime_seconds": 2.18,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 305,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9183666530667755,
+      "shifted_macro_f1": 0.9241861501957169,
+      "accuracy": 0.9183673469387755,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1,
+        "mechanism": 0.3
+      },
+      "robust_weights": {
+        "shape": 1,
+        "mechanism": 0.3
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9990281827016521,
+      "gauge_error": 8.344650268554688e-7,
+      "runtime_seconds": 2.34,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 306,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9241460261295591,
+      "shifted_macro_f1": 0.8736579044798223,
+      "accuracy": 0.924198250728863,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9989082823478332,
+      "gauge_error": 6.258487701416016e-7,
+      "runtime_seconds": 1.87,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 306,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9084061846610709,
+      "shifted_macro_f1": 0.9084061846610709,
+      "accuracy": 0.9086491739552964,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9989082823478332,
+      "gauge_error": 6.258487701416016e-7,
+      "runtime_seconds": 1.89,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 306,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9241460261295591,
+      "shifted_macro_f1": 0.8736579044798223,
+      "accuracy": 0.924198250728863,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9989082823478332,
+      "gauge_error": 6.258487701416016e-7,
+      "runtime_seconds": 1.99,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 306,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9241460261295591,
+      "shifted_macro_f1": 0.8736579044798223,
+      "accuracy": 0.924198250728863,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9989082823478332,
+      "gauge_error": 6.258487701416016e-7,
+      "runtime_seconds": 2.16,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "seed": 306,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9241460261295591,
+      "shifted_macro_f1": 0.8736579044798223,
+      "accuracy": 0.924198250728863,
+      "n_labeled": 10,
+      "train_count": 67,
+      "test_count": 1029,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.027192949580788585,
+      "shift_gate_mean": 0.9989082823478332,
+      "gauge_error": 6.258487701416016e-7,
+      "runtime_seconds": 2.33,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 304,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000009920448064804077,
+      "runtime_seconds": 27.8,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 304,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.974937343358396,
+      "shifted_macro_f1": 0.974937343358396,
+      "accuracy": 0.975,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.9494949494949495,
+      "robust_cv": 0.9494949494949495,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000009920448064804077,
+      "runtime_seconds": 27.82,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 304,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000009920448064804077,
+      "runtime_seconds": 27.93,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 304,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000009920448064804077,
+      "runtime_seconds": 28.11,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 304,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000009920448064804077,
+      "runtime_seconds": 28.29,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 305,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.9494949494949495,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000010132789611816406,
+      "runtime_seconds": 2.02,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 305,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.9494949494949495,
+      "robust_cv": 0.9494949494949495,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000010132789611816406,
+      "runtime_seconds": 2.03,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 305,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.9494949494949495,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000010132789611816406,
+      "runtime_seconds": 2.15,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 305,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.9494949494949495,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000010132789611816406,
+      "runtime_seconds": 2.34,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 305,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.9494949494949495,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000010132789611816406,
+      "runtime_seconds": 2.52,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 306,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000021785497665405273,
+      "runtime_seconds": 1.99,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 306,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.974937343358396,
+      "shifted_macro_f1": 0.974937343358396,
+      "accuracy": 0.975,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.9494949494949495,
+      "robust_cv": 0.9494949494949495,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000021785497665405273,
+      "runtime_seconds": 2,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 306,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000021785497665405273,
+      "runtime_seconds": 2.11,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 306,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000021785497665405273,
+      "runtime_seconds": 2.29,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "BasicMotions",
+      "seed": 306,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 20,
+      "train_count": 40,
+      "test_count": 40,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01461842423602458,
+      "shift_gate_mean": 1,
+      "gauge_error": 0.000021785497665405273,
+      "runtime_seconds": 2.47,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 307,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9642401021711366,
+      "shifted_macro_f1": 0.8541666666666667,
+      "accuracy": 0.9642857142857143,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.25,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 307,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9285714285714286,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9285714285714286,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.27,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 307,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9642401021711366,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9642857142857143,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.37,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 307,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9642401021711366,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9642857142857143,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.53,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 307,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9642401021711366,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9642857142857143,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 21.7,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 308,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.8916129032258064,
+      "accuracy": 1,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 3.94,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 308,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 1,
+      "accuracy": 1,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 3.96,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 308,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.8916129032258064,
+      "accuracy": 1,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 4.06,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 308,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.8916129032258064,
+      "accuracy": 1,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 4.24,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 308,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 1,
+      "shifted_macro_f1": 0.8916129032258064,
+      "accuracy": 1,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 4.76837158203125e-7,
+      "runtime_seconds": 4.41,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 309,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9285714285714286,
+      "shifted_macro_f1": 0.7142857142857143,
+      "accuracy": 0.9285714285714286,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.696969696969697,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 4.04,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 309,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9285714285714286,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9285714285714286,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 4.06,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 309,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9285714285714286,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9285714285714286,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 4.16,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 309,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9285714285714286,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9285714285714286,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 4.32,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "Coffee",
+      "seed": 309,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9285714285714286,
+      "shifted_macro_f1": 0.9285714285714286,
+      "accuracy": 0.9285714285714286,
+      "n_labeled": 10,
+      "train_count": 28,
+      "test_count": 28,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.0008455305742590257,
+      "shift_gate_mean": 1,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 4.49,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 307,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9777522216601234,
+      "shifted_macro_f1": 0.9431902433770886,
+      "accuracy": 0.9777777777777777,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.9663299663299663,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988023774252042,
+      "gauge_error": 7.152557373046875e-7,
+      "runtime_seconds": 31.02,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 307,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9600480353905011,
+      "shifted_macro_f1": 0.9600480353905011,
+      "accuracy": 0.96,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988023774252042,
+      "gauge_error": 7.152557373046875e-7,
+      "runtime_seconds": 31.06,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 307,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9755225160702024,
+      "shifted_macro_f1": 0.9600480353905011,
+      "accuracy": 0.9755555555555555,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988023774252042,
+      "gauge_error": 7.152557373046875e-7,
+      "runtime_seconds": 31.24,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 307,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9755225160702024,
+      "shifted_macro_f1": 0.9600480353905011,
+      "accuracy": 0.9755555555555555,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988023774252042,
+      "gauge_error": 7.152557373046875e-7,
+      "runtime_seconds": 31.54,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 307,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9755225160702024,
+      "shifted_macro_f1": 0.9600480353905011,
+      "accuracy": 0.9755555555555555,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988023774252042,
+      "gauge_error": 7.152557373046875e-7,
+      "runtime_seconds": 31.83,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 308,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9677187389908702,
+      "shifted_macro_f1": 0.9174728772618058,
+      "accuracy": 0.9677777777777777,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.9663299663299663,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988153057664606,
+      "gauge_error": 6.854534149169922e-7,
+      "runtime_seconds": 5.52,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 308,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9420982472316481,
+      "shifted_macro_f1": 0.9420982472316481,
+      "accuracy": 0.9422222222222222,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988153057664606,
+      "gauge_error": 6.854534149169922e-7,
+      "runtime_seconds": 5.55,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 308,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9677187389908702,
+      "shifted_macro_f1": 0.9420982472316481,
+      "accuracy": 0.9677777777777777,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988153057664606,
+      "gauge_error": 6.854534149169922e-7,
+      "runtime_seconds": 5.73,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 308,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9677187389908702,
+      "shifted_macro_f1": 0.9420982472316481,
+      "accuracy": 0.9677777777777777,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988153057664606,
+      "gauge_error": 6.854534149169922e-7,
+      "runtime_seconds": 6.02,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 308,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9677187389908702,
+      "shifted_macro_f1": 0.9420982472316481,
+      "accuracy": 0.9677777777777777,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.9988153057664606,
+      "gauge_error": 6.854534149169922e-7,
+      "runtime_seconds": 6.31,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 309,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9866780519168992,
+      "shifted_macro_f1": 0.9199835164656084,
+      "accuracy": 0.9866666666666667,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 0.8656565656565658,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.996452414623887,
+      "gauge_error": 0.0000010728836059570312,
+      "runtime_seconds": 5.52,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 309,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9655699992350605,
+      "shifted_macro_f1": 0.9655699992350605,
+      "accuracy": 0.9655555555555555,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.9326599326599326,
+      "robust_cv": 0.9326599326599326,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.996452414623887,
+      "gauge_error": 0.0000010728836059570312,
+      "runtime_seconds": 5.55,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 309,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9866780519168992,
+      "shifted_macro_f1": 0.9710817027873238,
+      "accuracy": 0.9866666666666667,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1,
+        "shape": 0.5
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.996452414623887,
+      "gauge_error": 0.0000010728836059570312,
+      "runtime_seconds": 5.74,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 309,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9866780519168992,
+      "shifted_macro_f1": 0.9710817027873238,
+      "accuracy": 0.9866666666666667,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1,
+        "shape": 0.5
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.996452414623887,
+      "gauge_error": 0.0000010728836059570312,
+      "runtime_seconds": 6.04,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "CBF",
+      "seed": 309,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9866780519168992,
+      "shifted_macro_f1": 0.9710817027873238,
+      "accuracy": 0.9866666666666667,
+      "n_labeled": 15,
+      "train_count": 30,
+      "test_count": 900,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1,
+        "shape": 0.5
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.01310861287026378,
+      "shift_gate_mean": 0.996452414623887,
+      "gauge_error": 0.0000010728836059570312,
+      "runtime_seconds": 6.34,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 307,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9744267553760247,
+      "shifted_macro_f1": 0.9291517663833421,
+      "accuracy": 0.9744483159117305,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.6703296703296704,
+      "robust_cv": 0.7916666666666667,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9994958940459269,
+      "gauge_error": 6.51925802230835e-7,
+      "runtime_seconds": 31.84,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 307,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9825689918358367,
+      "shifted_macro_f1": 0.9825689918358367,
+      "accuracy": 0.9825783972125436,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.6703296703296704,
+      "robust_cv": 0.6703296703296704,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9994958940459269,
+      "gauge_error": 6.51925802230835e-7,
+      "runtime_seconds": 31.88,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 307,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9744267553760247,
+      "shifted_macro_f1": 0.9291517663833421,
+      "accuracy": 0.9744483159117305,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.6703296703296704,
+      "robust_cv": 0.7916666666666667,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9994958940459269,
+      "gauge_error": 6.51925802230835e-7,
+      "runtime_seconds": 32.06,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 307,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9744267553760247,
+      "shifted_macro_f1": 0.9291517663833421,
+      "accuracy": 0.9744483159117305,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.6703296703296704,
+      "robust_cv": 0.7916666666666667,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9994958940459269,
+      "gauge_error": 6.51925802230835e-7,
+      "runtime_seconds": 32.34,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 307,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9744267553760247,
+      "shifted_macro_f1": 0.9291517663833421,
+      "accuracy": 0.9744483159117305,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.6703296703296704,
+      "robust_cv": 0.7916666666666667,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9994958940459269,
+      "gauge_error": 6.51925802230835e-7,
+      "runtime_seconds": 32.63,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 308,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.8972074193863486,
+      "shifted_macro_f1": 0.7626278461305598,
+      "accuracy": 0.8977932636469221,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9999252586369185,
+      "gauge_error": 6.705522537231445e-7,
+      "runtime_seconds": 4.82,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 308,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.9145490758553182,
+      "shifted_macro_f1": 0.9145490758553182,
+      "accuracy": 0.9152148664343787,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9999252586369185,
+      "gauge_error": 6.705522537231445e-7,
+      "runtime_seconds": 4.85,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 308,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.9018798094142418,
+      "shifted_macro_f1": 0.9145490758553182,
+      "accuracy": 0.9024390243902439,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9999252586369185,
+      "gauge_error": 6.705522537231445e-7,
+      "runtime_seconds": 5.04,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 308,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9018798094142418,
+      "shifted_macro_f1": 0.9145490758553182,
+      "accuracy": 0.9024390243902439,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9999252586369185,
+      "gauge_error": 6.705522537231445e-7,
+      "runtime_seconds": 5.31,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 308,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.9018798094142418,
+      "shifted_macro_f1": 0.9145490758553182,
+      "accuracy": 0.9024390243902439,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 0.898989898989899,
+      "robust_cv": 0.898989898989899,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.9999252586369185,
+      "gauge_error": 6.705522537231445e-7,
+      "runtime_seconds": 5.59,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 309,
+      "method": "MultiRocket-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.8303782505910166,
+      "shifted_macro_f1": 0.7894111685416033,
+      "accuracy": 0.8304297328687572,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.999004207557846,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 4.81,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 309,
+      "method": "Canonical-augmented",
+      "status": "EXECUTED",
+      "macro_f1": 0.8395392178046672,
+      "shifted_macro_f1": 0.8395392178046672,
+      "accuracy": 0.8397212543554007,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "shape": 1
+      },
+      "robust_weights": {
+        "shape": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.999004207557846,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 4.85,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 309,
+      "method": "Robust kernel fusion",
+      "status": "EXECUTED",
+      "macro_f1": 0.8303782505910166,
+      "shifted_macro_f1": 0.7894111685416033,
+      "accuracy": 0.8304297328687572,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.999004207557846,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 5.01,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 309,
+      "method": "Generic-SSL-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.8303782505910166,
+      "shifted_macro_f1": 0.7894111685416033,
+      "accuracy": 0.8304297328687572,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.999004207557846,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 5.29,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "seed": 309,
+      "method": "MESA-robust-gated",
+      "status": "EXECUTED",
+      "macro_f1": 0.8303782505910166,
+      "shifted_macro_f1": 0.7894111685416033,
+      "accuracy": 0.8304297328687572,
+      "n_labeled": 10,
+      "train_count": 23,
+      "test_count": 861,
+      "encoder_epochs": 25,
+      "clean_weights": {
+        "raw": 1
+      },
+      "robust_weights": {
+        "raw": 1
+      },
+      "clean_cv": 1,
+      "robust_cv": 1,
+      "clean_gate_mean": 0.06372892075860279,
+      "shift_gate_mean": 0.999004207557846,
+      "gauge_error": 5.960464477539062e-7,
+      "runtime_seconds": 5.57,
+      "shift_assumption": "Declared affine nuisance treated as label preserving"
+    }
+  ],
+  "summary": [
+    {
+      "dataset": "GunPoint",
+      "method": "MultiRocket-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9688586117953372,
+      "macro_f1_sd": 0.0038712301728316243,
+      "shifted_f1_mean": 0.821357833655706,
+      "shifted_f1_sd": 0.06974876255728198,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "Canonical-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9599038292860094,
+      "macro_f1_sd": 0.011669921663622388,
+      "shifted_f1_mean": 0.9599038292860094,
+      "shifted_f1_sd": 0.011669921663622388,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "Robust kernel fusion",
+      "n": 3,
+      "macro_f1_mean": 0.9688586117953372,
+      "macro_f1_sd": 0.0038712301728316243,
+      "shifted_f1_mean": 0.9599038292860094,
+      "shifted_f1_sd": 0.011669921663622388,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "Generic-SSL-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9688586117953372,
+      "macro_f1_sd": 0.0038712301728316243,
+      "shifted_f1_mean": 0.9599038292860094,
+      "shifted_f1_sd": 0.011669921663622388,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "GunPoint",
+      "method": "MESA-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9688586117953372,
+      "macro_f1_sd": 0.0038712301728316243,
+      "shifted_f1_mean": 0.9599038292860094,
+      "shifted_f1_sd": 0.011669921663622388,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "MultiRocket-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9121443532467985,
+      "macro_f1_sd": 0.012202053775102776,
+      "shifted_f1_mean": 0.8801329322997554,
+      "shifted_f1_sd": 0.012948059109986074,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "Canonical-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9103705329636688,
+      "macro_f1_sd": 0.0026724164284742968,
+      "shifted_f1_mean": 0.9103705329636688,
+      "shifted_f1_sd": 0.0026724164284742968,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "Robust kernel fusion",
+      "n": 3,
+      "macro_f1_mean": 0.9121443532467985,
+      "macro_f1_sd": 0.012202053775102776,
+      "shifted_f1_mean": 0.8926636144320469,
+      "shifted_f1_sd": 0.017935480423549654,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "Generic-SSL-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9121443532467985,
+      "macro_f1_sd": 0.012202053775102776,
+      "shifted_f1_mean": 0.8926636144320469,
+      "shifted_f1_sd": 0.017935480423549654,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ItalyPowerDemand",
+      "method": "MESA-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9140880043642564,
+      "macro_f1_sd": 0.012747759737573394,
+      "shifted_f1_mean": 0.9023785799550551,
+      "shifted_f1_sd": 0.025963805032576528,
+      "mechanism_selected_in_clean": 1,
+      "mechanism_selected_in_robust": 1
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "MultiRocket-augmented",
+      "n": 3,
+      "macro_f1_mean": 1,
+      "macro_f1_sd": 0,
+      "shifted_f1_mean": 0.9831649831649831,
+      "shifted_f1_sd": 0.02915910450452655,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "Canonical-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9832915622389308,
+      "macro_f1_sd": 0.014469931558637237,
+      "shifted_f1_mean": 0.9832915622389308,
+      "shifted_f1_sd": 0.014469931558637237,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "Robust kernel fusion",
+      "n": 3,
+      "macro_f1_mean": 1,
+      "macro_f1_sd": 0,
+      "shifted_f1_mean": 0.9831649831649831,
+      "shifted_f1_sd": 0.02915910450452655,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "Generic-SSL-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 1,
+      "macro_f1_sd": 0,
+      "shifted_f1_mean": 0.9831649831649831,
+      "shifted_f1_sd": 0.02915910450452655,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "BasicMotions",
+      "method": "MESA-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 1,
+      "macro_f1_sd": 0,
+      "shifted_f1_mean": 0.9831649831649831,
+      "shifted_f1_sd": 0.02915910450452655,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "Coffee",
+      "method": "MultiRocket-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9642705102475219,
+      "macro_f1_sd": 0.035714295423121024,
+      "shifted_f1_mean": 0.8200217613927291,
+      "shifted_f1_sd": 0.09346463984563046,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "Coffee",
+      "method": "Canonical-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9523809523809524,
+      "macro_f1_sd": 0.041239304942116105,
+      "shifted_f1_mean": 0.9523809523809524,
+      "shifted_f1_sd": 0.041239304942116105,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "Coffee",
+      "method": "Robust kernel fusion",
+      "n": 3,
+      "macro_f1_mean": 0.9642705102475219,
+      "macro_f1_sd": 0.035714295423121024,
+      "shifted_f1_mean": 0.9162519201228879,
+      "shifted_f1_sd": 0.02133801455714656,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "Coffee",
+      "method": "Generic-SSL-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9642705102475219,
+      "macro_f1_sd": 0.035714295423121024,
+      "shifted_f1_mean": 0.9162519201228879,
+      "shifted_f1_sd": 0.02133801455714656,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "Coffee",
+      "method": "MESA-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9642705102475219,
+      "macro_f1_sd": 0.035714295423121024,
+      "shifted_f1_mean": 0.9162519201228879,
+      "shifted_f1_sd": 0.02133801455714656,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "MultiRocket-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9773830041892976,
+      "macro_f1_sd": 0.009485047591464376,
+      "shifted_f1_mean": 0.9268822123681676,
+      "shifted_f1_sd": 0.014178848114140432,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "Canonical-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9559054272857366,
+      "macro_f1_sd": 0.012271987897633712,
+      "shifted_f1_mean": 0.9559054272857366,
+      "shifted_f1_sd": 0.012271987897633712,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "Robust kernel fusion",
+      "n": 3,
+      "macro_f1_mean": 0.9766397689926573,
+      "macro_f1_sd": 0.009528907451870985,
+      "shifted_f1_mean": 0.9577426618031577,
+      "shifted_f1_sd": 0.014628610136300419,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "Generic-SSL-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9766397689926573,
+      "macro_f1_sd": 0.009528907451870985,
+      "shifted_f1_mean": 0.9577426618031577,
+      "shifted_f1_sd": 0.014628610136300419,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "CBF",
+      "method": "MESA-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.9766397689926573,
+      "macro_f1_sd": 0.009528907451870985,
+      "shifted_f1_mean": 0.9577426618031577,
+      "shifted_f1_sd": 0.014628610136300419,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "MultiRocket-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9006708084511299,
+      "macro_f1_sd": 0.07208667859292497,
+      "shifted_f1_mean": 0.8270635936851684,
+      "shifted_f1_sd": 0.0894194209525122,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "Canonical-augmented",
+      "n": 3,
+      "macro_f1_mean": 0.9122190951652739,
+      "macro_f1_sd": 0.0715433482048739,
+      "shifted_f1_mean": 0.9122190951652739,
+      "shifted_f1_sd": 0.0715433482048739,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "Robust kernel fusion",
+      "n": 3,
+      "macro_f1_mean": 0.902228271793761,
+      "macro_f1_sd": 0.07202488460401438,
+      "shifted_f1_mean": 0.8777040035934212,
+      "shifted_f1_sd": 0.07681164093924793,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "Generic-SSL-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.902228271793761,
+      "macro_f1_sd": 0.07202488460401438,
+      "shifted_f1_mean": 0.8777040035934212,
+      "shifted_f1_sd": 0.07681164093924793,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    },
+    {
+      "dataset": "ECGFiveDays",
+      "method": "MESA-robust-gated",
+      "n": 3,
+      "macro_f1_mean": 0.902228271793761,
+      "macro_f1_sd": 0.07202488460401438,
+      "shifted_f1_mean": 0.8777040035934212,
+      "shifted_f1_sd": 0.07681164093924793,
+      "mechanism_selected_in_clean": 0,
+      "mechanism_selected_in_robust": 0
+    }
+  ]
+}
