@@ -1,0 +1,57 @@
+name: MESA representation-surprise chart smoke and failure learning
+on:
+  push:
+    branches: [mesa-representation-surprise-2026]
+    paths: ['.github/workflows/mesa-representation-surprise-smoke.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        dataset: [MedicalImages, Fish, Car]
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      NUMBA_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible CPU libraries
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'aeon==1.6.0' 'scikit-learn>=1.5,<1.10' 'numba>=0.61,<1'
+      - name: Restore verified original MESA/aeon runner
+        run: |
+          base64 -d MESA_SSL/bench_neuro_ssl.py.gz.b64 | gzip -dc > bench_neuro_ssl.py
+          base64 -d MESA_SSL/mesa_mr_experiment.py.gz.b64 | gzip -dc > mesa_mr_experiment.py
+          echo 'd5578abed721e1ab0cafb9c45e13ca7999ef1b2b1d26fe516b96a09e64467860  bench_neuro_ssl.py' | sha256sum -c -
+          echo 'd269f6fc030bf26705c4b0b92f4c0c71516e8aec5a58131db4ba817afddd4884  mesa_mr_experiment.py' | sha256sum -c -
+          python -m py_compile MESA_SSL/mesa_elastic_synaptic.py
+          python -c 'from MESA_SSL.mesa_elastic_synaptic import basic_synthetic_tests; assert basic_synthetic_tests()'
+      - name: Compare original morphology and new representation surprise router
+        run: |
+          python -m MESA_SSL.mesa_elastic_synaptic \
+            --dataset "${{ matrix.dataset }}" --seeds 3801 \
+            --budgets 1 3 5 --epochs 3 --hidden 24 --dim 48 \
+            --out "results/${{ matrix.dataset }}"
+      - name: Preserve all positive and negative outcomes
+        if: always()
+        run: |
+          mkdir -p "results/${{ matrix.dataset }}"
+          cp MESA_SSL/mesa_elastic_synaptic.py "results/${{ matrix.dataset }}/source.py"
+          python -m pip freeze > "results/${{ matrix.dataset }}/requirements.txt"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesa-repsurprise-dev-${{ matrix.dataset }}
+          path: results/${{ matrix.dataset }}/
+          retention-days: 30
